@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Directors - Econometric Learning Lab</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .people-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .person-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .person-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .person-image {
+            width: 50%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .person-info {
+            padding: 1.5rem;
+        }
+
+        .person-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .person-title {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .person-bio {
+            margin: 1.5rem 0;
+            line-height: 1.6;
+            color: #444;
+        }
+
+        .person-interests {
+            margin: 1rem 0;
+            padding: 1rem 0;
+            border-top: 1px solid #eee;
+        }
+
+        .interests-title {
+            font-weight: 600;
+            color: #990000;
+            margin-bottom: 0.5rem;
+        }
+
+        .person-links {
+            margin-top: 1.5rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .person-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1rem;
+            background-color: #990000;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .person-link:hover {
+            background-color: #800000;
+        }
+
+        .person-contact {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .person-contact a {
+            color: #990000;
+            text-decoration: none;
+        }
+
+        .person-contact a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <nav class="nav">
+            <a href="index.html" class="logo">Econometric Learning Lab (ELL@IU)</a>
+            <div class="nav-links">
+                <div class="dropdown">
+                    <a href="#">Activities</a>
+                    <div class="dropdown-content">
+                        <a href="workshops.html">Workshops & Courses</a>
+                        <a href="presentations.html">Presentations</a>
+                        <a href="publications.html">Publications</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#">People</a>
+                    <div class="dropdown-content">
+                        <a href="directors.html">Directors</a>
+                        <a href="students.html">Student Fellows</a>
+                        <a href="collaborators.html">Collaborators</a>
+                    </div>
+                </div>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Banner Section -->
+    <section class="banner">
+        <div class="banner-content">
+            <h1>Directors</h1>
+            <p>Meet the leadership of the Econometric Learning Lab</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container" style="grid-template-columns: 1fr;">
+        <main class="main-content">
+            <div class="people-grid">
+                <!-- Joon Y. Park -->
+                <div class="person-card">
+                    <img src="images/joon.jpg" alt="Joon Y. Park" class="person-image">
+                    <div class="person-info">
+                        <h3 class="person-name">Joon Y. Park</h3>
+                        <p class="person-title">Professor<br>Wisnewsky Professor, Human Studies</p>
+                        <div class="person-bio">
+                            <p>Bio.</p>
+                        </div>
+                        <div class="person-interests">
+                            <h4 class="interests-title">Research Interests</h4>
+                            <p>AI and Machine Learning, Time Series and Financial Econometrics, Forecasting, Empirical Finance, Energy Economics</p>
+                        </div>
+                        <div class="person-contact">
+                            <p>Email: <a href="mailto:jpark@indiana.edu">jpark@indiana.edu</a></p>
+                            <p>Office: Wylie Hall, Room 105</p>
+                        </div>
+                        <div class="person-links">
+                            <a href="#" class="person-link">Personal Website</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Yoosoon Chang -->
+                <div class="person-card">
+                    <img src="images/yoosoon.png" alt="Yoosoon Chang" class="person-image">
+                    <div class="person-info">
+                        <h3 class="person-name">Yoosoon Chang</h3>
+                        <p class="person-title">Professor<br>Executive Director</p>
+                        <div class="person-bio">
+                            <p>Bio.</p>
+                        </div>
+                        <div class="person-interests">
+                            <h4 class="interests-title">Research Interests</h4>
+                            <p>AI and Machine Learning, Time Series and Financial Econometrics, Empirical Macroeconomics, Empirical Finance, Energy Economics</p>
+                        </div>
+                        <div class="person-contact">
+                            <p>Email: <a href="mailto:yoosoon@indiana.edu">yoosoon@indiana.edu</a></p>
+                            <p>Office: Wylie Hall, Room 107</p>
+                        </div>
+                        <div class="person-links">
+                            <a href="#" class="person-link">Personal Website</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Econometric Learning Lab</h3>
+                <p>Advancing economic research through innovative methodologies</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="workshops.html">Workshops & Courses</a></li>
+                    <li><a href="presentations.html">Presentations</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <ul class="footer-links">
+                    <li><a href="#" target="_blank">Twitter</a></li>
+                    <li><a href="#" target="_blank">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 Econometric Learning Lab. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
