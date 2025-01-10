@@ -3,246 +3,251 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Economic Machine Learning Lab (EML@IU)</title>
+    <title>Workshops & Courses - Economic Machine Learning Lab</title>
+    <link rel="stylesheet" href="css/style.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-        }
-
-        body {
-            background-color: #f8f8f8;
-        }
-
-        /* Header Styles */
-        .header {
-            background: white;
-            padding: 1rem 2rem;
-            border-bottom: 1px solid #eee;
-            margin-bottom: 2rem;
-        }
-
-        .nav {
-            display: flex;
-            align-items: center;
+        .workshop-grid {
+            display: grid;
+            grid-template-columns: 1fr;
             gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
+            margin: 2rem 0;
         }
 
-        .logo {
-            color: #333;
-            font-weight: 500;
-            text-decoration: none;
-            font-size: 1.1rem;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: #333;
-            text-decoration: none;
-            font-size: 1rem;
-        }
-
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* Section Styles */
-        .section {
-            margin-bottom: 4rem;
-        }
-
-        .section-title {
-            color: #333;
-            font-size: 2rem;
-            font-weight: 500;
-            margin-bottom: 2rem;
-        }
-
-        /* Card Styles */
-        .card {
+        .workshop-card {
             background: white;
             border-radius: 8px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
         }
 
-        .card-header {
-            background: #990000;
+        .workshop-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .workshop-header {
+            padding: 1.5rem;
+            background-color: #990000;
             color: white;
-            padding: 1.5rem;
-            border-top-left-radius: 8px;
-            border-top-right-radius: 8px;
         }
 
-        .card-header h3 {
-            font-size: 1.5rem;
-            font-weight: 500;
-            margin: 0;
-        }
-
-        .card-content {
+        .workshop-content {
             padding: 1.5rem;
         }
 
-        .meta-info {
-            color: #666;
-            font-size: 0.9rem;
-            margin: 1rem 0;
+        .workshop-meta {
             display: flex;
             gap: 2rem;
+            margin: 1rem 0;
+            color: #666;
+            font-size: 0.9rem;
         }
 
-        .instructors {
+        .workshop-details {
             margin: 1rem 0;
         }
 
-        .topics-list {
-            margin: 1rem 0 1.5rem 1.5rem;
+        .workshop-links {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #eee;
         }
 
-        .topics-list li {
-            margin-bottom: 0.5rem;
-            color: #333;
-        }
-
-        .action-button {
+        .workshop-link {
             display: inline-block;
-            background: #990000;
-            color: white;
             padding: 0.75rem 1.5rem;
+            background-color: #990000;
+            color: white;
             text-decoration: none;
             border-radius: 4px;
-            margin-top: 1rem;
+            margin-right: 1rem;
+            transition: background-color 0.3s ease;
         }
 
-        .course-description {
-            color: #333;
-            line-height: 1.5;
-            margin: 1rem 0;
+        .workshop-link:hover {
+            background-color: #800000;
+        }
+
+        .past-workshops {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 2px solid #eee;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
+    <!-- Header Navigation -->
     <header class="header">
         <nav class="nav">
-            <a href="#" class="logo">Economic Machine Learning Lab (EML@IU)</a>
+            <a href="index.html" class="logo">Economic Machine Learning Lab (EML@IU)</a>
             <div class="nav-links">
-                <a href="#">Workshops & Courses</a>
-                <a href="#">Presentations</a>
-                <a href="#">Publications</a>
-                <a href="#">About</a>
-                <a href="#">Contact</a>
+                <div class="dropdown">
+                    <a href="#">Activities</a>
+                    <div class="dropdown-content">
+                        <a href="workshops.html">Workshops & Courses</a>
+                        <a href="presentations.html">Presentations</a>
+                        <a href="publications.html">Publications</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#">People</a>
+                    <div class="dropdown-content">
+                        <a href="directors.html">Directors</a>
+                        <a href="students.html">Student Fellows</a>
+                        <a href="collaborators.html">Collaborators</a>
+                    </div>
+                </div>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
             </div>
         </nav>
     </header>
 
-    <div class="container">
-        <!-- Workshops Section -->
-        <section class="section">
-            <h2 class="section-title">Workshops</h2>
-            <div class="card">
-                <div class="card-header">
-                    <h3>Workshop on Machine Learning in Econometrics</h3>
-                </div>
-                <div class="card-content">
-                    <div class="meta-info">
-                        <span>August 19-23, 2024</span>
-                    </div>
-                    <div class="instructors">
-                        <strong>Instructors:</strong> Joon Park, Doyeon Pyun, Yoosoon Chang, Sangmyung Ha
-                    </div>
-                    <ul class="topics-list">
-                        <li>Large Dimensional Regression: PCA, Ridge and Lasso</li>
-                        <li>Reproducing Kernel Hilbert Space: Kernel Method</li>
-                        <li>Support Vector Machine: Linear and Kernel Trick</li>
-                        <li>Tree-Based Approach: Random Forest and XGBoost</li>
-                        <li>Neural Network: Vanilla and Recurrent Form</li>
-                    </ul>
-                    <a href="#" class="action-button">Workshop Materials</a>
-                </div>
-            </div>
-        </section>
+    <!-- Banner Section -->
+    <section class="banner">
+        <div class="banner-content">
+            <h1>Workshops & Courses</h1>
+            <p>Advanced training in econometric methods and applications</p>
+        </div>
+    </section>
 
-        <!-- Courses Section -->
-        <section class="section">
-            <h2 class="section-title">Courses</h2>
-            
-            <!-- Course 1 -->
-            <div class="card">
-                <div class="card-header">
-                    <h3>Econometrics of Big Data and Machine Learning (ECON 724)</h3>
-                </div>
-                <div class="card-content">
-                    <div class="meta-info">
-                        <span>Spring 2024</span>
-                        <span>Instructor: Joon Y. Park</span>
+    <!-- Main Content -->
+    <div class="container" style="grid-template-columns: 1fr;">
+        <main class="main-content">
+            <!-- Workshops Section -->
+            <h2>Workshops</h2>
+            <div class="workshop-grid">
+                <div class="workshop-card">
+                    <div class="workshop-header">
+                        <h3>Workshop on Machine Learning in Econometrics</h3>
                     </div>
-                    <div class="course-description">
-                        The objective of this course is to prepare the Ph.D. students for their dissertation research in the area of 
-                        econometrics of big data and machine learning, both theoretical and empirical. Topics include:
+                    <div class="workshop-content">
+                        <div class="workshop-meta">
+                            <span>August 19-23, 2024</span>
+                        </div>
+                        <div class="workshop-details">
+                            <p><strong>Instructors:</strong> Joon Park, Doyeon Pyun, Yoosoon Chang, Sangmyung Ha</p>
+                            <ul style="margin: 1rem 0 1rem 2rem;">
+                                <li>Large Dimensional Regression: PCA, Ridge and Lasso</li>
+                                <li>Reproducing Kernel Hilbert Space: Kernel Method</li>
+                                <li>Support Vector Machine: Linear and Kernel Trick</li>
+                                <li>Tree-Based Approach: Random Forest and XGBoost</li>
+                                <li>Neural Network: Vanilla and Recurrent Form</li>
+                            </ul>
+                        </div>
+                        <div class="workshop-links">
+                            <a href="#" class="workshop-link">Workshop Materials</a>
+                        </div>
                     </div>
-                    <ul class="topics-list">
-                        <li>Functional Data Analysis</li>
-                        <li>Machine Learning</li>
-                    </ul>
-                    <a href="#" class="action-button">Course Details</a>
                 </div>
             </div>
 
-            <!-- Course 2 -->
-            <div class="card">
-                <div class="card-header">
-                    <h3>Macroeconometrics (ECON 672)</h3>
-                </div>
-                <div class="card-content">
-                    <div class="meta-info">
-                        <span>Spring 2024</span>
-                        <span>Instructor: Yoosoon Chang</span>
+            <!-- Courses Section -->
+            <h2>Courses</h2>
+            <div class="workshop-grid">
+                <!-- Course 1 -->
+                <div class="workshop-card">
+                    <div class="workshop-header">
+                        <h3>Econometrics of Big Data and Machine Learning (ECON 724)</h3>
                     </div>
-                    <div class="course-description">
-                        A Description. Topics include:
+                    <div class="workshop-content">
+                        <div class="workshop-meta">
+                            <span>Spring 2024</span>
+                            <span>Instructor: Joon Y. Park</span>
+                        </div>
+                        <div class="workshop-details">
+                            <p>The objective of this course is to prepare the Ph.D. students for their dissertation research in the area of 
+                                econometrics of big data and machine learning, both theoretical and empirical. Topics include:</p>
+                            <ul style="margin: 1rem 0 1rem 2rem;">
+                                <li>Functional Data Analysis</li>
+                                <li>Machine Learning</li>
+                            </ul>
+                        </div>
+                        <div class="workshop-links">
+                            <a href="https://github.com/elltest2025/elltest2025.github.io/blob/main/assets/E724_syl24.pdf" class="workshop-link">Course Details</a>
+                        </div>
                     </div>
-                    <ul class="topics-list">
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                    </ul>
-                    <a href="#" class="action-button">Course Details</a>
                 </div>
-            </div>
-        </section>
 
-        <!-- Lecture Series Section -->
-        <section class="section">
-            <h2 class="section-title">Lecture Series</h2>
-            <div class="card">
-                <div class="card-header">
-                    <h3>Special Lecture Series</h3>
-                </div>
-                <div class="card-content">
-                    <div class="meta-info">
-                        <span>2024</span>
-                        <span>Guest Lecturer: Simon Sokbae Lee (Columbia University)</span>
+                <!-- Course 2 -->
+                <div class="workshop-card">
+                    <div class="workshop-header">
+                        <h3>Macroeconometrics (ECON 672)</h3>
                     </div>
-                    <div class="course-description">
-                        A special lecture series focusing on cutting-edge developments in econometric methods.
+                    <div class="workshop-content">
+                        <div class="workshop-meta">
+                            <span>Spring 2024</span>
+                            <span>Instructor: Yoosoon Chang</span>
+                        </div>
+                        <div class="workshop-details">
+                            <p>A Deccription. Topics include:</p>
+                            <ul style="margin: 1rem 0 1rem 2rem;">
+                                <li>1</li>
+                                <li>2</li>
+                                <li>3</li>
+                            </ul>
+                        </div>
+                        <div class="workshop-links">
+                            <a href="#" class="workshop-link">Course Details</a>
+                        </div>
                     </div>
-                    <a href="#" class="action-button">Slides</a>
                 </div>
             </div>
-        </section>
+
+            <!-- Lecture Series Section -->
+            <h2>Lecture Series</h2>
+            <div class="workshop-grid">
+                <div class="workshop-card">
+                    <div class="workshop-header">
+                        <h3>Lecture Series</h3>
+                    </div>
+                    <div class="workshop-content">
+                        <div class="workshop-meta">
+                            <span>2024</span>
+                            <span>Guest Lecturer: Simon Sokbae Lee (Columbia University)</span>
+                        </div>
+                        <div class="workshop-details">
+                            <p>A special lecture series focusing on cutting-edge developments in econometric methods.</p>
+                            <ul style="margin: 1rem 0 1rem 2rem;">
+                            </ul>
+                        </div>
+                        <div class="workshop-links">
+                            <a href="#" class="workshop-link">Slides</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
     </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Econometric Learning Lab</h3>
+                <p>Advancing the frontiers of economic research and education in the era of AI and machine learning</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="workshops.html">Workshops & Courses</a></li>
+                    <li><a href="presentations.html">Presentations</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <ul class="footer-links">
+                    <li><a href="#" target="_blank">Twitter</a></li>
+                    <li><a href="#" target="_blank">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Economic Machine Learning Lab. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
