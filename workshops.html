@@ -3,124 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Workshops & Courses - Economic Machine Learning Lab</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Economic Machine Learning Lab (EML@IU)</title>
     <style>
-        .content-section {
-            margin: 4rem 0;
-            padding: 2rem 0;
-            border-bottom: 2px solid #eee;
-        }
-
-        .content-section:first-child {
-            margin-top: 0;
-        }
-
-        .section-title {
-            color: #000;
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            font-weight: 500;
-        }
-
-        .card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
-        }
-
-        .card-header {
-            padding: 1.5rem;
-            background-color: #990000;
-            color: white;
-        }
-
-        .card-header h3 {
+        * {
             margin: 0;
-            font-size: 1.5rem;
-        }
-
-        .card-content {
-            padding: 1.5rem;
-        }
-
-        .meta-info {
-            display: flex;
-            gap: 2rem;
-            margin: 1rem 0;
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        .details {
-            margin: 1rem 0;
-        }
-
-        .details ul {
-            margin: 1rem 0 1rem 2rem;
             padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
         }
 
-        .details li {
-            margin-bottom: 0.5rem;
+        body {
+            background-color: #f8f8f8;
         }
 
-        .action-link {
-            display: inline-block;
-            padding: 0.75rem 1.5rem;
-            background-color: #990000;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            margin-top: 1.5rem;
-            transition: background-color 0.3s ease;
-        }
-
-        .action-link:hover {
-            background-color: #800000;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        /* Banner Styles */
-        .banner {
-            background-color: #f5f5f5;
-            padding: 3rem 0;
-            text-align: center;
-        }
-
-        .banner-content h1 {
-            margin: 0;
-            color: #333;
-            font-size: 2.5rem;
-        }
-
-        .banner-content p {
-            margin-top: 1rem;
-            color: #666;
-            font-size: 1.2rem;
-        }
-
-        /* Navigation Styles */
+        /* Header Styles */
         .header {
             background: white;
-            padding: 1rem 0;
+            padding: 1rem 2rem;
             border-bottom: 1px solid #eee;
+            margin-bottom: 2rem;
         }
 
         .nav {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        }
+
+        .logo {
+            color: #333;
+            font-weight: 500;
+            text-decoration: none;
+            font-size: 1.1rem;
         }
 
         .nav-links {
@@ -128,73 +44,113 @@
             gap: 2rem;
         }
 
-        .nav a {
+        .nav-links a {
             color: #333;
             text-decoration: none;
+            font-size: 1rem;
         }
 
-        /* Footer Styles */
-        .footer {
-            background: #333;
-            color: white;
-            padding: 4rem 0 2rem;
-            margin-top: 4rem;
-        }
-
-        .footer-content {
+        /* Container */
+        .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 4rem;
         }
 
-        .footer-section h3 {
-            margin-bottom: 1rem;
+        /* Section Styles */
+        .section {
+            margin-bottom: 4rem;
         }
 
-        .footer-links {
-            list-style: none;
-            padding: 0;
+        .section-title {
+            color: #333;
+            font-size: 2rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+
+        /* Card Styles */
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .card-header {
+            background: #990000;
+            color: white;
+            padding: 1.5rem;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+
+        .card-header h3 {
+            font-size: 1.5rem;
+            font-weight: 500;
             margin: 0;
         }
 
-        .footer-links li {
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .meta-info {
+            color: #666;
+            font-size: 0.9rem;
+            margin: 1rem 0;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .instructors {
+            margin: 1rem 0;
+        }
+
+        .topics-list {
+            margin: 1rem 0 1.5rem 1.5rem;
+        }
+
+        .topics-list li {
             margin-bottom: 0.5rem;
+            color: #333;
         }
 
-        .footer-links a {
-            color: #fff;
+        .action-button {
+            display: inline-block;
+            background: #990000;
+            color: white;
+            padding: 0.75rem 1.5rem;
             text-decoration: none;
+            border-radius: 4px;
+            margin-top: 1rem;
         }
 
-        .copyright {
-            text-align: center;
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid #444;
+        .course-description {
+            color: #333;
+            line-height: 1.5;
+            margin: 1rem 0;
         }
     </style>
 </head>
 <body>
-    <!-- Header Navigation -->
+    <!-- Header -->
     <header class="header">
         <nav class="nav">
-            <a href="index.html" class="logo">Economic Machine Learning Lab (EML@IU)</a>
+            <a href="#" class="logo">Economic Machine Learning Lab (EML@IU)</a>
             <div class="nav-links">
-                <a href="workshops.html">Workshops & Courses</a>
-                <a href="presentations.html">Presentations</a>
-                <a href="publications.html">Publications</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
+                <a href="#">Workshops & Courses</a>
+                <a href="#">Presentations</a>
+                <a href="#">Publications</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
             </div>
         </nav>
     </header>
 
     <div class="container">
         <!-- Workshops Section -->
-        <section class="content-section">
+        <section class="section">
             <h2 class="section-title">Workshops</h2>
             <div class="card">
                 <div class="card-header">
@@ -204,25 +160,26 @@
                     <div class="meta-info">
                         <span>August 19-23, 2024</span>
                     </div>
-                    <div class="details">
-                        <p><strong>Instructors:</strong> Joon Park, Doyeon Pyun, Yoosoon Chang, Sangmyung Ha</p>
-                        <ul>
-                            <li>Large Dimensional Regression: PCA, Ridge and Lasso</li>
-                            <li>Reproducing Kernel Hilbert Space: Kernel Method</li>
-                            <li>Support Vector Machine: Linear and Kernel Trick</li>
-                            <li>Tree-Based Approach: Random Forest and XGBoost</li>
-                            <li>Neural Network: Vanilla and Recurrent Form</li>
-                        </ul>
+                    <div class="instructors">
+                        <strong>Instructors:</strong> Joon Park, Doyeon Pyun, Yoosoon Chang, Sangmyung Ha
                     </div>
-                    <a href="#" class="action-link">Workshop Materials</a>
+                    <ul class="topics-list">
+                        <li>Large Dimensional Regression: PCA, Ridge and Lasso</li>
+                        <li>Reproducing Kernel Hilbert Space: Kernel Method</li>
+                        <li>Support Vector Machine: Linear and Kernel Trick</li>
+                        <li>Tree-Based Approach: Random Forest and XGBoost</li>
+                        <li>Neural Network: Vanilla and Recurrent Form</li>
+                    </ul>
+                    <a href="#" class="action-button">Workshop Materials</a>
                 </div>
             </div>
         </section>
 
         <!-- Courses Section -->
-        <section class="content-section">
+        <section class="section">
             <h2 class="section-title">Courses</h2>
             
+            <!-- Course 1 -->
             <div class="card">
                 <div class="card-header">
                     <h3>Econometrics of Big Data and Machine Learning (ECON 724)</h3>
@@ -232,18 +189,19 @@
                         <span>Spring 2024</span>
                         <span>Instructor: Joon Y. Park</span>
                     </div>
-                    <div class="details">
-                        <p>The objective of this course is to prepare the Ph.D. students for their dissertation research in the area of 
-                            econometrics of big data and machine learning, both theoretical and empirical. Topics include:</p>
-                        <ul>
-                            <li>Functional Data Analysis</li>
-                            <li>Machine Learning</li>
-                        </ul>
+                    <div class="course-description">
+                        The objective of this course is to prepare the Ph.D. students for their dissertation research in the area of 
+                        econometrics of big data and machine learning, both theoretical and empirical. Topics include:
                     </div>
-                    <a href="https://github.com/elltest2025/elltest2025.github.io/blob/main/assets/E724_syl24.pdf" class="action-link">Course Details</a>
+                    <ul class="topics-list">
+                        <li>Functional Data Analysis</li>
+                        <li>Machine Learning</li>
+                    </ul>
+                    <a href="#" class="action-button">Course Details</a>
                 </div>
             </div>
 
+            <!-- Course 2 -->
             <div class="card">
                 <div class="card-header">
                     <h3>Macroeconometrics (ECON 672)</h3>
@@ -253,21 +211,21 @@
                         <span>Spring 2024</span>
                         <span>Instructor: Yoosoon Chang</span>
                     </div>
-                    <div class="details">
-                        <p>A Description. Topics include:</p>
-                        <ul>
-                            <li>1</li>
-                            <li>2</li>
-                            <li>3</li>
-                        </ul>
+                    <div class="course-description">
+                        A Description. Topics include:
                     </div>
-                    <a href="#" class="action-link">Course Details</a>
+                    <ul class="topics-list">
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                    </ul>
+                    <a href="#" class="action-button">Course Details</a>
                 </div>
             </div>
         </section>
 
         <!-- Lecture Series Section -->
-        <section class="content-section">
+        <section class="section">
             <h2 class="section-title">Lecture Series</h2>
             <div class="card">
                 <div class="card-header">
@@ -278,43 +236,13 @@
                         <span>2024</span>
                         <span>Guest Lecturer: Simon Sokbae Lee (Columbia University)</span>
                     </div>
-                    <div class="details">
-                        <p>A special lecture series focusing on cutting-edge developments in econometric methods.</p>
+                    <div class="course-description">
+                        A special lecture series focusing on cutting-edge developments in econometric methods.
                     </div>
-                    <a href="#" class="action-link">Slides</a>
+                    <a href="#" class="action-button">Slides</a>
                 </div>
             </div>
         </section>
     </div>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Economic Machine Learning Lab</h3>
-                <p>Advancing the frontiers of economic research and education in the era of AI and machine learning</p>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="workshops.html">Workshops & Courses</a></li>
-                    <li><a href="presentations.html">Presentations</a></li>
-                    <li><a href="publications.html">Publications</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Connect</h3>
-                <ul class="footer-links">
-                    <li><a href="#" target="_blank">Twitter</a></li>
-                    <li><a href="#" target="_blank">LinkedIn</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>&copy; 2025 Economic Machine Learning Lab. All rights reserved.</p>
-        </div>
-    </footer>
 </body>
 </html>
