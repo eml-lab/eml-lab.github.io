@@ -3,229 +3,278 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Workshops & Courses - Economic Machine Learning Lab</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Publications - Economic Machine Learning Lab</title>
     <style>
-        .workshop-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            margin: 2rem 0;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .workshop-card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
         }
 
-        .workshop-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .workshop-header {
-            padding: 1.5rem;
+        .header {
             background-color: #990000;
             color: white;
+            padding: 1rem 2rem;
         }
 
-        .workshop-content {
-            padding: 1.5rem;
-        }
-
-        .workshop-meta {
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
-            gap: 2rem;
-            margin: 1rem 0;
-            color: #666;
-            font-size: 0.9rem;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .workshop-details {
-            margin: 1rem 0;
-        }
-
-        .workshop-links {
-            margin-top: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid #eee;
-        }
-
-        .workshop-link {
-            display: inline-block;
-            padding: 0.75rem 1.5rem;
-            background-color: #333;
+        .logo {
             color: white;
             text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            color: #990000;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #eee;
+        }
+
+        .publication-card {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .publication-title {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .publication-authors {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .publication-authors a {
+            color: #990000;
+            text-decoration: none;
+        }
+
+        .publication-status {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .publication-abstract {
+            margin: 1.5rem 0;
+            line-height: 1.6;
+        }
+
+        .publication-links {
+            margin-top: 1.5rem;
+        }
+
+        .pub-link {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background-color: #f5f5f5;
+            color: #333;
+            text-decoration: none;
             border-radius: 4px;
+            font-size: 0.9rem;
             margin-right: 1rem;
             transition: background-color 0.3s ease;
         }
 
-        .workshop-link:hover {
-            background-color: white;
+        .pub-link:hover {
+            background-color: #e5e5e5;
         }
 
-        .past-workshops {
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 3rem 2rem;
             margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 2px solid #eee;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
         }
     </style>
 </head>
 <body>
-    <!-- Header Navigation -->
     <header class="header">
         <nav class="nav">
             <a href="index.html" class="logo">Economic Machine Learning Lab (EML@IU)</a>
             <div class="nav-links">
-                <div class="dropdown">
-                    <a href="#">Activities</a>
-                    <div class="dropdown-content">
-                        <a href="workshops.html">Workshops & Courses</a>
-                        <a href="presentations.html">Presentations</a>
-                        <a href="publications.html">Publications</a>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <a href="#">People</a>
-                    <div class="dropdown-content">
-                        <a href="directors.html">Directors</a>
-                        <a href="students.html">Student Fellows</a>
-                        <a href="collaborators.html">Collaborators</a>
-                    </div>
-                </div>
+                <a href="workshops.html">Workshops</a>
+                <a href="publications.html">Publications</a>
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
             </div>
         </nav>
     </header>
 
-    <!-- Banner Section -->
-    <section class="banner">
-        <div class="banner-content">
-            <h1>Workshops & Courses</h1>
-            <p>Advanced training in econometric methods and applications</p>
-        </div>
-    </section>
-
-    <!-- Main Content -->
-    <div class="container" style="grid-template-columns: 1fr;">
-        <main class="main-content">
-            <!-- Workshops Section -->
-            <h2>Workshops</h2>
-            <div class="workshop-grid">
-                <div class="workshop-card">
-                    <div class="workshop-header">
-                        <h3>Workshop on Machine Learning in Econometrics</h3>
-                    </div>
-                    <div class="workshop-content">
-                        <div class="workshop-meta">
-                            <span>August 19-23, 2024</span>
-                        </div>
-                        <div class="workshop-details">
-                            <p><strong>Instructors:</strong> Joon Park, Yoosoon Chang</p>
-                            <p><strong>Topics Covered:</strong></p>
-                            <ul style="margin: 1rem 0 1rem 2rem;">
-                                <li>Large Dimensional Regression: PCA, Ridge and Lasso</li>
-                                <li>Reproducing Kernel Hilbert Space: Kernel Method</li>
-                                <li>Support Vector Machine: Linear and Kernel Trick</li>
-                                <li>Tree-Based Approach: Random Forest and XGBoost</li>
-                                <li>Neural Network: Vanilla and Recurrent Form</li>
-                            </ul>
-                        </div>
-                        <div class="workshop-links">
-                            <a href="#" class="workshop-link">Workshop Materials</a>
-                        </div>
-                    </div>
+    <div class="container">
+        <!-- Projects Section -->
+        <section class="publication-section">
+            <h2 class="section-title">Current Projects</h2>
+            
+            <div class="publication-card">
+                <h3 class="publication-title">COVID Mortality Prediction Pre and Post Vaccine Availability</h3>
+                <div class="publication-authors">
+                    Yoosoon Chang (Indiana University), Sangmyung Ha (Indiana University), Joon Y. Park (Indiana University), Kosali Simon (Indiana University)
+                </div>
+                <div class="publication-status">[Work in Progress]</div>
+                <div class="publication-abstract">
+                    <p>This study is motivated by the following three observations. First, the US experienced over 1.2 million COVID deaths during the pandemic era. Many of these deaths occurred in the hospital. Among COVID patients admitted to hospital, a substantial fraction died. Second, there are several known risk factors for covid mortality, conditional on covid hospitalization. Examples are pre-existing conditions such as diabetes; however, there may be other factors that will be uncovered by a prediction exercise. Finally, there was a drastic change in mortality when vaccines were available, and there also was a change in mortality when the dominant strains of COVID-19 changed.</p>
                 </div>
             </div>
 
-            <!-- Courses Section -->
-            <h2>Courses</h2>
-            <div class="workshop-grid">
-                <!-- Course 1 -->
-                <div class="workshop-card">
-                    <div class="workshop-header">
-                        <h3>Econometrics of Big Data and Machine Learning (ECON 724)</h3>
-                    </div>
-                    <div class="workshop-content">
-                        <div class="workshop-meta">
-                            <span>Spring 2024</span>
-                            <span>Instructor: Joon Y. Park</span>
-                        </div>
-                        <div class="workshop-details">
-                            <p>The objective of this course is to prepare the Ph.D. students for their dissertation research in the area of 
-                                econometrics of big data and machine learning, both theoretical and empirical. Topics include:</p>
-                            <ul style="margin: 1rem 0 1rem 2rem;">
-                                <li>Functional Data Analysis</li>
-                                <li>Machine Learning</li>
-                            </ul>
-                        </div>
-                        <div class="workshop-links">
-                            <a href="https://github.com/elltest2025/elltest2025.github.io/blob/main/assets/E724_syl24.pdf" class="workshop-link">Course Details</a>
-                        </div>
-                    </div>
+            <div class="publication-card">
+                <h3 class="publication-title">Using Machine Learning to Identify and Extract Climate-Driven Fluctuations in Peak Electricity Demand</h3>
+                <div class="publication-authors">
+                    Yoosoon Chang (Indiana University), Yongok Choi (Chung-Ang University), Joon Y. Park (Indiana University)
                 </div>
-
-
+                <div class="publication-status">[Work in Progress]</div>
             </div>
 
-            <!-- Lecture Series Section -->
-            <h2>Lecture Series</h2>
-            <div class="workshop-grid">
-                <div class="workshop-card">
-                    <div class="workshop-header">
-                        <h3>Lecture Series</h3>
-                    </div>
-                    <div class="workshop-content">
-                        <div class="workshop-meta">
-                            <span>2024</span>
-                            <span>Guest Lecturer: Simon Sokbae Lee (Columbia University)</span>
-                        </div>
-                        <div class="workshop-details">
-                            <p>A special lecture series focusing on cutting-edge developments in econometric methods.</p>
-                            <ul style="margin: 1rem 0 1rem 2rem;">
-                            </ul>
-                        </div>
-                        <div class="workshop-links">
-                            <a href="#" class="workshop-link">Slides</a>
-                        </div>
-                    </div>
+            <div class="publication-card">
+                <h3 class="publication-title">Market Returns Dormant in Option Panels</h3>
+                <div class="publication-authors">
+                    Yoosoon Chang (Indiana University), Youngmin Choi (City University of New York), Soohun Kim (KAIST), Joon Y. Park (Indiana University)
+                </div>
+                <div class="publication-status">[Work in Progress]</div>
+                <div class="publication-abstract">
+                    <p>This study uncovers the relationship between extensive option panels and market returns through a functional predictive regression. Employing our approach on the realized returns of the S&P 500, we achieve remarkable performance in predicting S&P 500 monthly returns, yielding an R² of more than four percent for both in-sample and out-of-sample prediction. Additionally, our method proves highly effective in predicting the realized variance of the S&P 500 index and its risk premia.</p>
                 </div>
             </div>
-        </main>
+
+            <div class="publication-card">
+                <h3 class="publication-title">Using SVM to Estimate and Predict Large Dimensional Binary Choice Models</h3>
+                <div class="publication-authors">
+                    Chang, Park and Yan
+                </div>
+                <div class="publication-status">[Work in Progress]</div>
+            </div>
+        </section>
+
+        <!-- Working Papers Section -->
+        <section class="publication-section">
+            <h2 class="section-title">Working Papers</h2>
+            
+            <div class="publication-card">
+                <h3 class="publication-title">Shocking Climate: Identifying Economic Damages from Anthropogenic and Natural Climate Change</h3>
+                <div class="publication-authors">
+                    Yoosoon Chang, J. Isaac Miller and Joon Y. Park
+                </div>
+            </div>
+
+            <div class="publication-card">
+                <h3 class="publication-title">The Influence of Fiscal and Monetary Policies on the Shape of the Yield Curve</h3>
+                <div class="publication-authors">
+                    Yoosoon Chang, Fabio Gomez-Rodriguez and Christian Matthes
+                </div>
+                <div class="publication-links">
+                    <a href="https://ideas.repec.org/p/inu/caeprp/2023008.html" class="pub-link" target="_blank">View Paper</a>
+                </div>
+            </div>
+
+            <div class="publication-card">
+                <h3 class="publication-title">Market Returns Dormant in Option Panels</h3>
+                <div class="publication-authors">
+                    Yoosoon Chang, Youngmin Choi, Soohun Kim and Joon Park
+                </div>
+            </div>
+
+            <div class="publication-card">
+                <h3 class="publication-title">Oil and the Stock Market Revisited: A mixed functional VAR approach</h3>
+                <div class="publication-authors">
+                    Hilde Bjornland, Yoosoon Chang and Jamie L. Cross
+                </div>
+                <div class="publication-links">
+                    <a href="https://ideas.repec.org/d/nbgovno.html" class="pub-link" target="_blank">Norges bank working paper</a>
+                </div>
+            </div>
+
+            <div class="publication-card">
+                <h3 class="publication-title">The Effects of Economic Shocks on Heterogeneous Inflation Expectations</h3>
+                <div class="publication-authors">
+                    Yoosoon Chang (Indiana U), Fabio Gomez-Rodriguez (Lehigh U), Gee Hee Hong (IMF)
+                </div>
+                <div class="publication-status">[IMF working paper]</div>
+            </div>
+
+            <div class="publication-card">
+                <h3 class="publication-title">A Trajectory-based Approach to Measuring Intergenerational Mobility</h3>
+                <div class="publication-authors">
+                    Yoosoon Chang, Steven N. Durlauf, Seunghee Lee and Joon Y. Park
+                </div>
+                <div class="publication-links">
+                    <a href="https://www.nber.org/papers/w31020" class="pub-link" target="_blank">NBER Working Paper</a>
+                </div>
+            </div>
+
+            <div class="publication-card">
+                <h3 class="publication-title">Accounting for Individual-Specific Heterogeneity in Intergenerational Income Mobility</h3>
+                <div class="publication-authors">
+                    Yoosoon Chang (Indiana University), Steven Durlauf (University of Chicago), Bo Hu (Indiana University), Joon Y. Park (Indiana University)
+                </div>
+                <div class="publication-status">NBER Working Paper 33349</div>
+                <div class="publication-abstract">
+                    <p>This paper proposes a fully nonparametric model to investigate the dynamics of intergenerational income mobility for discrete outcomes. In our model, an individual's income class probabilities depend on parental income in a manner that accommodates nonlinearities and interactions among various individual and parental characteristics, including race, education, and parental age at childbearing.</p>
+                </div>
+                <div class="publication-links">
+                    <a href="http://www.nber.org/papers/w33349" class="pub-link" target="_blank">View Paper</a>
+                </div>
+            </div>
+        </section>
     </div>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
-                <h3>Econometric Learning Lab</h3>
+                <h3>Economic Machine Learning Lab</h3>
                 <p>Advancing the frontiers of economic research and education in the era of AI and machine learning</p>
             </div>
             <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="workshops.html">Workshops & Courses</a></li>
-                    <li><a href="presentations.html">Presentations</a></li>
-                    <li><a href="publications.html">Publications</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
+                <h3>Contact</h3>
+                <p>Indiana University</p>
+                <p>Bloomington, IN</p>
             </div>
-            <div class="footer-section">
-                <h3>Connect</h3>
-                <ul class="footer-links">
-                    <li><a href="#" target="_blank">Twitter</a></li>
-                    <li><a href="#" target="_blank">LinkedIn</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>&copy; 2025 Economic Machine Learning Lab. All rights reserved.</p>
         </div>
     </footer>
 </body>
