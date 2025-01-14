@@ -122,15 +122,16 @@ body {
 
 /* Banner Section */
 .banner {
-    background-color: #990000;
     position: relative;
     color: white;
     padding: 6rem 2rem 3rem;
     background-image: url('../images/banner.png');
     background-size: cover;
     background-position: center;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Add this to keep text readable */
 }
 
+/* Delete or comment out this entire block
 .banner::before {
     content: '';
     position: absolute;
@@ -138,9 +139,10 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(153, 0, 0, 0.15);
+    background: rgba(153, 0, 0, 0.85);
     z-index: 1;
 }
+*/
 
 .banner-content {
     position: relative;
