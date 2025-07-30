@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Economic Machine Learning Lab</title>
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="description" content="Advancing the frontiers of econometric research and education">
+    <style>
+        /* Featured Conference Styles */
+        .featured-conference {
+            background: linear-gradient(135deg, #990000 0%, #cc0000 50%, #990000 100%);
+            color: white;
+            margin: 2rem 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(153, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .featured-conference::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .conference-content {
+            position: relative;
+            z-index: 2;
+            padding: 2.5rem;
+        }
+
+        .conference-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .conference-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin: 0 0 1rem 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .conference-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .conference-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+
+        .detail-icon {
+            width: 24px;
+            height: 24px;
+            opacity: 0.9;
+        }
+
+        .conference-cta {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            padding: 1rem 2rem;
+            background: white;
+            color: #990000;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .cta-button.secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: white;
+        }
+
+        @media (max-width: 768px) {
+            .conference-title {
+                font-size: 1.8rem;
+            }
+            
+            .conference-details {
+                grid-template-columns: 1fr;
+            }
+            
+            .conference-content {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <nav class="nav">
+            <a href="index.html" class="logo">Economic Machine Learning Lab (EML-Lab@IU)</a>
+            <div class="nav-links">
+                <div class="dropdown">
+                    <a href="#">Activities</a>
+                    <div class="dropdown-content">
+                        <a href="workshops.html">Workshops & Courses</a>
+                        <a href="presentations.html">Presentations</a>
+                        <a href="publications.html">Publications</a>
+                        <a href="conference.html">Indiana Quant Conference</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#">People</a>
+                    <div class="dropdown-content">
+                        <a href="directors.html">Directors</a>
+                        <a href="students.html">Student Fellows</a>
+                        <a href="collaborators.html">Collaborators</a>
+                    </div>
+                </div>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Banner Section -->
+    <section class="banner">
+        <div class="banner-content">
+            <h1>Economic Machine Learning Lab</h1>
+            <p>Advancing the frontiers of economic research and education in the era of AI and machine learning</p>
+        </div>
+    </section>
+
+    <!-- Main Content Container -->
+    <div class="container">
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Featured Conference Section -->
+            <div class="featured-conference">
+                <div class="conference-content">
+                    <div class="conference-badge">🎯 INAUGURAL EVENT</div>
+                    <h2 class="conference-title">Indiana Quant Conference 2025</h2>
+                    <p class="conference-subtitle">Bridging Academic Research and Industry Practice in Quantitative Finance</p>
+                    
+                    <div class="conference-details">
+                        <div class="detail-item">
+                            <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                            <div>
+                                <strong>October 10, 2025</strong><br>
+                                One-day intensive event
+                            </div>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <div>
+                                <strong>Indiana University</strong><br>
+                                Bloomington, IN
+                            </div>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <svg class="detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                            <div>
+                                <strong>Multi-sector Participants</strong><br>
+                                Industry & Academia
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="conference-cta">
+                        <a href="conference.html" class="cta-button">Learn More</a>
+                        <a href="conference.html#registration" class="cta-button secondary">Register Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Welcome to EML Lab</h2>
+            <p>We are excited to announce the establishment of the <strong>Economic Machine Learning (EML) Lab</strong> in the Department of Economics at Indiana University. The Lab aims to develop and disseminate innovative methodologies and theories specifically designed for analyzing large-dimensional economic data. In today's data-rich environment, there is an urgent need for tools that can effectively handle complex datasets we encounter in economic applications, and the Lab is poised to meet this demand.</p>
+            
+            <p>The primary goal of the EML Lab is to equip faculty and students in the IU community with the necessary skills and knowledge to utilize machine learning tools for economic data analysis. The Lab offers a supportive environment where participants can learn various new methodologies while leveraging their theoretical backgrounds. Regular training sessions will be organized to help faculty and students acquire the skills needed to implement standard machine learning tools effectively. Faculty associates and student assistants are also available to provide consultation for those working with large-dimensional data in their research at more advanced levels.</p>
+
+            <p>During August 19-23, 2024, the EML Lab hosted its inaugural workshop, <strong>Machine Learning in Economics</strong>, attended by six faculty members and thirteen graduate students. This workshop included two daily sessions: morning lectures covering the theoretical foundations of various machine learning methodologies and afternoon sessions focused on practical applications in empirical research. The workshop covered a range of topics, including large dimensional regression techniques such as PCA, Ridge, and Lasso; reproducing kernel Hilbert space and kernel methods; support vector machines, including those with kernel tricks; tree-based approaches such as random forests with resampling and boosting; and neural networks in both vanilla and recurrent forms. Participants were encouraged to bring their own laptops and had some working knowledge of programming in MATLAB and Python. A short session on the basics of both programming languages was included to support all attendees.</p>
+            
+            <p>The EML Lab is committed to fostering collaborative research and sharing ideas among faculty and students to develop new methodologies and theories tailored for economic analysis. We look forward to the contributions and advancements that will emerge from the Lab and our ongoing commitment to excellence in economic research and education.</p>
+        </main>
+
+        <aside class="sidebar">
+            <div class="events-section" style="margin-bottom: 40px;">
+                <h2>Recent News & Events</h2>
+                <div class="news-item" style="margin-bottom: 30px;">
+                    <p>Yoosoon Chang gave keynote speeches at <strong>Bristol Econometric Study Group Conference</strong>.</p>
+                    <p class="news-date">July 10-12, 2024</p>
+                    <p class="news-location">Bristol, UK</p>
+                </div>
+                <div class="news-item" style="margin-bottom: 30px;">
+                    <p>Yoosoon Chang & Joon Park gave keynote speeches on <strong>Models with Functional Variables: Theory and Applications</strong>, during the workshop at City University of London.</p>
+                    <p class="news-date">December 12-13, 2024</p>
+                    <p class="news-location">London, UK</p>
+                </div>
+                <div class="news-item" style="margin-bottom: 30px;">
+                    <h3><strong>Inaugural Workshop on Machine Learning in Economics</strong></h3>
+                    <p class="news-date">August 19-23, 2024</p>
+                    <p class="news-location">Indiana University</p>
+                </div>
+                <div class="news-item" style="margin-bottom: 30px;">
+                    <p>Yoosoon Chang's keynote speech on <strong> Market Returns Dormant in Option Panels</strong> at SoFiE Conference</p>
+                    <p class="news-date">June 14-16, 2024</p>
+                    <p class="news-location">Rio de Janeiro, Brazil</p>
+                </div>
+            </div>
+            
+            <div class="events-section">
+                <h2>Upcoming Events</h2>
+                <div class="news-item" style="margin-bottom: 30px;">
+                    <p>Yoosoon Chang's invited talk at <strong>World Knowledge Forum</strong></p>
+                    <p class="news-date">September 9-11, 2025</p>
+                    <p class="news-location">Seoul, Korea</p>
+                </div>
+                <div class="news-item" style="margin-bottom: 30px;">
+                    <p>Joon Y. Park's keynote speech on <strong>Machine Leaning in Economics and Economic Data Analysis</strong> at Midwest Econometrics Group Meeting at UIUC</p>
+                    <p class="news-date">October 3-4, 2025</p>
+                </div>
+                <div class="news-item">
+                    <p>Yoosoon Chang's keynote speech at <strong>(EC)² Annual Conference</strong></p>
+                    <p class="news-date">December 5-6, 2025</p>
+                    <p class="news-location">Lugano, Switzerland</p>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Economic Machine Learning Lab</h3>
+                <p>Advancing the frontiers of economic research and education in the era of AI and machine learning</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="workshops.html">Workshops & Courses</a></li>
+                    <li><a href="presentations.html">Presentations</a></li>
+                    <li><a href="publications.html">Publications</a></li>
+                    <li><a href="conference.html">Indiana Quant Conference</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <ul class="footer-links">
+                    <li><a href="#" target="_blank">Twitter</a></li>
+                    <li><a href="#" target="_blank">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Economic Machine Learning Lab. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
