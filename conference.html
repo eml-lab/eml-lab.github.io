@@ -15,7 +15,6 @@
             position: relative;
             overflow: hidden;
         }
-
         .conference-hero::before {
             content: '';
             position: absolute;
@@ -26,7 +25,6 @@
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
             opacity: 0.3;
         }
-
         .conference-hero-content {
             position: relative;
             z-index: 2;
@@ -34,7 +32,6 @@
             margin: 0 auto;
             padding: 0 2rem;
         }
-
         .conference-badge {
             display: inline-block;
             background: rgba(255, 255, 255, 0.2);
@@ -45,7 +42,6 @@
             margin-bottom: 1.5rem;
             backdrop-filter: blur(10px);
         }
-
         .conference-hero h1 {
             font-size: 3.5rem;
             font-weight: 700;
@@ -53,7 +49,6 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
             line-height: 1.2;
         }
-
         .conference-hero-subtitle {
             font-size: 1.4rem;
             margin-bottom: 2rem;
@@ -62,7 +57,6 @@
             margin-left: auto;
             margin-right: auto;
         }
-
         .hero-details {
             display: flex;
             justify-content: center;
@@ -70,121 +64,46 @@
             margin: 2rem 0;
             flex-wrap: wrap;
         }
-
         .hero-detail {
             text-align: center;
         }
-
         .hero-detail-icon {
             width: 48px;
             height: 48px;
             margin: 0 auto 1rem;
             opacity: 0.9;
         }
-
         .hero-detail h3 {
             font-size: 1.2rem;
             margin: 0 0 0.5rem 0;
         }
-
         .hero-detail p {
             opacity: 0.8;
             margin: 0;
         }
-
         .section {
             padding: 4rem 0;
         }
-
         .section-light {
             background: #f9f9f9;
         }
-
         .section-content {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
         }
-
         .section h2 {
             font-size: 2.5rem;
             color: #990000;
             text-align: center;
             margin-bottom: 3rem;
         }
-
         .participants-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin: 3rem 0;
         }
-
-        .presenters-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        .presenter-card {
-            background: white;
-            border-radius: 8px;
-            padding: 1.5rem;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-            text-align: center;
-            transition: transform 0.3s ease;
-            border-left: 4px solid #990000;
-            position: relative;
-        }
-
-        .presenter-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
-        }
-
-        .presenter-card h4 {
-            color: #333;
-            margin: 0 0 0.5rem 0;
-            font-size: 1.3rem;
-            font-weight: 700;
-        }
-
-        .presenter-title {
-            color: #990000;
-            font-weight: 600;
-            margin: 0 0 0.3rem 0;
-            font-size: 1rem;
-        }
-
-        .presenter-org {
-            color: #666;
-            margin: 0;
-            font-size: 0.95rem;
-            font-style: italic;
-        }
-
-        .presenter-card.tentative {
-            border-left-color: #ccc;
-            opacity: 0.9;
-        }
-
-        .tentative-badge {
-            position: absolute;
-            top: 0.5rem;
-            right: 0.5rem;
-            background: #f0f0f0;
-            color: #666;
-            padding: 0.3rem 0.6rem;
-            border-radius: 12px;
-            font-size: 0.7rem;
-            font-weight: 600;
-        }
-
-        .presenter-card.tentative .presenter-title {
-            color: #999;
-        }
-
         .participant-card {
             background: white;
             border-radius: 12px;
@@ -194,11 +113,9 @@
             transition: transform 0.3s ease;
             border-top: 4px solid #990000;
         }
-
         .participant-card:hover {
             transform: translateY(-5px);
         }
-
         .participant-icon {
             width: 64px;
             height: 64px;
@@ -209,26 +126,110 @@
             align-items: center;
             justify-content: center;
         }
-
         .participant-icon svg {
             width: 32px;
             height: 32px;
             color: white;
         }
-
+        .presenters-section {
+            background: white;
+        }
+        .presenters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .presenter-category {
+            background: #f8f8f8;
+            border-radius: 12px;
+            padding: 2.5rem;
+            border-left: 5px solid #990000;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .presenter-category:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        .category-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        .category-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #990000, #cc0000);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+        }
+        .category-icon svg {
+            width: 24px;
+            height: 24px;
+            color: white;
+        }
+        .category-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #990000;
+            margin: 0;
+        }
+        .presenter-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .presenter-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid #e0e0e0;
+            transition: background-color 0.3s ease;
+        }
+        .presenter-item:last-child {
+            border-bottom: none;
+        }
+        .presenter-item:hover {
+            background: rgba(153, 0, 0, 0.05);
+            margin: 0 -1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            border-radius: 6px;
+        }
+        .presenter-name {
+            font-weight: 600;
+            color: #333;
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+        .presenter-affiliation {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+        .status-badge {
+            display: inline-block;
+            background: #ffa500;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+            text-transform: uppercase;
+        }
         .schedule-timeline {
             position: relative;
             max-width: 800px;
             margin: 3rem auto;
         }
-
         .timeline-item {
             display: flex;
             align-items: flex-start;
             margin-bottom: 2rem;
             position: relative;
         }
-
         .timeline-time {
             background: #990000;
             color: white;
@@ -239,7 +240,6 @@
             text-align: center;
             margin-right: 2rem;
         }
-
         .timeline-content {
             flex: 1;
             background: white;
@@ -247,19 +247,16 @@
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-
         .timeline-content h3 {
             color: #990000;
             margin: 0 0 0.5rem 0;
         }
-
         .cta-section {
             background: #990000;
             color: white;
             text-align: center;
             padding: 4rem 2rem;
         }
-
         .cta-buttons {
             display: flex;
             justify-content: center;
@@ -267,7 +264,6 @@
             margin-top: 2rem;
             flex-wrap: wrap;
         }
-
         .cta-button {
             padding: 1.2rem 2.5rem;
             border: 2px solid white;
@@ -281,22 +277,18 @@
             align-items: center;
             gap: 0.5rem;
         }
-
         .cta-button:hover {
             background: white;
             color: #990000;
         }
-
         .cta-button.primary {
             background: white;
             color: #990000;
         }
-
         .cta-button.primary:hover {
             background: transparent;
             color: white;
         }
-
         @media (max-width: 768px) {
             .conference-hero h1 {
                 font-size: 2.5rem;
@@ -306,7 +298,7 @@
                 gap: 1.5rem;
             }
             
-            .participants-grid {
+            .participants-grid, .presenters-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -323,6 +315,19 @@
             .cta-buttons {
                 flex-direction: column;
                 align-items: center;
+            }
+            
+            .presenter-category {
+                padding: 1.5rem;
+            }
+            
+            .category-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .category-icon {
+                margin: 0 0 1rem 0;
             }
         }
     </style>
@@ -355,7 +360,6 @@
             </div>
         </nav>
     </header>
-
     <!-- Conference Hero Section -->
     <section class="conference-hero">
         <div class="conference-hero-content">
@@ -397,7 +401,6 @@
             </div>
         </div>
     </section>
-
     <!-- About Section -->
     <section class="section">
         <div class="section-content">
@@ -409,6 +412,103 @@
             <p style="text-align: center; max-width: 900px; margin: 0 auto; line-height: 1.8;">
                 This one-day intensive event brings together leading minds from hedge funds, faculty members from the Kelly School of Business, and students across all levels - from undergraduate economics and finance clubs to Master's and Ph.D. programs. Our goal is to create meaningful dialogue about the latest developments in quantitative methods, machine learning applications in finance, and the evolving landscape of economic research.
             </p>
+        </div>
+    </section>
+
+    <!-- Featured Presenters Section -->
+    <section class="section presenters-section">
+        <div class="section-content">
+            <h2>Featured Presenters</h2>
+            <p style="font-size: 1.1rem; text-align: center; max-width: 800px; margin: 0 auto 3rem; color: #666;">
+                Our distinguished lineup brings together leading experts from industry, academia, and research institutions to share cutting-edge insights in quantitative finance and economic machine learning.
+            </p>
+            
+            <div class="presenters-grid">
+                <!-- External Industry Presenters -->
+                <div class="presenter-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M3 21h18"></path>
+                                <path d="M5 21V7l8-4v18"></path>
+                                <path d="M19 21V11l-6-4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="category-title">Industry Leaders</h3>
+                    </div>
+                    <ul class="presenter-list">
+                        <li class="presenter-item">
+                            <div class="presenter-name">Wayne Ferbert</div>
+                            <div class="presenter-affiliation">Co-founder & Managing Director<br>Alpha DNA Investment Management</div>
+                        </li>
+                        <li class="presenter-item">
+                            <div class="presenter-name">Sungsoo Yang</div>
+                            <div class="presenter-affiliation">Quantitative Analyst/Partner<br>Empirical Research Partners LLC</div>
+                        </li>
+                        <li class="presenter-item">
+                            <div class="presenter-name">Andre Westin</div>
+                            <div class="presenter-affiliation">Quantitative Due Diligence<br>BlackRock</div>
+                        </li>
+                        <li class="presenter-item">
+                            <div class="presenter-name">Soohyung Lee <span class="status-badge">To be confirmed</span></div>
+                            <div class="presenter-affiliation">Monetary Policy Board<br>Bank of Korea</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- EML Lab Presenters -->
+                <div class="presenter-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M9 12l2 2 4-4"></path>
+                                <path d="M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3"></path>
+                                <path d="M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3"></path>
+                                <path d="M12 21c0-1-1-3-3-3s-3 2-3 3 1 3 3 3 3-2 3-3"></path>
+                                <path d="M12 3c0 1 1 3 3 3s3-2 3-3-1-3-3-3-3 2-3 3"></path>
+                            </svg>
+                        </div>
+                        <h3 class="category-title">EML Research Team</h3>
+                    </div>
+                    <ul class="presenter-list">
+                        <li class="presenter-item">
+                            <div class="presenter-name">Joon Park</div>
+                            <div class="presenter-affiliation">Indiana University<br>EML Lab Director</div>
+                        </li>
+                        <li class="presenter-item">
+                            <div class="presenter-name">Yoosoon Chang</div>
+                            <div class="presenter-affiliation">Indiana University<br>EML Lab Co-Director</div>
+                        </li>
+                        <li class="presenter-item">
+                            <div class="presenter-name">Soohun Kim</div>
+                            <div class="presenter-affiliation">KAIST<br>EML Lab Collaborator</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Kelly School Presenters -->
+                <div class="presenter-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                                <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                            </svg>
+                        </div>
+                        <h3 class="category-title">Kelly School Faculty</h3>
+                    </div>
+                    <ul class="presenter-list">
+                        <li class="presenter-item">
+                            <div class="presenter-name">Dan Aron <span class="status-badge">To be confirmed</span></div>
+                            <div class="presenter-affiliation">Former Director<br>Investment Management Workshop</div>
+                        </li>
+                        <li class="presenter-item">
+                            <div class="presenter-name">Ken Weakley</div>
+                            <div class="presenter-affiliation">Former Director<br>Investment Workshop</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -449,3 +549,45 @@
                         </svg>
                     </div>
                     <h3>Graduate Students</h3>
+                    <p>Master's and Ph.D. students from economics, finance, and related programs who are actively engaged in quantitative research and seeking industry connections.</p>
+                </div>
+                
+                <div class="participant-card">
+                    <div class="participant-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                            <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+                        </svg>
+                    </div>
+                    <h3>Student Organizations</h3>
+                    <p>Members from undergraduate economics and finance clubs, investment societies, and academic organizations interested in quantitative finance and economic research.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h2 style="color: white; margin-bottom: 1rem;">Join Us for This Inaugural Event</h2>
+            <p style="font-size: 1.2rem; opacity: 0.9; margin-bottom: 2rem;">
+                Be part of the future of quantitative finance and economic machine learning. Registration details coming soon.
+            </p>
+            <div class="cta-buttons">
+                <a href="#" class="cta-button primary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                    Get Updates
+                </a>
+                <a href="contact.html" class="cta-button">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path>
+                    </svg>
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
