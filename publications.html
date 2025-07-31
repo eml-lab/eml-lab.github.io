@@ -9,7 +9,6 @@
         .publication-section {
             margin-bottom: 4rem;
         }
-
         .publication-card {
             background: white;
             border-radius: 8px;
@@ -18,46 +17,44 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             border: 1px solid #eee;
         }
-
         .publication-title {
             font-size: 1.5rem;
             color: #333;
             margin-bottom: 1rem;
             font-weight: 600;
         }
-
         .publication-meta {
             color: #666;
             margin-bottom: 1.5rem;
         }
-
         .publication-authors a {
             color: #990000;
             text-decoration: none;
         }
-
         .publication-authors a:hover {
             text-decoration: underline;
         }
-
         .publication-status {
             font-style: italic;
             color: #666;
             margin-bottom: 1rem;
         }
-
+        .publication-journal {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
         .publication-abstract {
             margin: 1.5rem 0;
             line-height: 1.6;
         }
-
         .publication-links {
             display: flex;
             gap: 0.5rem;
             flex-wrap: wrap;
             margin-top: 1.5rem;
         }
-
         .pub-link {
             display: inline-block;
             padding: 0.5rem 1rem;
@@ -68,37 +65,35 @@
             font-size: 0.9rem;
             transition: background-color 0.3s ease;
         }
-
         .pub-link:hover {
             background-color: #e5e5e5;
         }
-
         .media-mentions {
             margin-top: 1.5rem;
             padding-top: 1.5rem;
             border-top: 1px solid #eee;
         }
-
         .media-mentions h4 {
             color: #666;
             margin-bottom: 0.5rem;
         }
-
         .media-links a {
             color: #990000;
             text-decoration: none;
             margin-right: 1rem;
         }
-
         .media-links a:hover {
             text-decoration: underline;
         }
-
         .section-title {
             color: #990000;
             margin-bottom: 2rem;
             padding-bottom: 1rem;
             border-bottom: 2px solid #eee;
+        }
+        .new-publication {
+            border-left: 4px solid #28a745;
+            background: #f8fff9;
         }
     </style>
 </head>
@@ -129,18 +124,47 @@
             </div>
         </nav>
     </header>
-
     <!-- Banner Section -->
     <section class="banner">
         <div class="banner-content">
             <h1>Research</h1>
-            <p>Projects and Publications from ELL Researchers</p>
+            <p>Projects and Publications from EML Researchers</p>
         </div>
     </section>
-
 <!-- Main Content -->
 <div class="container" style="grid-template-columns: 1fr;">
     <main class="main-content">
+        <!-- Published Papers Section -->
+        <section class="publication-section">
+            <h2 class="section-title">Published Papers</h2>
+            
+            <div class="publication-card new-publication">
+                <h3 class="publication-title">Understanding regressions with observations collected at high frequency over long span</h3>
+                <div class="publication-authors">
+                    Yoosoon Chang (Indiana University), Ye Lu (University of Sydney), Joon Y. Park (Indiana University)
+                </div>
+                <div class="publication-journal">
+                    Quantitative Economics 16 (2025), 405–457
+                </div>
+                <div class="publication-links">
+                    <a href="#" class="pub-link" target="_blank">Paper</a>
+                </div>
+            </div>
+
+            <div class="publication-card new-publication">
+                <h3 class="publication-title">Accounting for Individual-Specific Heterogeneity in Intergenerational Income Mobility</h3>
+                <div class="publication-authors">
+                    Chang, Y., Durlauf, S. N., Hu, B., & Park, J. Y.
+                </div>
+                <div class="publication-journal">
+                    Sociological Methods & Research (2025)
+                </div>
+                <div class="publication-links">
+                    <a href="https://doi.org/10.1177/00491241251339654" class="pub-link" target="_blank">DOI Link</a>
+                </div>
+            </div>
+        </section>
+
         <!-- Projects Section -->
         <section class="publication-section">
             <h2 class="section-title">Current Projects</h2>
@@ -157,7 +181,6 @@
                     <a href="https://github.com/eml-lab/eml-lab.github.io/blob/e57b0f5ced8a61299ea33c807ca7ceacadff50b7/assets/pdfs/P1.pdf" class="pub-link" target="_blank">Abstract</a>
                 </div>
             </div>
-
             <div class="publication-card">
                 <h3 class="publication-title">Using Machine Learning to Identify and Extract Climate-Driven Fluctuations in Peak Electricity Demand</h3>
                 <div class="publication-authors">
@@ -167,7 +190,6 @@
                     <a href="https://github.com/eml-lab/eml-lab.github.io/blob/e57b0f5ced8a61299ea33c807ca7ceacadff50b7/assets/pdfs/P2.pdf" class="pub-link" target="_blank">Abstract</a>
                 </div>
             </div>
-
             <div class="publication-card">
                 <h3 class="publication-title">Market Returns Dormant in Option Panels</h3>
                 <div class="publication-authors">
@@ -180,7 +202,6 @@
                     <a href="https://github.com/eml-lab/eml-lab.github.io/blob/e57b0f5ced8a61299ea33c807ca7ceacadff50b7/assets/pdfs/P3.pdf" class="pub-link" target="_blank">Abstract</a>
                 </div>
             </div>
-
             <div class="publication-card">
                 <h3 class="publication-title">Using SVM to Estimate and Predict Large Dimensional Binary Choice Models</h3>
                 <div class="publication-authors">
@@ -191,7 +212,6 @@
                 </div>
             </div>
         </section>
-
         <!-- Working Papers Section -->
         <section class="publication-section">
             <h2 class="section-title">Working Papers</h2>
@@ -205,7 +225,6 @@
                     <a href="#" class="pub-link" target="_blank">Paper</a>
                 </div>
             </div>
-
             <div class="publication-card">
                 <h3 class="publication-title">The Influence of Fiscal and Monetary Policies on the Shape of the Yield Curve</h3>
                 <div class="publication-authors">
@@ -215,7 +234,6 @@
                     <a href="https://ideas.repec.org/p/inu/caeprp/2023008.html" class="pub-link" target="_blank"> CAEPR Working Papers 2023-008</a>
                 </div>
             </div>
-
             <div class="publication-card">
                 <h3 class="publication-title">Market Returns Dormant in Option Panels</h3>
                 <div class="publication-authors">
@@ -225,7 +243,6 @@
                     <a href="#" class="pub-link" target="_blank">Paper</a>
                 </div>
             </div>
-
             <div class="publication-card">
                 <h3 class="publication-title">Oil and the Stock Market Revisited: A Mixed Functional VAR Approach</h3>
                 <div class="publication-authors">
@@ -236,7 +253,6 @@
                     <a href="https://ideas.repec.org/d/nbgovno.html" class="pub-link" target="_blank">Paper</a>
                 </div>
             </div>
-
             <div class="publication-card">
                 <h3 class="publication-title">The Effects of Economic Shocks on Heterogeneous Inflation Expectations</h3>
                 <div class="publication-authors">
@@ -247,7 +263,6 @@
                     <a href="#" class="pub-link" target="_blank">Paper</a>
                 </div>
             </div>
-
             <div class="publication-card">
                 <h3 class="publication-title">A Trajectory-based Approach to Measuring Intergenerational Mobility</h3>
                 <div class="publication-authors">
@@ -257,24 +272,9 @@
                     <a href="https://www.nber.org/papers/w31020" class="pub-link" target="_blank">NBER Working Paper 31020</a>
                 </div>
             </div>
-
-            <div class="publication-card">
-                <h3 class="publication-title">Accounting for Individual-Specific Heterogeneity in Intergenerational Income Mobility</h3>
-                <div class="publication-authors">
-                    Yoosoon Chang (Indiana University), Steven Durlauf (University of Chicago), Bo Hu (Indiana University), Joon Y. Park (Indiana University)
-                </div>
-                <div class="publication-status">NBER Working Paper</div>
-                <div class="publication-abstract">
-                    <p></p>
-                </div>
-                <div class="publication-links">
-                    <a href="https://www.nber.org/papers/w33349" class="pub-link" target="_blank">NBER Working Paper 33349</a>
-                </div>
-            </div>
         </section>
     </main>
 </div>
-
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
