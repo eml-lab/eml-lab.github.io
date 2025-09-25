@@ -6,14 +6,12 @@
     <title>Presentations - Economic Machine Learning Lab</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
-        /* [Previous styles remain the same] */
         .presentation-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 2rem;
             margin: 2rem 0;
         }
-
         .presentation-card {
             background: white;
             border-radius: 8px;
@@ -22,21 +20,20 @@
             transition: transform 0.3s ease;
             border: 1px solid #eee;
         }
-
         .presentation-card:hover {
             transform: translateY(-5px);
         }
-
         .presentation-header {
             padding: 1.5rem;
             background: linear-gradient(to right, #990000, #800000);
             color: white;
         }
-
+        .upcoming-header {
+            background: linear-gradient(to right, #006400, #228B22);
+        }
         .presentation-content {
             padding: 1.5rem;
         }
-
         .presentation-meta {
             display: flex;
             flex-wrap: wrap;
@@ -45,37 +42,31 @@
             color: #666;
             font-size: 0.9rem;
         }
-
         .meta-item {
             display: flex;
             align-items: center;
             gap: 0.5rem;
         }
-
         .meta-item svg {
             width: 16px;
             height: 16px;
         }
-
         .presentation-abstract {
             margin: 1.5rem 0;
             padding: 1.5rem;
             background: #f9f9f9;
             border-radius: 4px;
         }
-
         .conference-details {
             margin: 1.5rem 0;
             padding-top: 1.5rem;
             border-top: 1px solid #eee;
         }
-
         .presentation-links {
             display: flex;
             gap: 1rem;
             margin-top: 1.5rem;
         }
-
         .presentation-link {
             display: inline-flex;
             align-items: center;
@@ -87,25 +78,108 @@
             border-radius: 4px;
             transition: background-color 0.3s ease;
         }
-
         .presentation-link:hover {
             background-color: #666;
         }
-
         .year-section {
             margin-top: 3rem;
         }
-
         .year-header {
             color: #990000;
             margin-bottom: 2rem;
             padding-bottom: 1rem;
             border-bottom: 2px solid #eee;
         }
+        .upcoming-section {
+            margin-bottom: 3rem;
+        }
+        .upcoming-section .year-header {
+            color: #006400;
+        }
+        
+        /* Photo dropdown styles */
+        .photo-dropdown {
+            position: relative;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+        .photo-toggle {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: background-color 0.3s ease;
+            font-size: 0.9rem;
+        }
+        .photo-toggle:hover {
+            background: #e9ecef;
+        }
+        .photo-toggle svg {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.3s ease;
+        }
+        .photo-dropdown.open .photo-toggle svg {
+            transform: rotate(180deg);
+        }
+        .photo-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border: 1px solid #ddd;
+            border-top: none;
+            border-radius: 0 0 4px 4px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            z-index: 10;
+            display: none;
+            padding: 1rem;
+        }
+        .photo-dropdown.open .photo-content {
+            display: block;
+        }
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+        .photo-item {
+            text-align: center;
+        }
+        .photo-placeholder {
+            width: 100%;
+            height: 120px;
+            background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+        }
+        .photo-caption {
+            font-size: 0.8rem;
+            color: #666;
+        }
+        
+        /* Special formatting for WKF */
+        .special-note {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 4px;
+            padding: 1rem;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
-    <!-- [Header Navigation remains the same] -->
     <header class="header">
         <nav class="nav">
             <a href="index.html" class="logo">Economic Machine Learning Lab (EML-Lab@IU)</a>
@@ -132,97 +206,136 @@
         </nav>
     </header>
 
-    <!-- Banner Section -->
     <section class="banner">
         <div class="banner-content">
             <h1>Presentations</h1>
-            <p>Conference presentations and keynote speeches by ELL researchers</p>
+            <p>Conference presentations and keynote speeches by EML-Lab researchers</p>
         </div>
     </section>
 
-    <!-- Main Content -->
     <div class="container" style="grid-template-columns: 1fr;">
         <main class="main-content">
-            <!-- 2024 Presentations -->
-            <section class="year-section">
-                <h2 class="year-header">2024 Presentations</h2>
+            <!-- Upcoming Presentations -->
+            <section class="upcoming-section">
+                <h2 class="year-header">Upcoming Presentations</h2>
                 <div class="presentation-grid">
+                    <!-- Midwest Econometrics Group Meeting -->
+                    <div class="presentation-card">
+                        <div class="presentation-header upcoming-header">
+                            <h3>Keynote Speech at Midwest Econometrics Group (MEG) Meeting</h3>
+                        </div>
+                        <div class="presentation-content">
+                            <p style="margin-bottom: 1rem;">Joon Y. Park's keynote speech on <strong>Machine Learning in Economics and Economic Data Analysis</strong> at Midwest Econometrics Group (MEG) Meeting at University of Illinois Urbana-Champaign.</p>
+                            <div class="presentation-meta">
+                                <div class="meta-item">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                                    </svg>
+                                    <span>October 3-4, 2025</span>
+                                </div>
+                                <div class="meta-item">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                        <circle cx="12" cy="10" r="3"></circle>
+                                    </svg>
+                                    <span>Urbana-Champaign, USA</span>
+                                </div>
+                                <div class="meta-item">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="12" cy="7" r="4"></circle>
+                                    </svg>
+                                    <span>Keynote Speaker: Joon Y. Park</span>
+                                </div>
+                            </div>
+                            <div class="photo-dropdown" onclick="togglePhotos(this)">
+                                <div class="photo-toggle">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M9 18l6-6-6-6"/>
+                                    </svg>
+                                    View Photos
+                                </div>
+                                <div class="photo-content">
+                                    <div class="photo-gallery">
+                                        <div class="photo-item">
+                                            <div class="photo-placeholder">Conference Venue</div>
+                                            <div class="photo-caption">UIUC Campus</div>
+                                        </div>
+                                        <div class="photo-item">
+                                            <div class="photo-placeholder">Keynote Setup</div>
+                                            <div class="photo-caption">Presentation Hall</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-
-<!-- London Workshop -->
-<div class="presentation-card">
-    <div class="presentation-header">
-        <h3>Keynote Speeches at Workshop on Models with Functional Variables</h3>
-    </div>
-    <div class="presentation-content">
-        <p style="margin-bottom: 1rem;">Yoosoon Chang & Joon Park gave keynote speeches on <strong>Models with Functional Variables: Theory and Applications</strong>, during the workshop at City University of London.</p>
-        <div class="presentation-meta">
-            <div class="meta-item">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                    <line x1="16" y1="2" x2="16" y2="6"></line>
-                    <line x1="8" y1="2" x2="8" y2="6"></line>
-                    <line x1="3" y1="10" x2="21" y2="10"></line>
-                </svg>
-                <span>December 12-13, 2024</span>
-            </div>
-            <div class="meta-item">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                    <circle cx="12" cy="10" r="3"></circle>
-                </svg>
-                <span>London, UK</span>
-            </div>
-        </div>
-        <div class="presentation-content">
-            <a href="https://www.dropbox.com/scl/fi/ovnpol0qc9v915lfj5mrr/WorkshopV4.pdf?rlkey=qluhu0xdnc3u2b971zwt39wgd&dl=0" target="_blank" class="presentation-content">Program Details</a>
-        </div>
-    </div>
-</div>
-
-                    <!-- SoFiE Conference -->
-<div class="presentation-card">
-    <div class="presentation-header">
-        <h3>Keynote Speech at 2024 SoFiE Conference</h3>
-    </div>
-    <div class="presentation-content">
-        <p style="margin-bottom: 1rem;">Yoosoon Chang's keynote speech on <strong>Market Returns Dormant in Option Panels</strong> at the 16th Annual Conference of Society for Financial Econometrics (SoFiE)</p>
-        <div class="presentation-meta">
-            <div class="meta-item">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                    <line x1="16" y1="2" x2="16" y2="6"></line>
-                    <line x1="8" y1="2" x2="8" y2="6"></line>
-                    <line x1="3" y1="10" x2="21" y2="10"></line>
-                </svg>
-                <span>June 14-16, 2024</span>
-            </div>
-            <div class="meta-item">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                    <circle cx="12" cy="10" r="3"></circle>
-                </svg>
-                <span>Rio de Janeiro, Brazil</span>
-            </div>
-            <div class="meta-item">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                    <circle cx="12" cy="7" r="4"></circle>
-                </svg>
-                <span>Keynote Speaker: Yoosoon Chang</span>
-            </div>
-        </div>
-        <div class="presentation-content">
-            <a href="https://sites.google.com/view/sofie2024/home" target="_blank" class="presentation-content">Conference Website</a>
-        </div>
-    </div>
-</div>
-
+                    <!-- EC^2 Conference -->
+                    <div class="presentation-card">
+                        <div class="presentation-header upcoming-header">
+                            <h3>Keynote Speech at European Conferences of the Economics Community (EC)²</h3>
+                        </div>
+                        <div class="presentation-content">
+                            <div class="presentation-meta">
+                                <div class="meta-item">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                                    </svg>
+                                    <span>December 5-6, 2025</span>
+                                </div>
+                                <div class="meta-item">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                        <circle cx="12" cy="10" r="3"></circle>
+                                    </svg>
+                                    <span>Lugano, Switzerland</span>
+                                </div>
+                                <div class="meta-item">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="12" cy="7" r="4"></circle>
+                                    </svg>
+                                    <span>Keynote Speaker: Yoosoon Chang</span>
+                                </div>
+                            </div>
+                            <div class="presentation-content">
+                                <a href="https://sites.google.com/site/ecpower2/home-1" target="_blank" class="presentation-link">Conference Website</a>
+                            </div>
+                            <div class="photo-dropdown" onclick="togglePhotos(this)">
+                                <div class="photo-toggle">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M9 18l6-6-6-6"/>
+                                    </svg>
+                                    View Photos
+                                </div>
+                                <div class="photo-content">
+                                    <div class="photo-gallery">
+                                        <div class="photo-item">
+                                            <div class="photo-placeholder">Lugano View</div>
+                                            <div class="photo-caption">Lake Lugano</div>
+                                        </div>
+                                        <div class="photo-item">
+                                            <div class="photo-placeholder">Conference Hall</div>
+                                            <div class="photo-caption">USI Campus</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <!-- 2025 Presentations -->
             <section class="year-section">
-                <h2 class="year-header">2025 Upcoming Presentations</h2>
+                <h2 class="year-header">2025 Presentations</h2>
                 <div class="presentation-grid">
                     <!-- Bristol Econometric Study Group -->
                     <div class="presentation-card">
@@ -256,17 +369,21 @@
                                 </div>
                             </div>
                             <div class="presentation-content">
-                                <a href="https://www.econometricstudygroup.org/" target="_blank" class="presentation-content">Event Details</a>
+                                <a href="https://www.econometricstudygroup.org/" target="_blank" class="presentation-link">Event Details</a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- World Knowledge Forum -->
+                    <!-- World Knowledge Forum - Fixed -->
                     <div class="presentation-card">
                         <div class="presentation-header">
-                            <h3>Invited Talk at the World Knowledge Forum (WKF)</h3>
+                            <h3>World Knowledge Forum (WKF) - Seoul, Korea</h3>
                         </div>
                         <div class="presentation-content">
+                            <p style="margin-bottom: 1rem;"><strong>Invited Talk</strong> by Yoosoon Chang on September 10, 2024</p>
+                            <div class="special-note">
+                                <strong>Additional Role:</strong> Served as moderator for James Robinson's session on September 9, 2024. James Robinson was awarded the 2024 Nobel Prize in Economics.
+                            </div>
                             <div class="presentation-meta">
                                 <div class="meta-item">
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -275,7 +392,7 @@
                                         <line x1="8" y1="2" x2="8" y2="6"></line>
                                         <line x1="3" y1="10" x2="21" y2="10"></line>
                                     </svg>
-                                    <span>September 9-11, 2025</span>
+                                    <span>September 9-10, 2024</span>
                                 </div>
                                 <div class="meta-item">
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -289,76 +406,124 @@
                                         <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                                         <circle cx="12" cy="7" r="4"></circle>
                                     </svg>
-                                    <span>Invited Speaker: Yoosoon Chang</span>
+                                    <span>Speaker & Moderator: Yoosoon Chang</span>
                                 </div>
                             </div>
                             <div class="presentation-content">
-                                <a href="https://www.wkforum.org/en/" target="_blank" class="presentation-content">WKF Website</a>
-                                <a href="https://en.wikipedia.org/wiki/World_Knowledge_Forum" target="_blank" class="presentation-content">About WKF</a>
+                                <a href="https://www.wkforum.org/en/" target="_blank" class="presentation-link">WKF Website</a>
+                                <a href="https://en.wikipedia.org/wiki/World_Knowledge_Forum" target="_blank" class="presentation-link">About WKF</a>
+                            </div>
+                            <div class="photo-dropdown" onclick="togglePhotos(this)">
+                                <div class="photo-toggle">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M9 18l6-6-6-6"/>
+                                    </svg>
+                                    View Photos
+                                </div>
+                                <div class="photo-content">
+                                    <div class="photo-gallery">
+                                        <div class="photo-item">
+                                            <div class="photo-placeholder">Invited Talk</div>
+                                            <div class="photo-caption">Y. Chang presenting</div>
+                                        </div>
+                                        <div class="photo-item">
+                                            <div class="photo-placeholder">Moderating Session</div>
+                                            <div class="photo-caption">With J. Robinson</div>
+                                        </div>
+                                        <div class="photo-item">
+                                            <div class="photo-placeholder">WKF Venue</div>
+                                            <div class="photo-caption">Seoul Convention Center</div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
+            </section>
 
-<!-- Midwest Econometrics Group Meeting -->
-<div class="presentation-card">
-    <div class="presentation-header">
-        <h3>Keynote Speech at Midwest Econometrics Group (MEG) Meeting</h3>
-    </div>
-    <div class="presentation-content">
-        <p style="margin-bottom: 1rem;">Joon Y. Park's keynote speech on <strong>Machine Learning in Economics and Economic Data Analysis</strong> at Midwest Econometrics Group (MEG) Meeting at University of Illinois Urbana-Champaign.</p>
-        <div class="presentation-meta">
-            <div class="meta-item">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                    <line x1="16" y1="2" x2="16" y2="6"></line>
-                    <line x1="8" y1="2" x2="8" y2="6"></line>
-                    <line x1="3" y1="10" x2="21" y2="10"></line>
-                </svg>
-                <span>October 3-4, 2025</span>
-            </div>
-            <div class="meta-item">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                    <circle cx="12" cy="10" r="3"></circle>
-                </svg>
-                <span>Urbana-Champaign, USA</span>
-            </div>
-            <div class="meta-item">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                    <circle cx="12" cy="7" r="4"></circle>
-                </svg>
-                <span>Keynote Speaker: Joon Y. Park</span>
-            </div>
-        </div>
-        <div class="presentation-content">
-            <a href="#" target="_blank" class="presentation-content">Conference Details</a>
-        </div>
-    </div>
-</div>
-                    
-                    <!-- EC^2 Conference -->
+            <!-- 2024 Presentations -->
+            <section class="year-section">
+                <h2 class="year-header">2024 Presentations</h2>
+                <div class="presentation-grid">
+                    <!-- London Workshop -->
                     <div class="presentation-card">
                         <div class="presentation-header">
-                            <h3>Keynote Speech at European Conferences of the Economics Community (EC)²</h3>
+                            <h3>Keynote Speeches at Workshop on Models with Functional Variables</h3>
                         </div>
                         <div class="presentation-content">
+                            <p style="margin-bottom: 1rem;">Yoosoon Chang & Joon Park gave keynote speeches on <strong>Models with Functional Variables: Theory and Applications</strong>, during the workshop at City University of London.</p>
                             <div class="presentation-meta">
                                 <div class="meta-item">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                                         <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
                                         <line x1="16" y1="2" x2="16" y2="6"></line>
                                         <line x1="8" y1="2" x2="8" y2="6"></line>
                                         <line x1="3" y1="10" x2="21" y2="10"></line>
                                     </svg>
-                                    <span>December 5-6, 2025</span>
+                                    <span>December 12-13, 2024</span>
                                 </div>
                                 <div class="meta-item">
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                                         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                                         <circle cx="12" cy="10" r="3"></circle>
                                     </svg>
-                                    <span>Lugano, Switzerland</span>
+                                    <span>London, UK</span>
+                                </div>
+                            </div>
+                            <div class="presentation-content">
+                                <a href="https://www.dropbox.com/scl/fi/ovnpol0qc9v915lfj5mrr/WorkshopV4.pdf?rlkey=qluhu0xdnc3u2b971zwt39wgd&dl=0" target="_blank" class="presentation-link">Program Details</a>
+                            </div>
+                            <div class="photo-dropdown" onclick="togglePhotos(this)">
+                                <div class="photo-toggle">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M9 18l6-6-6-6"/>
+                                    </svg>
+                                    View Photos
+                                </div>
+                                <div class="photo-content">
+                                    <div class="photo-gallery">
+                                        <div class="photo-item">
+                                            <div class="photo-placeholder">Y. Chang Keynote</div>
+                                            <div class="photo-caption">Functional Models Talk</div>
+                                        </div>
+                                        <div class="photo-item">
+                                            <div class="photo-placeholder">J. Park Keynote</div>
+                                            <div class="photo-caption">Applications Session</div>
+                                        </div>
+                                        <div class="photo-item">
+                                            <div class="photo-placeholder">City University</div>
+                                            <div class="photo-caption">Workshop Venue</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SoFiE Conference -->
+                    <div class="presentation-card">
+                        <div class="presentation-header">
+                            <h3>Keynote Speech at 2024 SoFiE Conference</h3>
+                        </div>
+                        <div class="presentation-content">
+                            <p style="margin-bottom: 1rem;">Yoosoon Chang's keynote speech on <strong>Market Returns Dormant in Option Panels</strong> at the 16th Annual Conference of Society for Financial Econometrics (SoFiE)</p>
+                            <div class="presentation-meta">
+                                <div class="meta-item">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                                    </svg>
+                                    <span>June 14-16, 2024</span>
+                                </div>
+                                <div class="meta-item">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                        <circle cx="12" cy="10" r="3"></circle>
+                                    </svg>
+                                    <span>Rio de Janeiro, Brazil</span>
                                 </div>
                                 <div class="meta-item">
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -369,7 +534,27 @@
                                 </div>
                             </div>
                             <div class="presentation-content">
-                                <a href="https://sites.google.com/site/ecpower2/home-1" target="_blank" class="presentation-content">Website</a>
+                                <a href="https://sites.google.com/view/sofie2024/home" target="_blank" class="presentation-link">Conference Website</a>
+                            </div>
+                            <div class="photo-dropdown" onclick="togglePhotos(this)">
+                                <div class="photo-toggle">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M9 18l6-6-6-6"/>
+                                    </svg>
+                                    View Photos
+                                </div>
+                                <div class="photo-content">
+                                    <div class="photo-gallery">
+                                        <div class="photo-item">
+                                            <div class="photo-placeholder">Keynote Presentation</div>
+                                            <div class="photo-caption">Options Panel Talk</div>
+                                        </div>
+                                        <div class="photo-item">
+                                            <div class="photo-placeholder">Rio Venue</div>
+                                            <div class="photo-caption">SoFiE Conference</div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -378,7 +563,6 @@
         </main>
     </div>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
@@ -407,5 +591,21 @@
             <p>&copy; 2025 Economic Machine Learning Lab. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        function togglePhotos(element) {
+            element.classList.toggle('open');
+        }
+
+        // Close photo dropdowns when clicking outside
+        document.addEventListener('click', function(event) {
+            const photoDropdowns = document.querySelectorAll('.photo-dropdown');
+            photoDropdowns.forEach(dropdown => {
+                if (!dropdown.contains(event.target)) {
+                    dropdown.classList.remove('open');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
