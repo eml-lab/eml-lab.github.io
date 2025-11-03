@@ -542,7 +542,7 @@
             <h1>EML Quant Conference 2025</h1>
             <p class="conference-hero-subtitle">Bridging Academic Research and Industry Practice in Quantitative Finance</p>
             
-            <a href="https://eml-lab.github.io/assets/QC2025/EML%20Quant%20conference%20program-final.pdf" 
+            <a href="https://eml-lab.github.io/assets/QC2025/EML%20Quant%20conference%20program-v5.pdf" 
                class="program-link" 
                target="_blank">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="margin-right: 0.5rem;">
@@ -601,7 +601,7 @@
             <div class="dropdown-sections">
                 <!-- Conference Recap Dropdown -->
                 <div class="dropdown-section" id="recap-dropdown">
-                    <div class="dropdown-header" onclick="toggleDropdown('recap-dropdown')">
+                    <div class="dropdown-header">
                         <h3>
                             <div class="dropdown-icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -658,7 +658,7 @@
 
                 <!-- Thank You Letter Dropdown -->
                 <div class="dropdown-section" id="letter-dropdown">
-                    <div class="dropdown-header" onclick="toggleDropdown('letter-dropdown')">
+                    <div class="dropdown-header">
                         <h3>
                             <div class="dropdown-icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -887,20 +887,28 @@
     </section>
 
     <script>
-        function toggleDropdown(dropdownId) {
-            const section = document.getElementById(dropdownId);
-            const allSections = document.querySelectorAll('.dropdown-section');
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all dropdown headers
+            const dropdownHeaders = document.querySelectorAll('.dropdown-header');
             
-            // Close all other sections
-            allSections.forEach(s => {
-                if (s.id !== dropdownId && s.classList.contains('active')) {
-                    s.classList.remove('active');
-                }
+            dropdownHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    // Get the parent dropdown section
+                    const section = this.parentElement;
+                    const allSections = document.querySelectorAll('.dropdown-section');
+                    
+                    // Close all other sections
+                    allSections.forEach(s => {
+                        if (s !== section && s.classList.contains('active')) {
+                            s.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current section
+                    section.classList.toggle('active');
+                });
             });
-            
-            // Toggle current section
-            section.classList.toggle('active');
-        }
+        });
     </script>
 </body>
 </html>
