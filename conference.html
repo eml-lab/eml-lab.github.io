@@ -338,6 +338,7 @@
             justify-content: space-between;
             align-items: center;
             transition: background 0.3s ease;
+            user-select: none;
         }
         
         .dropdown-header:hover {
@@ -378,6 +379,7 @@
             align-items: center;
             justify-content: center;
             transition: transform 0.3s ease;
+            flex-shrink: 0;
         }
         
         .dropdown-toggle svg {
@@ -430,6 +432,16 @@
         
         .dropdown-inner li {
             margin-bottom: 0.5rem;
+        }
+        
+        .dropdown-inner a {
+            color: #990000;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        .dropdown-inner a:hover {
+            text-decoration: underline;
         }
         
         .signature {
@@ -530,7 +542,7 @@
             <h1>EML Quant Conference 2025</h1>
             <p class="conference-hero-subtitle">Bridging Academic Research and Industry Practice in Quantitative Finance</p>
             
-            <a href="https://eml-lab.github.io/assets/QC2025/EML%20Quant%20conference%20program-v5.pdf" 
+            <a href="https://eml-lab.github.io/assets/QC2025/EML%20Quant%20conference%20program-final.pdf" 
                class="program-link" 
                target="_blank">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="margin-right: 0.5rem;">
@@ -578,8 +590,122 @@
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- Conference Recap and Letter Section (MOVED ABOVE ABOUT) -->
     <section class="section">
+        <div class="section-content">
+            <h2>Conference Highlights & Messages</h2>
+            <p style="font-size: 1.1rem; text-align: center; max-width: 800px; margin: 0 auto 3rem; color: #666;">
+                Read about the success of our inaugural conference and a message from our Executive Director.
+            </p>
+            
+            <div class="dropdown-sections">
+                <!-- Conference Recap Dropdown -->
+                <div class="dropdown-section" id="recap-dropdown">
+                    <div class="dropdown-header" onclick="toggleDropdown('recap-dropdown')">
+                        <h3>
+                            <div class="dropdown-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path>
+                                </svg>
+                            </div>
+                            Conference Recap: October 10, 2025
+                        </h3>
+                        <div class="dropdown-toggle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="dropdown-content">
+                        <div class="dropdown-inner">
+                            <h4>Inaugural EML Quant Conference 2025: Bridging Academic Research and Industry Practice</h4>
+                            
+                            <p><strong>October 10, 2025</strong></p>
+                            
+                            <p>The Econometric Machine Learning Lab successfully hosted its inaugural Quant Conference on October 10, 2025, bringing together practitioners from the hedge fund industry and IU students and faculty for an intensive exchange on quantitative finance strategies and methodologies. The formal program was followed by continued discussions over breakfast and lunch on October 11, providing valuable informal interactions that deepened the connections between academic researchers and industry practitioners.</p>
+                            
+                            <h4>Industry-Academic Collaboration in Action</h4>
+                            
+                            <p>The conference featured three speakers from the quantitative finance industry:</p>
+                            <ul>
+                                <li>Wayne Ferbert, Co-founder & Managing Director, Alpha DNA Investment Management</li>
+                                <li>Andre Westin, Investment Research, WE Family Offices</li>
+                                <li>Sungsoo Yang, Quantitative Analyst/Partner, Empirical Research Partners LLC</li>
+                            </ul>
+                            
+                            <p>The program included interactive sessions where practitioners shared insights on current challenges in quantitative finance, followed by detailed presentations of EML Lab's proprietary trading strategies. The afternoon sessions featured in-depth industry commentary and feedback, providing valuable insights into how to implement and commercialize our research for real-world applications.</p>
+                            
+                            <h4>Student Impact and Learning Outcomes</h4>
+                            
+                            <p>Student response was overwhelmingly positive. Participants described the conference as "amazing" and "super helpful," particularly valuing the opportunity to understand how practitioners approach problem-solving in quantitative finance. The direct engagement with industry experts gave students and researchers concrete insights into bridging the gap between academic models and market implementation.</p>
+                            
+                            <p>"Understanding how practitioners think about these problems has been transformative for our research direction," noted the EML Lab team. "The feedback sessions gave us clarity on how to refine our approach to operationalize and commercialize our strategies."</p>
+                            
+                            <h4>A Milestone for EML Lab</h4>
+                            
+                            <p>The conference represented an important milestone for the EML Lab, demonstrating to the IU community and potential industry partners the lab's capabilities in developing rigorous, market-relevant quantitative strategies. The event aligned with the university's broader initiatives to connect academic research with industry practice and to promote machine learning and AI research.</p>
+                            
+                            <p>The success of this inaugural Quant conference lays the groundwork for ongoing industry partnerships and future collaborative research, supporting EML Lab's mission to develop and disseminate innovative methodologies for analyzing large-dimensional economic and financial data while supporting our faculty and students in their research and training.</p>
+                            
+                            <h4>Looking Forward</h4>
+                            
+                            <p>Building on the momentum from this successful first conference, EML Lab plans to continue fostering connections between academic research and industry practice, with the goal of generating collaborative projects and industry partnerships that will advance the lab's research and educational mission.</p>
+                            
+                            <p>For more information about EML Lab's research and upcoming events, visit <a href="https://eml-lab.github.io" target="_blank">eml-lab.github.io</a>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Thank You Letter Dropdown -->
+                <div class="dropdown-section" id="letter-dropdown">
+                    <div class="dropdown-header" onclick="toggleDropdown('letter-dropdown')">
+                        <h3>
+                            <div class="dropdown-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                            </div>
+                            Letter from the Executive Director
+                        </h3>
+                        <div class="dropdown-toggle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="dropdown-content">
+                        <div class="dropdown-inner">
+                            <p>Dear Conference Participants,</p>
+                            
+                            <p>I hope this message finds you well. As we reflect on our inaugural EML Quant Conference, I wanted to reach out with sincere thanks to everyone who made it such a success.</p>
+                            
+                            <p>To our industry speakers – Wayne Ferbert, Andre Westin, and Sungsoo Yang - thank you for sharing your time, expertise, and candid insights on quantitative finance practices and challenges. Your perspectives on our trading strategies were invaluable, and the moderated discussion sessions gave us exactly what we needed to refine our approach to operationalize our strategies.</p>
+                            
+                            <p>To our students and faculty – your enthusiastic participation and thoughtful questions made the conference truly interactive. Many of you reached out afterward to say how helpful it was to understand how practitioners think about these problems. That connection between academic research and industry practice is exactly what we hoped to foster.</p>
+                            
+                            <p>To the broader IU community – thank you for supporting our EML Lab's milestone event. The conference helped showcase EML Lab's work and our contribution to the university's broader initiatives to connect academic research and industry practice and to promote machine learning and AI research.</p>
+                            
+                            <p>The feedback has been overwhelmingly positive. Students told us the conference was "amazing" and "super helpful," and we now have a much clearer understanding of how to operationalize our strategies for real-world application. The practitioner commentary sessions gave us valuable insights into how we might implement and commercialize our strategies most effectively.</p>
+                            
+                            <p>This was an important first step in demonstrating the lab's value to potential industry partners as we work toward generating industry grants that will help us push forward our lab's initiatives and support our faculty and students in their research and training.</p>
+                            
+                            <p>Thank you again for being part of this inaugural event. We look forward to continuing these conversations and building on this momentum.</p>
+                            
+                            <div class="signature">
+                                <p>All the best,</p>
+                                <p><strong>Yoosoon Chang</strong></p>
+                                <p>Executive Director, EML Lab</p>
+                                <p>Indiana University Bloomington</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section section-light">
         <div class="section-content">
             <h2>About the Conference</h2>
             <p style="font-size: 1.2rem; text-align: center; max-width: 800px; margin: 0 auto 3rem; color: #666;">
@@ -736,120 +862,6 @@
         </div>
     </section>
 
-    <!-- Conference Recap and Letter Section -->
-    <section class="section">
-        <div class="section-content">
-            <h2>Conference Highlights & Messages</h2>
-            <p style="font-size: 1.1rem; text-align: center; max-width: 800px; margin: 0 auto 3rem; color: #666;">
-                Read about the success of our inaugural conference and a message from our Executive Director.
-            </p>
-            
-            <div class="dropdown-sections">
-                <!-- Conference Recap Dropdown -->
-                <div class="dropdown-section">
-                    <div class="dropdown-header" onclick="toggleDropdown(this)">
-                        <h3>
-                            <div class="dropdown-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                    <path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path>
-                                </svg>
-                            </div>
-                            Conference Recap: October 10, 2025
-                        </h3>
-                        <div class="dropdown-toggle">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="dropdown-content">
-                        <div class="dropdown-inner">
-                            <h4>Inaugural EML Quant Conference 2025: Bridging Academic Research and Industry Practice</h4>
-                            
-                            <p><strong>October 10, 2025</strong></p>
-                            
-                            <p>The Econometric Machine Learning Lab successfully hosted its inaugural Quant Conference on October 10, 2025, bringing together practitioners from the hedge fund industry and IU students and faculty for an intensive exchange on quantitative finance strategies and methodologies. The formal program was followed by continued discussions over breakfast and lunch on October 11, providing valuable informal interactions that deepened the connections between academic researchers and industry practitioners.</p>
-                            
-                            <h4>Industry-Academic Collaboration in Action</h4>
-                            
-                            <p>The conference featured three speakers from the quantitative finance industry:</p>
-                            <ul>
-                                <li>Wayne Ferbert, Co-founder & Managing Director, Alpha DNA Investment Management</li>
-                                <li>Andre Westin, Investment Research, WE Family Offices</li>
-                                <li>Sungsoo Yang, Quantitative Analyst/Partner, Empirical Research Partners LLC</li>
-                            </ul>
-                            
-                            <p>The program included interactive sessions where practitioners shared insights on current challenges in quantitative finance, followed by detailed presentations of EML Lab's proprietary trading strategies. The afternoon sessions featured in-depth industry commentary and feedback, providing valuable insights into how to implement and commercialize our research for real-world applications.</p>
-                            
-                            <h4>Student Impact and Learning Outcomes</h4>
-                            
-                            <p>Student response was overwhelmingly positive. Participants described the conference as "amazing" and "super helpful," particularly valuing the opportunity to understand how practitioners approach problem-solving in quantitative finance. The direct engagement with industry experts gave students and researchers concrete insights into bridging the gap between academic models and market implementation.</p>
-                            
-                            <p>"Understanding how practitioners think about these problems has been transformative for our research direction," noted the EML Lab team. "The feedback sessions gave us clarity on how to refine our approach to operationalize and commercialize our strategies."</p>
-                            
-                            <h4>A Milestone for EML Lab</h4>
-                            
-                            <p>The conference represented an important milestone for the EML Lab, demonstrating to the IU community and potential industry partners the lab's capabilities in developing rigorous, market-relevant quantitative strategies. The event aligned with the university's broader initiatives to connect academic research with industry practice and to promote machine learning and AI research.</p>
-                            
-                            <p>The success of this inaugural Quant conference lays the groundwork for ongoing industry partnerships and future collaborative research, supporting EML Lab's mission to develop and disseminate innovative methodologies for analyzing large-dimensional economic and financial data while supporting our faculty and students in their research and training.</p>
-                            
-                            <h4>Looking Forward</h4>
-                            
-                            <p>Building on the momentum from this successful first conference, EML Lab plans to continue fostering connections between academic research and industry practice, with the goal of generating collaborative projects and industry partnerships that will advance the lab's research and educational mission.</p>
-                            
-                            <p>For more information about EML Lab's research and upcoming events, visit <a href="https://eml-lab.github.io" style="color: #990000; font-weight: 600;">eml-lab.github.io</a>.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Thank You Letter Dropdown -->
-                <div class="dropdown-section">
-                    <div class="dropdown-header" onclick="toggleDropdown(this)">
-                        <h3>
-                            <div class="dropdown-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                                    <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                                </svg>
-                            </div>
-                            Letter from the Executive Director
-                        </h3>
-                        <div class="dropdown-toggle">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="dropdown-content">
-                        <div class="dropdown-inner">
-                            <p>Dear Conference Participants,</p>
-                            
-                            <p>I hope this message finds you well. As we reflect on our inaugural EML Quant Conference, I wanted to reach out with sincere thanks to everyone who made it such a success.</p>
-                            
-                            <p>To our industry speakers – Wayne Ferbert, Andre Westin, and Sungsoo Yang - thank you for sharing your time, expertise, and candid insights on quantitative finance practices and challenges. Your perspectives on our trading strategies were invaluable, and the moderated discussion sessions gave us exactly what we needed to refine our approach to operationalize our strategies.</p>
-                            
-                            <p>To our students and faculty – your enthusiastic participation and thoughtful questions made the conference truly interactive. Many of you reached out afterward to say how helpful it was to understand how practitioners think about these problems. That connection between academic research and industry practice is exactly what we hoped to foster.</p>
-                            
-                            <p>To the broader IU community – thank you for supporting our EML Lab's milestone event. The conference helped showcase EML Lab's work and our contribution to the university's broader initiatives to connect academic research and industry practice and to promote machine learning and AI research.</p>
-                            
-                            <p>The feedback has been overwhelmingly positive. Students told us the conference was "amazing" and "super helpful," and we now have a much clearer understanding of how to operationalize our strategies for real-world application. The practitioner commentary sessions gave us valuable insights into how we might implement and commercialize our strategies most effectively.</p>
-                            
-                            <p>This was an important first step in demonstrating the lab's value to potential industry partners as we work toward generating industry grants that will help us push forward our lab's initiatives and support our faculty and students in their research and training.</p>
-                            
-                            <p>Thank you again for being part of this inaugural event. We look forward to continuing these conversations and building on this momentum.</p>
-                            
-                            <div class="signature">
-                                <p>All the best,</p>
-                                <p><strong>Yoosoon Chang</strong></p>
-                                <p>Executive Director, EML Lab</p>
-                                <p>Indiana University Bloomington</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Call to Action Section -->
     <section class="cta-section">
         <div style="max-width: 800px; margin: 0 auto;">
@@ -875,13 +887,13 @@
     </section>
 
     <script>
-        function toggleDropdown(header) {
-            const section = header.parentElement;
+        function toggleDropdown(dropdownId) {
+            const section = document.getElementById(dropdownId);
             const allSections = document.querySelectorAll('.dropdown-section');
             
             // Close all other sections
             allSections.forEach(s => {
-                if (s !== section && s.classList.contains('active')) {
+                if (s.id !== dropdownId && s.classList.contains('active')) {
                     s.classList.remove('active');
                 }
             });
