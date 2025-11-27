@@ -103,6 +103,65 @@
         .special-links a:hover {
             text-decoration: underline;
         }
+        
+        /* Copyright notice styles */
+        .copyright-notice {
+            font-size: 0.75rem;
+            color: #666;
+            font-style: italic;
+            margin-top: 0.5rem;
+            padding: 0.5rem;
+            background-color: #f9f9f9;
+            border-left: 3px solid #990000;
+        }
+        
+        /* Tooltip styles */
+        .pdf-link-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .pdf-link-wrapper .tooltip {
+            visibility: hidden;
+            width: 300px;
+            background-color: #333;
+            color: #fff;
+            text-align: left;
+            border-radius: 6px;
+            padding: 10px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -150px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.75rem;
+            line-height: 1.4;
+        }
+        
+        .pdf-link-wrapper .tooltip::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #333 transparent transparent transparent;
+        }
+        
+        .pdf-link-wrapper:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        .pdf-icon {
+            display: inline-block;
+            margin-left: 4px;
+            color: #990000;
+            font-size: 0.8rem;
+        }
     </style>
 </head>
 <body>
@@ -180,9 +239,17 @@
                             <p>Econometerics, Machine Learning and Functional Data Analysis</p>
                         </div>
                         <div class="special-links">
-<a href="https://economics.indiana.edu/news-events/advances-in-econometrics-conference/index.html" target="_blank">2023 Conference Honoring Joon Y. Park</a>
-<a href="https://bookstore.emerald.com/essays-in-honor-of-joon-y-park.html" target="_blank" download>Festschrift Volume: Advances in Econometrics 45A</a>
-<a href="https://bookstore.emerald.com/essays-in-honor-of-joon-y-park-hb-9781837532131.html" target="_blank" download>Festschrift Volume: Advances in Econometrics 45B</a></a>
+                            <a href="https://economics.indiana.edu/news-events/advances-in-econometrics-conference/index.html" target="_blank">2023 Conference Honoring Joon Y. Park</a>
+                            
+                            <div class="pdf-link-wrapper">
+                                <a href="www.aliali.AEI2023.com/AIE2023/45A" target="_blank">Festschrift Volume: Advances in Econometrics 45A <span class="pdf-icon">ⓘ</span></a>
+                                <span class="tooltip">Author-accepted manuscript. This PDF is provided for your own personal use only. It may not be used for resale, reprinting, systematic distribution, emailing, web hosting, or for any other commercial purpose without the permission of Emerald Publishing Limited.</span>
+                            </div>
+                            
+                            <div class="pdf-link-wrapper">
+                                <a href="www.aliali.AEI2023.com/AIE2023/45B" target="_blank">Festschrift Volume: Advances in Econometrics 45B <span class="pdf-icon">ⓘ</span></a>
+                                <span class="tooltip">Author-accepted manuscript. This PDF is provided for your own personal use only. It may not be used for resale, reprinting, systematic distribution, emailing, web hosting, or for any other commercial purpose without the permission of Emerald Publishing Limited.</span>
+                            </div>
                         </div>
                         <div class="person-contact">
                             <p>Email: <a href="mailto:jpark@indiana.edu">jpark@indiana.edu</a></p>
