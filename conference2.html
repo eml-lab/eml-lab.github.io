@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EML Energy Conference 2026 - Economic Machine Learning Lab</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Conference Page Specific Styles */
+        .conference-hero {
+            background: linear-gradient(135deg, #990000 0%, #cc0000 50%, #990000 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .conference-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+        .conference-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        .conference-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(10px);
+        }
+        .conference-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin: 0 0 1rem 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.2;
+        }
+        .conference-hero-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .hero-details {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        .hero-detail {
+            text-align: center;
+        }
+        .hero-detail-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 1rem;
+            opacity: 0.9;
+        }
+        .hero-detail h3 {
+            font-size: 1.2rem;
+            margin: 0 0 0.5rem 0;
+        }
+        .hero-detail p {
+            opacity: 0.8;
+            margin: 0;
+        }
+        .section {
+            padding: 4rem 0;
+        }
+        .section-light {
+            background: #f9f9f9;
+        }
+        .section-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        .section h2 {
+            font-size: 2.5rem;
+            color: #990000;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .participants-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .participant-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+            border-top: 4px solid #990000;
+        }
+        .participant-card:hover {
+            transform: translateY(-5px);
+        }
+        .participant-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, #990000, #cc0000);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .participant-icon svg {
+            width: 32px;
+            height: 32px;
+            color: white;
+        }
+        .presenters-section {
+            background: white;
+        }
+        .presenters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .presenter-category {
+            background: #f8f8f8;
+            border-radius: 12px;
+            padding: 2.5rem;
+            border-left: 5px solid #990000;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .presenter-category:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        .category-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        .category-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #990000, #cc0000);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+        }
+        .category-icon svg {
+            width: 24px;
+            height: 24px;
+            color: white;
+        }
+        .category-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #990000;
+            margin: 0;
+        }
+        .presenter-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .presenter-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid #e0e0e0;
+            transition: background-color 0.3s ease;
+        }
+        .presenter-item:last-child {
+            border-bottom: none;
+        }
+        .presenter-item:hover {
+            background: rgba(153, 0, 0, 0.05);
+            margin: 0 -1rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            border-radius: 6px;
+        }
+        .presenter-name {
+            font-weight: 600;
+            color: #333;
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+        .presenter-affiliation {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+        .program-link {
+            display: inline-block;
+            margin: 2rem 0;
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        .program-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        /* SIMPLE DROPDOWN STYLES */
+        .dropdown-sections {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .dropdown-box {
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .dropdown-title {
+            background: linear-gradient(135deg, #990000, #cc0000);
+            color: white;
+            padding: 1.5rem 2rem;
+            cursor: pointer;
+            font-size: 1.5rem;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .dropdown-title:hover {
+            background: linear-gradient(135deg, #cc0000, #990000);
+        }
+        
+        .dropdown-arrow {
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+        
+        .dropdown-text {
+            display: none;
+            padding: 2.5rem;
+            line-height: 1.8;
+            color: #333;
+        }
+        
+        .dropdown-text.show {
+            display: block;
+        }
+        
+        .dropdown-text h4 {
+            color: #990000;
+            font-size: 1.3rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .dropdown-text h4:first-child {
+            margin-top: 0;
+        }
+        
+        .dropdown-text p {
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+        }
+        
+        .dropdown-text ul {
+            margin: 1rem 0 1.5rem 2rem;
+            list-style-type: disc;
+        }
+        
+        .dropdown-text li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .dropdown-text a {
+            color: #990000;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        .dropdown-text a:hover {
+            text-decoration: underline;
+        }
+        
+        .signature {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid #f0f0f0;
+            font-style: italic;
+        }
+        
+        .signature p {
+            margin: 0.3rem 0;
+        }
+        
+        .cta-section {
+            background: #990000;
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        .cta-button {
+            padding: 1.2rem 2.5rem;
+            border: 2px solid white;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .cta-button:hover {
+            background: white;
+            color: #990000;
+        }
+        .cta-button.primary {
+            background: white;
+            color: #990000;
+        }
+        .cta-button.primary:hover {
+            background: transparent;
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .conference-hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero-details {
+                gap: 1.5rem;
+            }
+            .participants-grid, .presenters-grid {
+                grid-template-columns: 1fr;
+            }
+            .presenter-category {
+                padding: 1.5rem;
+            }
+            .dropdown-title {
+                font-size: 1.2rem;
+                padding: 1.2rem 1.5rem;
+            }
+            .dropdown-text {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <nav class="nav">
+            <a href="index.html" class="logo">Economic Machine Learning Lab (EML-Lab@IU)</a>
+            <div class="nav-links">
+                <div class="dropdown">
+                    <a href="#">Activities</a>
+                    <div class="dropdown-content">
+                        <a href="workshops.html">Workshops & Courses</a>
+                        <a href="presentations.html">Presentations</a>
+                        <a href="publications.html">Publications</a>
+                        <a href="conference.html">EML Quant Conference</a>
+                        <a href="conference2.html">EML Energy Conference</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#">People</a>
+                    <div class="dropdown-content">
+                        <a href="directors.html">Directors</a>
+                        <a href="students.html">Student Fellows</a>
+                        <a href="collaborators.html">Collaborators</a>
+                    </div>
+                </div>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Conference Hero Section -->
+    <section class="conference-hero">
+        <div class="conference-hero-content">
+            <div class="conference-badge">⚡ INAUGURAL EVENT</div>
+            <h1>EML Energy Conference 2026</h1>
+            <p class="conference-hero-subtitle">Electricity Demand Forecasting in the AI Era</p>
+            
+            <a href="https://eml-lab.github.io/assets/QC2025/2026%20EML%20Energy%20Conference-program-final.pdf" 
+               class="program-link" 
+               target="_blank">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="margin-right: 0.5rem;">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14,2 14,8 20,8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                    <polyline points="10,9 9,9 8,9"></polyline>
+                </svg>
+                View Full Program
+            </a>
+            
+            <div class="hero-details">
+                <div class="hero-detail">
+                    <svg class="hero-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    <h3>February 20, 2026</h3>
+                    <p>One-day intensive event</p>
+                </div>
+                
+                <div class="hero-detail">
+                    <svg class="hero-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <h3>Indiana University</h3>
+                    <p>Bloomington, Indiana</p>
+                </div>
+                
+                <div class="hero-detail">
+                    <svg class="hero-detail-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                    <h3>Multi-Sector</h3>
+                    <p>Industry, Policy & Academia</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conference Recap and Letter Section -->
+    <section class="section">
+        <div class="section-content">
+            <h2>Conference Highlights & Messages</h2>
+            <p style="font-size: 1.1rem; text-align: center; max-width: 800px; margin: 0 auto 3rem; color: #666;">
+                Read about the success of our inaugural Energy Conference and a message from our Executive Director.
+            </p>
+            
+            <div class="dropdown-sections">
+                <!-- DROPDOWN 1 -->
+                <div class="dropdown-box">
+                    <div class="dropdown-title" onclick="toggleBox('box1')">
+                        <span>📋 Conference Recap: February 20, 2026</span>
+                        <span class="dropdown-arrow" id="arrow1">▼</span>
+                    </div>
+                    <div class="dropdown-text" id="box1">
+                        <h4>Inaugural EML Energy Conference 2026: Electricity Demand Forecasting in the AI Era</h4>
+                        
+                        <p><strong>February 20, 2026</strong></p>
+                        
+                        <p>The Economic Machine Learning (EML) Lab hosted its inaugural Energy Conference, bringing together industry practitioners, policymakers, and researchers for focused discussions on AI-powered load forecasting. The event highlighted EML Lab's development of transparent, self-diagnostic forecasting systems tailored to economic, financial, and energy data.</p>
+                        
+                        <h4>Distinguished External Speakers</h4>
+                        
+                        <p>The conference featured three distinguished external speakers who brought diverse perspectives on energy forecasting:</p>
+                        <ul>
+                            <li><strong>Honorable Greg Ballard</strong>, Former Mayor of Indianapolis, provided leadership perspectives on energy policy and innovation at a critical moment for Indiana. His remarks emphasized the intersection of rising energy costs and the ongoing AI transformation across the economy, underscoring the importance of developing forecasting capabilities that both reduce consumer costs and support workforce preparation for the AI era.</li>
+                            <li><strong>Kenneth B. Medlock III</strong>, James A. Baker III and Susan G. Baker Fellow in Energy and Resource Economics; Senior Director, Center for Energy Studies, Rice University, presented virtually, offering insights into electricity market dynamics. Drawing on experience spanning trading operations, industry consultations, and energy research leadership, he explained how renewable integration and battery adoption are increasing market volatility and creating new arbitrage opportunities. His analysis highlighted why accurate real-time forecasting has become central to operational and strategic decision-making.</li>
+                            <li><strong>Kristian Doty</strong>, Principal Forecasting Analyst, Midcontinent Independent System Operator (MISO), participated throughout the day, presenting detailed insights into MISO's short- and medium-term load forecasting processes and operational workflows. His engagement with EML's live dashboard demonstration reinforced the operational relevance of the Lab's approach.</li>
+                        </ul>
+                        
+                        <h4>AI-Powered Load Forecasting: The ART Framework</h4>
+                        
+                        <p>EML's AI-powered load forecasting system is fully automated and continuously self-updating. What distinguishes this system from conventional black-box forecasters is its ART framework:</p>
+                        <ul>
+                            <li><strong>Adaptability:</strong> Producing reliable forecasts in evolving environments</li>
+                            <li><strong>Robustness:</strong> Reducing exposure to model instability and failure risks</li>
+                            <li><strong>Transparency:</strong> Supporting automated self-diagnosis and self-revision</li>
+                        </ul>
+                        <p>Unlike opaque forecasting systems that provide predictions without explanation, EML's approach integrates counterfactual decomposition to analyze the structural drivers of its forecasts.</p>
+                        
+                        <h4>Live Demonstration: Self-Diagnosis and Self-Revision in Real Time</h4>
+                        
+                        <p>A continuous dashboard display demonstrated the system's ability to diagnose and refine itself in real time. For 272 days of day-ahead load forecasts (January 1 – September 20, 2025), the dashboard displayed:</p>
+                        <ul>
+                            <li>Forecasts alongside realized loads</li>
+                            <li>Counterfactual decompositions capturing day-type and temperature effects unique to each day</li>
+                        </ul>
+                        <p>This decomposition allows operators to understand not only the forecast outcome, but the components contributing to it. When deviations occur, the system identifies which elements require adjustment. The result is a forecasting framework that supports trust, operational decision-making, and systematic improvement.</p>
+                        
+                        <h4>The Intellectual Contribution</h4>
+                        
+                        <p>The central contribution demonstrated at the conference was the development of forecasting systems capable of self-diagnosis and self-revision through counterfactual decomposition. Rather than focusing solely on forecast accuracy, the approach emphasizes interpretability and structured self-revision. This reflects a broader insight: economic, financial, and energy data are characterized by weak signals embedded in high noise and shaped by institutional and behavioral dynamics. Standard machine learning tools are not designed for this environment. By customizing ML methods guided by economic theory and advanced econometric methodologies, EML preserves interpretability while retaining predictive strength.</p>
+                        
+                        <h4>Distinctive Features of the Conference</h4>
+                        
+                        <p>The conference centered on a live demonstration of a fully operational forecasting system. Participants observed:</p>
+                        <ul>
+                            <li>Consistently small forecast errors using publicly available data</li>
+                            <li>Fully automated operation without discretionary human adjustments</li>
+                            <li>Clear identification of improvement pathways through structured diagnostics</li>
+                        </ul>
+                        <p>The discussions that followed focused on operational integration, data collaboration, and future partnerships.</p>
+                        
+                        <h4>Community and Forward Path</h4>
+                        
+                        <p>Though intentionally small in scale, the conference facilitated substantive exchange among practitioners, policymakers, researchers, and students. The focused format enabled detailed discussion of grid-level operational challenges and potential collaboration.</p>
+                        
+                        <p>The event established a foundation for continued engagement with industry and policy partners and for pursuing applied research initiatives in energy forecasting and AI-driven economic modeling.</p>
+                        
+                        <p>The conference marks an important step in EML Lab's broader effort to rethink how econometric structure and machine learning should be jointly deployed in operational forecasting, particularly in settings where transparency, interpretability, and structured self-diagnosis are essential for responsible decision-making.</p>
+                        
+                        <p>For more information about EML Lab's research and upcoming events, visit <a href="https://eml-lab.github.io" target="_blank">eml-lab.github.io</a>.</p>
+                    </div>
+                </div>
+
+                <!-- DROPDOWN 2 -->
+                <div class="dropdown-box">
+                    <div class="dropdown-title" onclick="toggleBox('box2')">
+                        <span>✉️ Letter from the Executive Director</span>
+                        <span class="dropdown-arrow" id="arrow2">▼</span>
+                    </div>
+                    <div class="dropdown-text" id="box2">
+                        <p>Dear Conference Participants,</p>
+                        
+                        <p>Thank you for making our inaugural EML Energy Conference on "Electricity Demand Forecasting in the AI Era" such a meaningful event.</p>
+                        
+                        <p>I am especially grateful to our external speakers:</p>
+                        
+                        <p><strong>Honorable Greg Ballard</strong> for providing leadership perspectives on how AI-driven forecasting connects to Indiana's energy costs and broader economic transformation;</p>
+                        
+                        <p><strong>Kenneth Medlock</strong> for clarifying how renewables, battery adoption, and market volatility make accurate real-time forecasting increasingly critical;</p>
+                        
+                        <p><strong>Kristian Doty</strong> for offering invaluable insights into MISO's operational forecasting and engaging deeply with our live demonstration.</p>
+                        
+                        <p>What we were able to showcase was more than a forecasting model. We demonstrated a fully operational AI system built around what we call the ART framework — Adaptability, Robustness, and Transparency.</p>
+                        
+                        <p>The live dashboard displaying 272 days of day-ahead forecasts, together with counterfactual decompositions of day-type and temperature effects, illustrated our central idea: a forecasting system should not only predict, but also explain, diagnose, and improve itself in real time.</p>
+                        
+                        <p>This combination of econometric foundations and customized machine learning — specifically tailored to economic, financial, and energy data — distinguishes our approach from black-box forecasters. Transparency enables trust, operational relevance, and continuous improvement.</p>
+                        
+                        <p>Equally important were the discussions. The focused format allowed for substantive exchange among practitioners, policymakers, researchers, and students. The engagement from all of you — including our student fellows and visiting scholars — made the day especially productive. We are encouraged by the interest expressed in further collaboration and partnership.</p>
+                        
+                        <p>A fuller summary of the conference is available above, including details on the ART framework and our next steps. Presentation files and a link to our dashboard will also be posted on the EML website.</p>
+                        
+                        <p>Thank you again for being part of this milestone event. Your participation helped establish an important foundation for EML's work in energy forecasting and future engagement with industry and policy partners.</p>
+                        
+                        <div class="signature">
+                            <p>All the best,</p>
+                            <p>Yoosoon Chang</p>
+                            <p>Executive Director, EML Lab</p>
+                            <p>Indiana University Bloomington</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Presenters Section -->
+    <section class="section presenters-section">
+        <div class="section-content">
+            <h2>Featured Presenters</h2>
+            <p style="font-size: 1.1rem; text-align: center; max-width: 800px; margin: 0 auto 3rem; color: #666;">
+                Our distinguished lineup brought together leading experts from government, industry, and academia to share cutting-edge insights in energy forecasting and AI-driven economic modeling.
+            </p>
+            
+            <div class="presenters-grid">
+                <!-- External Speakers -->
+                <div class="presenter-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M3 21h18"></path>
+                                <path d="M5 21V7l8-4v18"></path>
+                                <path d="M19 21V11l-6-4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="category-title">Distinguished External Speakers</h3>
+                    </div>
+                    <ul class="presenter-list">
+                        <li class="presenter-item">
+                            <div class="presenter-name">Hon. Greg Ballard</div>
+                            <div class="presenter-affiliation">Former Mayor of Indianapolis<br>Energy Policy & Innovation</div>
+                        </li>
+                        <li class="presenter-item">
+                            <div class="presenter-name">Kenneth B. Medlock III</div>
+                            <div class="presenter-affiliation">James A. Baker III and Susan G. Baker Fellow in Energy and Resource Economics; Senior Director, Center for Energy Studies<br>Rice University</div>
+                        </li>
+                        <li class="presenter-item">
+                            <div class="presenter-name">Kristian Doty</div>
+                            <div class="presenter-affiliation">Principal Forecasting Analyst<br>Midcontinent Independent System Operator (MISO)</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- EML Lab Presenters -->
+                <div class="presenter-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M9 12l2 2 4-4"></path>
+                                <path d="M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3"></path>
+                                <path d="M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3"></path>
+                                <path d="M12 21c0-1-1-3-3-3s-3 2-3 3 1 3 3 3 3-2 3-3"></path>
+                                <path d="M12 3c0 1 1 3 3 3s3-2 3-3-1-3-3-3-3 2-3 3"></path>
+                            </svg>
+                        </div>
+                        <h3 class="category-title">EML Research Team</h3>
+                    </div>
+                    <ul class="presenter-list">
+                        <li class="presenter-item">
+                            <div class="presenter-name">Yoosoon Chang</div>
+                            <div class="presenter-affiliation">Indiana University<br>EML Lab Executive Director</div>
+                        </li>
+                        <li class="presenter-item">
+                            <div class="presenter-name">Joon Park</div>
+                            <div class="presenter-affiliation">Indiana University<br>EML Lab Research Director</div>
+                        </li>
+                        <li class="presenter-item">
+                            <div class="presenter-name">Yongok Choi</div>
+                            <div class="presenter-affiliation">Chung-Ang University<br>EML External Fellow</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Participants Section -->
+    <section class="section section-light">
+        <div class="section-content">
+            <h2>Conference Participants</h2>
+            
+            <div class="participants-grid">
+                <div class="participant-card">
+                    <div class="participant-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M3 21h18"></path>
+                            <path d="M5 21V7l8-4v18"></path>
+                            <path d="M19 21V11l-6-4"></path>
+                        </svg>
+                    </div>
+                    <h3>Industry Practitioners</h3>
+                    <p>Energy market professionals, grid operators, and forecasting analysts from leading energy organizations, sharing real-world operational insights and methodologies.</p>
+                </div>
+                
+                <div class="participant-card">
+                    <div class="participant-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
+                    <h3>Policymakers</h3>
+                    <p>Government leaders and policy advisors focused on energy innovation, infrastructure planning, and the economic implications of AI-driven transformation.</p>
+                </div>
+                
+                <div class="participant-card">
+                    <div class="participant-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                            <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                        </svg>
+                    </div>
+                    <h3>Researchers & Faculty</h3>
+                    <p>Academic researchers and faculty members working at the intersection of econometrics, machine learning, and energy systems, advancing interpretable forecasting methodologies.</p>
+                </div>
+                
+                <div class="participant-card">
+                    <div class="participant-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+                    <h3>Student Fellows & Visiting Scholars</h3>
+                    <p>Graduate students, EML student fellows, and visiting scholars actively engaged in quantitative research in energy forecasting and AI-driven economic modeling.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section section-light">
+        <div class="section-content">
+            <h2>About the Conference</h2>
+            <p style="font-size: 1.2rem; text-align: center; max-width: 800px; margin: 0 auto 3rem; color: #666;">
+                The inaugural EML Energy Conference represents a focused initiative to advance AI-powered forecasting for electricity demand in collaboration with industry and policy partners.
+            </p>
+            
+            <p style="text-align: center; max-width: 900px; margin: 0 auto; line-height: 1.8;">
+                This one-day intensive event brought together energy practitioners, policymakers, researchers, and students for substantive discussions on how econometric structure and machine learning should be jointly deployed in operational energy forecasting. The conference centered on a live demonstration of EML's fully operational AI-powered load forecasting system, built around the ART framework of Adaptability, Robustness, and Transparency. The focused format enabled detailed exchange on grid-level operational challenges, data collaboration, and future partnerships.
+            </p>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h2 style="color: white; margin-bottom: 1rem;">Join Us for Future Events</h2>
+            <p style="font-size: 1.2rem; opacity: 0.9; margin-bottom: 2rem;">
+                Be part of the future of AI-powered energy forecasting and economic machine learning. Stay informed about upcoming events and opportunities.
+            </p>
+            <div class="cta-buttons">
+                <a href="#" class="cta-button primary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                    Get Updates
+                </a>
+                <a href="contact.html" class="cta-button">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"></path>
+                    </svg>
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function toggleBox(id) {
+            var content = document.getElementById(id);
+            var arrow = document.getElementById('arrow' + id.replace('box', ''));
+            
+            if (content.classList.contains('show')) {
+                content.classList.remove('show');
+                arrow.innerHTML = '▼';
+            } else {
+                content.classList.add('show');
+                arrow.innerHTML = '▲';
+            }
+        }
+    </script>
+</body>
+</html>
