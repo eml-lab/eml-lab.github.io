@@ -1,0 +1,122 @@
+/* =====================================================
+   Dashboard Container
+===================================================== */
+
+.dashboard-container {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 22px rgba(0,0,0,.08);
+    overflow: hidden;
+}
+
+.dashboard-container-header {
+    padding: 2rem;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.dashboard-container-header h2 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.dashboard-container-header p {
+    margin-top: 0.75rem;
+    color: #555;
+    line-height: 1.7;
+}
+
+.dashboard-container-content {
+    aspect-ratio: 16 / 9;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(
+        135deg,
+        #eef3fa,
+        #dde6f2
+    );
+}
+
+.dashboard-container-content--active {
+    aspect-ratio: auto;
+    display: block;
+    width: 100%;
+    min-width: 0;
+}
+
+.dashboard-coming-soon {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #6d7d91;
+    letter-spacing: 0.03em;
+}
+
+/* ---------- Research Areas ---------- */
+
+.research-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+
+    max-width: 900px;
+    margin: 2rem auto 0;
+}
+
+.research-tag {
+    background: white;
+    border: 1px solid #d7dce4;
+    border-radius: 12px;
+
+    padding: 1rem 1.5rem;
+
+    text-align: center;
+    font-weight: 600;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,.05);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.research-tag:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0,0,0,.10);
+}
+
+/* ---------- Navigation ---------- */
+
+.dashboard-navigation {
+    display: flex;
+    justify-content: center;
+    margin: 4rem 0 2rem;
+}
+
+.dashboard-back-link {
+    display: inline-block;
+
+    padding: 0.85rem 1.75rem;
+
+    border: 1px solid #d7dce4;
+    border-radius: 999px;
+
+    background: white;
+
+    text-decoration: none;
+    color: #0057b8;
+
+    font-weight: 600;
+
+    transition:
+        background .2s ease,
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.dashboard-back-link:hover {
+    background: #f8fafc;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,.08);
+}

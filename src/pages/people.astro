@@ -1,0 +1,96 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/people.css";
+---
+
+<BaseLayout title="People | Economic Machine Learning Lab">
+
+<!-- Banner Section -->
+    <section class="banner">
+        <div class="banner-content">
+            <h1>People</h1>
+            <p>Meet the faculty, student fellows, and collaborators who make up the EML.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container people-layout">
+        <main>
+    <section class="people-intro-panel">
+        <p class="people-intro-label">
+            Meet the EML Community
+        </p>
+
+        <h2>
+            Faculty, students, and collaborators.
+        </h2>
+
+        <p>
+            The Economic Machine Learning Lab brings together faculty,
+            student fellows, researchers, and collaborators working at
+            the intersection of economics and machine learning.
+        </p>
+
+        <p>
+            Our community spans research, education, and interdisciplinary
+            collaboration, creating opportunities for students and researchers
+            to contribute to innovative projects and initiatives.
+        </p>
+    </section>
+
+    <section class="people-section">
+        <h3 class="people-subtitle">
+            Leadership
+        </h3>
+
+    <p class="section-intro">
+        Meet the faculty who lead the Economic Machine Learning Lab
+        and guide its research, education, and outreach activities.
+    </p>
+
+        <a href="/directors"
+            class="people-card featured-people-card">
+
+            <div>
+                <h3>Directors</h3>
+
+                <p>
+                    Learn about the EML directors who provide leadership,
+                    mentorship, and strategic direction for the lab's
+                    research and educational initiatives.
+                </p>
+            </div>
+
+            <span>Learn more &rarr;</span>
+        </a>
+
+        <h3 class="people-subtitle secondary-subtitle">
+            Our Community
+        </h3>
+        
+        <div class="people-grid-landing">
+            <a href="/students" class="people-card secondary-people-card">
+                <h3>Student Fellows</h3>
+                <p>
+                    Meet the student fellows who contribute to EML
+                    research, conferences, workshops, and interdisciplinary
+                    projects.
+                </p>
+                <span>Learn more &rarr;</span>
+            </a>
+
+            <a href="/collaborators" class="people-card secondary-people-card">
+                <h3>Collaborators</h3>
+                <p>
+                    Explore the researchers and institutional partners
+                    who extend the lab's work through collaborative
+                    research and shared initiatives.
+                </p>
+                <span>Learn more &rarr;</span>
+            </a>
+        </div>
+    </section>
+</main>
+    </div>
+
+</BaseLayout>

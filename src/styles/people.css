@@ -1,0 +1,172 @@
+.people-layout {
+    grid-template-columns: 1fr;
+}
+
+.section-intro {
+    max-width: 700px;
+    margin: -0.5rem auto 2rem;
+    text-align: center;
+    color: #666;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.people-subtitle {
+    margin-top: 4rem;
+    margin-bottom: 1.5rem;
+
+    color: #990000;
+
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.secondary-subtitle {
+    margin-top: 4rem;
+}
+
+.featured-people-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    min-height: 250px;
+    padding: 2.5rem;
+
+    margin-bottom: 4rem;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.featured-people-card:hover {
+    transform: translateY(-6px);
+    border-color: #b31b1b;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.10);
+}
+
+.featured-people-card h3 {
+    font-size: 2rem;
+    margin-bottom: 1.25rem;
+}
+
+.featured-people-card p {
+    font-size: 1.15rem;
+    line-height: 1.75;
+}
+
+.featured-people-card span {
+    display: inline-block;
+    margin-top: 2rem;
+    font-weight: 600;
+}
+
+.people-grid-landing {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+}
+
+.people-intro-panel {
+    position: relative;
+    z-index: 2;
+
+    max-width: 1120px;
+    margin: -2rem auto 4.5rem;
+    padding: 2.75rem 3rem;
+
+    background: white;
+
+    border: 1px solid rgba(153, 0, 0, 0.08);
+    border-radius: 22px;
+
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
+}
+
+.people-intro-panel .people-intro-label {
+    margin: 0 0 0.75rem;
+
+    color: #990000;
+
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.people-intro-panel h2 {
+    max-width: none;
+    margin: 0 0 1.5rem;
+
+    color: #222;
+
+    font-size: clamp(2rem, 3.2vw, 2.75rem);
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+    white-space: nowrap;
+}
+
+.people-intro-panel p {
+    max-width: 850px;
+    margin: 0 0 1rem;
+
+    color: #555;
+
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.people-intro-panel p:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 700px) {
+    .people-intro-panel {
+        margin: -1.5rem 1rem 3.5rem;
+        padding: 2rem 1.5rem;
+
+        border-radius: 18px;
+    }
+
+    .people-intro-panel h2 {
+        font-size: 2rem;
+        white-space: normal;
+    }
+}
+
+.secondary-people-card {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 220px;
+    padding: 2rem;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.secondary-people-card:hover {
+    transform: translateY(-6px);
+    border-color: #b31b1b;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.10);
+}
+
+.secondary-people-card h3 {
+    margin-bottom: 1rem;
+}
+
+.secondary-people-card p {
+    flex: 1;
+    color: #666;
+    line-height: 1.7;
+}
+
+.secondary-people-card span {
+    display: inline-block;
+    margin-top: 1.5rem;
+    font-weight: 600;
+}

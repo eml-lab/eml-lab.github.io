@@ -1,0 +1,99 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import FeaturedCarousel from "../components/FeaturedCarousel.astro";
+import { featuredItems } from "../data/featured";
+import NewsList from "../components/NewsList.astro";
+import InitiativeList from "../components/InitiativeList.astro";
+
+import "../styles/home.css";
+
+---
+
+<BaseLayout title="Economic Machine Learning Lab">
+
+        <!-- Hero -->
+    <section class="home-hero">
+        <div class="home-hero-content">
+            <h1>Advancing Economic Research in the Era of ML and AI</h1>
+            <p class="home-hero-description">
+                Developing new methods, tools, and research collaborations for
+                understanding large and complex economic data.
+            </p>
+        </div>
+    </section>
+
+    <main class="home-page">
+        <!-- Featured Carousel -->
+        <section class="home-section featured-carousel-section">
+            <div class="section-heading">
+                <p class="section-label">Featured</p>
+                <h2>Research, Data, and Services from EML</h2>
+            </div>
+            <FeaturedCarousel items={featuredItems} />
+        </section>
+
+        <!-- Highlights and News -->
+        <section class="home-section home-updates-grid">
+            <div class="featured-highlights">
+                <div class="section-heading">
+                    <p class="section-label">Featured Highlights</p>
+                    <h2>Recent EML initiatives</h2>
+                </div>
+
+                <InitiativeList limit={2} />
+            </div>
+
+            <aside class="recent-news">
+                <div class="section-heading">
+                    <p class="section-label">Updates</p>
+                    <h2>Recent News &amp; Events</h2>
+                </div>
+                <NewsList limit={4} />
+                
+            </aside>
+        </section>
+
+        <!-- Explore EML -->
+        <section class="home-section explore-eml-section">
+            <div class="section-heading">
+                <p class="section-label">Explore EML</p>
+                <h2>Discover the lab</h2>
+            </div>
+
+            <div class="explore-grid">
+                <a class="explore-card" href="/activities">
+                    <h3>Research</h3>
+                    <p>Explore the lab’s research activities and ongoing work.</p>
+                </a>
+
+                <a class="explore-card" href="/publications">
+                    <h3>Publications</h3>
+                    <p>Read research produced by EML faculty and collaborators.</p>
+                </a>
+
+                <a class="explore-card" href="/dashboards">
+                    <h3>Dashboards</h3>
+                    <p>Interact with economic data and forecasting tools.</p>
+                </a>
+
+                <a class="explore-card" href="/people">
+                    <h3>People</h3>
+                    <p>Meet EML directors, students, and collaborators.</p>
+                </a>
+
+                <a class="explore-card" href="/about">
+                    <h3>About</h3>
+                    <p>Learn about the lab’s mission, goals, and activities.</p>
+                </a>
+                
+                <div class="explore-card explore-card-placeholder">
+                    <h3>Services</h3>
+                    <p>Learn about data, forecasting, and analytical services.</p>
+                    <span>Coming soon</span>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+</BaseLayout>

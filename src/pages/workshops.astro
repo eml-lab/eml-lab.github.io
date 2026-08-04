@@ -1,0 +1,146 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/workshops.css";
+import { getCollection } from "astro:content";
+
+const workshops = await getCollection("workshops");
+
+workshops.sort((a, b) => a.data.order - b.data.order);
+
+const featured = workshops.find((w) => w.data.featured);
+const courses = workshops.filter((w) => !w.data.featured);
+---
+
+<BaseLayout title="Workshops & Courses">
+
+    <section class="banner">
+        <div class="banner-content">
+            <h1>Workshops & Courses</h1>
+            <p>Advanced training in econometric methods and applications</p>
+        </div>
+    </section>
+
+    <div class="container workshops-layout">
+        <main class="main-content">
+
+            <section class="training-intro">
+                <h2>Training and Learning Opportunities</h2>
+
+                <p>
+                    The Economic Machine Learning Lab supports training in modern econometric and machine learning methods through workshops, graduate courses, and lecture series.
+                </p>
+
+                <p>
+                    These activities are designed to help students and researchers engage with tools for high-dimensional data, functional data analysis, machine learning, and economic applications.
+                </p>
+            </section>
+
+            {featured && (
+                <section class="training-section">
+
+                    <h2>Featured Training</h2>
+
+                    <div class="training-card featured-training-card">
+
+                        <h3>{featured.data.title}</h3>
+
+                        <div class="training-meta">
+                            <span>{featured.data.date}</span>
+                            <span>Instructors: {featured.data.instructors}</span>
+                        </div>
+
+                        <p>{featured.data.description}</p>
+
+                        <ul>
+                            {featured.data.topics.map((topic) => (
+                                <li>{topic}</li>
+                            ))}
+                        </ul>
+
+                        <a
+                            href={featured.data.buttonLink}
+                            class="training-link"
+                        >
+                            {featured.data.buttonText}
+                        </a>
+
+                    </div>
+
+                </section>
+            )}
+
+            <section class="training-section">
+
+                <h2>Courses and Lecture Series</h2>
+
+                <div class="training-grid">
+
+                    {courses.map((course) => (
+
+                        <div class="training-card">
+
+                            <h3>{course.data.title}</h3>
+
+                            <div class="training-meta">
+
+                                {course.data.date && (
+                                    <span>{course.data.date}</span>
+                                )}
+
+                                <span>
+                                    Instructor{course.data.instructors.includes(",") ? "s" : ""}: {course.data.instructors}
+                                </span>
+
+                            </div>
+
+                            <p>{course.data.description}</p>
+
+                            {course.data.topics.length > 0 && (
+                                <ul>
+                                    {course.data.topics.map((topic) => (
+                                        <li>{topic}</li>
+                                    ))}
+                                </ul>
+                            )}
+
+                            {course.data.resources.length > 0 ? (
+
+                                <ul class="resource-links">
+                                    {course.data.resources.map((resource) => (
+                                        <li>
+                                            <a
+                                                href={resource.url}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                                {resource.title}
+                                            </a>
+                                        </li>
+                                    ))}
+                                </ul>
+
+                            ) : (
+
+                                <a
+                                    href={course.data.buttonLink}
+                                    class="training-link"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    {course.data.buttonText}
+                                </a>
+
+                            )}
+
+                        </div>
+
+                    ))}
+
+                </div>
+
+            </section>
+
+        </main>
+    </div>
+
+</BaseLayout>

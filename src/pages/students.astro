@@ -1,0 +1,71 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/students.css";
+import { getCollection } from "astro:content";
+
+const students = await getCollection("students");
+
+students.sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout title="Student Fellows">
+
+    <section class="banner">
+        <div class="banner-content">
+            <h1>Student Fellows</h1>
+            <p>Graduate student researchers contributing to the lab's work</p>
+        </div>
+    </section>
+
+    <div class="container students-layout">
+        <main class="main-content">
+            <section class="student-intro">
+                <h2>Student Fellows</h2>
+                <p>Student fellows contribute to research across machine learning, econometrics, causal inference, time series, energy economics, and related fields. This page highlights current fellows, their research interests, and contact information.</p>
+            </section>
+
+            <div class="people-grid">
+                {students.map((student) => (
+                    <div class="person-card">
+                        <div class="person-header">
+                            <div class="person-placeholder">{student.data.initials}</div>
+                            <div class="person-heading">
+                                <h3 class="person-name">{student.data.name}</h3>
+                                <p class="person-title">{student.data.title}</p>
+                            </div>
+                        </div>
+
+                        <div class="person-info">
+                            <div class="person-section">
+                                <h4>{student.data.interestLabel}</h4>
+
+                                {student.data.research.length > 0 ? (
+                                    <div class="interest-tags">
+                                        {student.data.research.map((interest) => (
+                                            <span class="interest-tag">{interest}</span>
+                                        ))}
+                                    </div>
+                                ) : (
+                                    <p class="empty-note">Research interests forthcoming.</p>
+                                )}
+                            </div>
+
+                            <div class="person-actions">
+                                <a href={`mailto:${student.data.email}`} class="person-link">
+                                    Email: {student.data.email}
+                                </a>
+
+                                {student.data.website && (
+                                    <a href={student.data.website} class="person-link">
+                                        Personal Website
+                                    </a>
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </main>
+    </div>
+
+</BaseLayout>

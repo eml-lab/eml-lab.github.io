@@ -1,0 +1,226 @@
+.presentations-intro {
+    margin-bottom: 3rem;
+    padding: 2.5rem 2.75rem;
+
+    background: white;
+
+    border-left: 6px solid #990000;
+    border-radius: 14px;
+
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.presentations-intro h2 {
+    margin-bottom: 1.25rem;
+
+    color: #333;
+
+    font-size: 1.8rem;
+}
+
+.presentations-intro p {
+    max-width: none;
+    margin-bottom: 1rem;
+
+    color: #555;
+
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.presentations-intro p:last-child {
+    margin-bottom: 0;
+}
+
+.presentation-section h2 {
+    color: #990000;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+        .presentation-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .upcoming-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0 3rem;
+        }
+        .presentation-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+            border: 1px solid #eee;
+        }
+        .presentation-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+        }
+        .featured-presentation-card {
+            border: 2px solid #990000;
+        }
+        .presentation-header {
+            padding: 1.5rem;
+            background: linear-gradient(to right, #990000, #800000);
+            color: white;
+        }
+        .upcoming-header {
+            background: linear-gradient(to right, #990000, #800000);
+        }
+        .presentation-header h3 {
+            font-size: 1.25rem;
+            line-height: 1.35;
+        }
+        .presentation-content {
+            padding: 1.5rem;
+        }
+        .presentation-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 1rem 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .meta-item svg {
+            width: 16px;
+            height: 16px;
+        }
+        .presentation-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .presentation-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        .presentation-link:hover {
+            background-color: #666;
+        }
+        .section-title {
+            color: #990000;
+            margin: 3rem 0 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #eee;
+        }
+        .archive-details {
+            margin-top: 3rem;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+            overflow: hidden;
+        }
+        .archive-details summary {
+            cursor: pointer;
+            list-style: none;
+            padding: 1.5rem 2rem;
+            color: #990000;
+            font-size: 1.5rem;
+            font-weight: 700;
+            border-bottom: 1px solid #eee;
+        }
+        .archive-details summary::-webkit-details-marker {
+            display: none;
+        }
+        .archive-details summary::before {
+            content: "▶";
+            display: inline-block;
+            margin-right: 0.75rem;
+            transition: transform 0.2s ease;
+        }
+        .archive-details[open] summary::before {
+            transform: rotate(90deg);
+        }
+        .archive-content {
+            padding: 0 2rem 2rem;
+        }
+        .year-section {
+            margin-top: 2.5rem;
+        }
+        .year-header {
+            color: #990000;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #eee;
+        }
+        .wkf-photos {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+        }
+        .simple-photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        .simple-photo-item {
+            text-align: center;
+        }
+        .photo-frame {
+            background: #f8f9fa;
+            padding: 8px;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+            transition: box-shadow 0.3s ease;
+        }
+        .photo-frame:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .photo-frame img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 4px;
+            display: block;
+        }
+        .simple-photo-caption {
+            margin: 0.75rem 0 0 0;
+            font-size: 0.9rem;
+            color: #555;
+            font-weight: 500;
+        }
+        @media (max-width: 768px) {
+            .upcoming-grid {
+                grid-template-columns: 1fr;
+            }
+            .archive-details summary,
+            .archive-content {
+                padding-left: 1.25rem;
+                padding-right: 1.25rem;
+            }
+        }
+
+        .presentations-layout {
+            grid-template-columns: 1fr;
+        }
+
+        .presentation-paragraph {
+            margin-bottom: 1rem;
+        }
+
+        .event-photos-heading {
+            margin: 1.5rem 0 1rem;
+            color: #333;
+            font-size: 1rem;
+        }

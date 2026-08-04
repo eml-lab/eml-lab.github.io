@@ -1,0 +1,43 @@
+---
+import { getCollection } from "astro:content";
+import { formatDateRange } from "../utils/date";
+
+interface Props {
+  limit?: number;
+}
+
+const { limit = 4 } = Astro.props;
+
+const initiatives = (await getCollection("initiatives"))
+  .sort(
+    (a, b) =>
+      b.data.startDate.getTime() -
+      a.data.startDate.getTime()
+  )
+  .slice(0, limit);
+---
+
+<div class="initiatives-list">
+  {initiatives.map((item) => (
+    <article class="initiatives-card">
+      <p class="initiatives-date">
+        {formatDateRange(item.data.startDate, item.data.endDate)}
+      </p>
+
+      <h3>
+        {item.data.link ? (
+          <a href={item.data.link}>{item.data.title}</a>
+        ) : (
+          item.data.title
+        )}
+      </h3>
+
+      <p>{item.data.description}</p>
+
+      {item.data.location && (
+        <p class="initiatives-location">{item.data.location}</p>
+      )}
+
+    </article>
+  ))}
+</div>

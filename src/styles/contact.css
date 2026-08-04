@@ -1,0 +1,116 @@
+.contact-container {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 2rem;
+            margin: 2rem 0;
+            align-items: start;
+        }
+
+        .contact-main,
+        .contact-side {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        .contact-main h2 {
+            font-size: 2rem;
+            margin-top: 0;
+            margin-bottom: 1.25rem;
+            color: #333;
+        }
+
+        .contact-main p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #444;
+        }
+
+        .email-card {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: #faf7f7;
+            border-left: 5px solid #990000;
+            border-radius: 6px;
+        }
+
+        .email-card h3 {
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+            color: #333;
+            font-size: 1.05rem;
+        }
+
+        .email-card a {
+            color: #990000;
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-decoration: none;
+        }
+
+        .email-card a:hover {
+            text-decoration: underline;
+        }
+
+        .inquiry-list {
+            margin-top: 2rem;
+        }
+
+        .inquiry-list h3,
+        .contact-side h3 {
+            color: #990000;
+            font-size: 1.35rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .inquiry-item {
+            padding: 0.85rem 0;
+            border-bottom: 1px solid #eee;
+            color: #444;
+            font-size: 1rem;
+        }
+
+        .inquiry-item:last-child {
+            border-bottom: none;
+        }
+
+        .address-block {
+            display: grid;
+            grid-template-columns: 32px 1fr;
+            gap: 1rem;
+            align-items: start;
+            margin-bottom: 2rem;
+        }
+
+        .address-block svg {
+            width: 24px;
+            height: 24px;
+            color: #990000;
+            margin-top: 0.15rem;
+        }
+
+        .address-block p {
+            margin: 0 0 0.45rem 0;
+            color: #444;
+            line-height: 1.45;
+        }
+
+        .note-box {
+            background: #f7f7f7;
+            border-radius: 6px;
+            padding: 1.25rem;
+            color: #555;
+            line-height: 1.6;
+            margin-top: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .contact-layout {
+            grid-template-columns: 1fr;
+        }

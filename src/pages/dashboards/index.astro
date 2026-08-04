@@ -1,0 +1,53 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import "../../styles/dashboards.css";
+import DashboardCard from "../../components/DashboardCard.astro";
+---
+
+<BaseLayout title="Interactive Economic Data | Economic Machine Learning Lab">
+
+    <section class="dashboard-hero">
+        <div class="dashboard-hero-content">
+
+            <h1>Interactive Dashboards</h1>
+
+            <p class="dashboard-hero-description">
+                Explore economic questions through interactive visualizations,
+                data tools, and analytical dashboards.
+            </p>
+        </div>
+    </section>
+
+    <main class="dashboards-layout">
+        <section class="dashboard-catalog">
+            <div class="dashboards-grid">
+
+                <DashboardCard
+                    title="Energy"
+                    description="Explore electricity markets, energy forecasting, and related economic data."
+                    href="/dashboards/energy"
+                />
+
+                <DashboardCard
+                    title="Finance"
+                    description="Explore financial markets, asset pricing, and machine learning applications in finance."
+                    href="/dashboards/finance"
+                />
+
+                <DashboardCard
+                    title="Macroeconomics"
+                    description="Explore macroeconomic indicators, forecasting, policy analysis, and economic dynamics."
+                    href="/dashboards/macro"
+                />
+
+                <DashboardCard
+                    title="Health Economics and Mobility"
+                    description="Explore healthcare data, health outcomes, and questions in health economics."
+                    href="/dashboards/health"
+                />
+
+            </div>
+        </section>
+    </main>
+
+</BaseLayout>

@@ -1,0 +1,114 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/directors.css";
+import { getCollection } from "astro:content";
+
+const directors = await getCollection("directors");
+
+directors.sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout title="Directors">
+
+    <section class="banner">
+        <div class="banner-content">
+            <h1>Directors</h1>
+            <p>Leadership of the Economic Machine Learning Lab</p>
+        </div>
+    </section>
+
+    <div class="container directors-layout">
+        <main class="main-content">
+            <div class="directors-wrap">
+                <section class="leadership-intro">
+                        <h2>Guiding Research at the Intersection of Econometrics, Machine Learning, and Economic Data.</h2>
+                        <p>The Economic Machine Learning Lab is led by two faculty directors whose complementary expertise shapes the lab's research agenda, collaborations, and student development. Together, they support projects that connect econometric theory, machine learning methods, and applied economic questions.</p>
+                        <div class="role-structure" aria-label="Director role structure">
+                            <div class="role-note">
+                                <h3>Executive Director</h3>
+                                <p>Provides strategic leadership for the lab, including institutional direction, external partnerships, student development, and the broader integration of EML research with the lab's mission.</p>
+                            </div>
+                            <div class="role-note">
+                                <h3>Research Director</h3>
+                                <p>Guides the lab's research agenda, with emphasis on methodological development, research standards, collaborative projects, and the scientific direction of EML work.</p>
+                            </div>
+                    </div>
+                </section>
+
+                <section class="directors-grid" aria-label="EML Lab directors">
+                    {directors.map((director) => (
+                        <article class="director-card">
+                            <div class="director-image-wrap">
+                                <img
+                                src={director.data.image}
+                                alt={director.data.name}
+                                class="director-photo"
+                                />
+                            </div>
+
+                            <div class="director-content">
+                                <div class="director-header">
+                                    <h2>{director.data.name}</h2>
+                                    <p class="director-title">
+                                        {director.data.title.split("\n").map((line, index) => (
+                                            <>
+                                                {line}
+                                                {index < director.data.title.split("\n").length - 1 && <br />}
+                                            </>
+                                        ))}
+                                    </p>
+
+                                    {director.data.badges.map((badge) => (
+                                        <span class="role-badge">{badge}</span>
+                                    ))}
+                                </div>
+
+                                <div class="director-section">
+                                    <h3>Background & Research Agenda</h3>
+                                    <p>{director.data.background1}</p>
+                                    <p>{director.data.background2}</p>
+                                </div>
+
+                                <div class="director-section">
+                                    <h3>Research Interests</h3>
+                                    <div class="tag-list">
+                                        {director.data.research.map((interest) => (
+                                            <span class="tag">{interest}</span>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                {director.data.highlights.length > 0 && (
+                                    <div class="highlight-box">
+                                        <h3>Selected Highlights</h3>
+                                        <ul class="highlight-list">
+                                            {director.data.highlights.map((highlight) => (
+                                                <li>
+                                                    <a href={highlight.url} target="_blank">
+                                                        {highlight.title}
+                                                    </a>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                )}
+
+                                <div class="quick-info">
+                                    <p><strong>Email:</strong> <a href={`mailto:${director.data.email}`}>{director.data.email}</a></p>
+                                    <p><strong>Office:</strong> {director.data.office}</p>
+                                    <p><strong>Education:</strong> {director.data.education}</p>
+                                </div>
+
+                                <div class="link-row">
+                                    <a href={director.data.facultyProfile} class="button-link" target="_blank">Faculty Profile</a>
+                                    <a href={director.data.cv} class="button-link secondary" target="_blank">CV / Working Papers</a>
+                                </div>
+                            </div>
+                        </article>
+                    ))}
+                </section>
+            </div>
+        </main>
+    </div>
+
+</BaseLayout>

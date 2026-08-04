@@ -1,0 +1,150 @@
+.training-intro {
+    margin-bottom: 3rem;
+    padding: 2.5rem 2.75rem;
+
+    background: white;
+
+    border-left: 6px solid #990000;
+    border-radius: 14px;
+
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.training-intro h2 {
+    margin-bottom: 1.25rem;
+
+    color: #333;
+
+    font-size: 1.8rem;
+}
+
+.training-intro p {
+    max-width: none;
+    margin-bottom: 1rem;
+
+    color: #555;
+
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.training-intro p:last-child {
+    margin-bottom: 0;
+}
+
+.training-section h2 {
+    color: #990000;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+        .training-card {
+            display: block;
+            background: white;
+            padding: 2rem;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            color: #333;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+
+        .training-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+            border-color: #990000;
+        }
+
+        .training-card h3 {
+            color: #990000;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .training-card p {
+            color: #444;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .training-card ul {
+            margin: 1rem 0 1rem 1.5rem;
+            line-height: 1.7;
+            color: #444;
+        }
+
+        .training-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1rem 0;
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .training-meta span {
+            background: #f5f5f5;
+            padding: 0.35rem 0.7rem;
+            border-radius: 999px;
+        }
+
+        .featured-training-card {
+            padding: 2.5rem;
+            border: 2px solid #990000;
+            background: #fffafa;
+            margin-bottom: 3rem;
+        }
+
+        .featured-training-card h3 {
+            font-size: 1.45rem;
+        }
+
+        .training-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 2rem;
+        }
+
+        .training-link {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.65rem 1.1rem;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .training-link:hover {
+            background-color: #666;
+        }
+
+        .resource-links {
+            list-style: none;
+            margin-left: 0 !important;
+        }
+
+        .resource-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .resource-links a {
+            color: #990000;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .resource-links a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .training-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .workshops-layout {
+            grid-template-columns: 1fr;
+        }

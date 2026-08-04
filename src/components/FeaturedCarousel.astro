@@ -1,0 +1,22 @@
+---
+import EmblaCarousel from "./EmblaCarousel";
+
+interface FeaturedItem {
+    category: string;
+    title: string;
+    description: string;
+    image: string;
+    primaryText: string;
+    primaryLink: string;
+    secondaryText?: string;
+    secondaryLink?: string;
+}
+
+interface Props {
+    items: FeaturedItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<EmblaCarousel client:load items={items} />

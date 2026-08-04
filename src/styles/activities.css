@@ -1,0 +1,231 @@
+.activities-layout {
+    grid-template-columns: 1fr;
+}
+
+.section-intro {
+    max-width: 700px;
+    margin: -0.5rem auto 2rem;
+    text-align: center;
+    color: #666;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.activities-section > h2 {
+    margin-bottom: 3rem;
+}
+
+.activity-subtitle {
+    margin-top: 4rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.activities-intro-panel {
+    position: relative;
+    z-index: 2;
+
+    max-width: 1120px;
+    margin: -2rem auto 4.5rem;
+    padding: 2.75rem 3rem;
+
+    background: white;
+
+    border: 1px solid rgba(153, 0, 0, 0.08);
+    border-radius: 22px;
+
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
+}
+
+.activities-intro-panel .activities-intro-label {
+    margin: 0 0 0.75rem;
+
+    color: #990000;
+
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.activities-intro-panel h2 {
+    max-width: none;
+    margin: 0 0 1.5rem;
+
+    color: #222;
+
+    font-size: clamp(2rem, 3.2vw, 2.75rem);
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+    white-space: nowrap;
+}
+
+.activities-intro-panel p {
+    max-width: 850px;
+    margin: 0 0 1rem;
+
+    color: #555;
+
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.activities-intro-panel p:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 700px) {
+    .activities-intro-panel {
+        margin: -1.5rem 1rem 3.5rem;
+        padding: 2rem 1.5rem;
+
+        border-radius: 18px;
+    }
+
+    .activities-intro-panel h2 {
+        font-size: 2rem;
+        white-space: normal;
+    }
+}
+
+.featured-conference-grid,
+.activities-grid {
+    margin-bottom: 3rem;
+}
+
+.secondary-card {
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.secondary-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+.secondary-card span {
+    display: inline-block;
+    align-self: flex-start;
+
+    margin-top: 1rem;
+    padding: 0.35rem 0.75rem;
+
+    border-radius: 999px;
+
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+
+    background: #f3f4f6;
+    color: #555;
+}
+
+.activities-grid .secondary-card:not(a) {
+    cursor: default;
+}
+
+.activities-grid .secondary-card:not(a):hover {
+    transform: translateY(-2px);
+}
+
+.featured-conference-grid .activity-card {
+    min-height: 320px;
+    padding: 2.5rem;
+}
+
+.featured-conference-grid .activity-card h3 {
+    font-size: 2rem;
+    margin-bottom: 1.25rem;
+}
+
+.featured-conference-grid .activity-card p {
+    font-size: 1.15rem;
+    line-height: 1.75;
+}
+
+.featured-conference-grid .activity-card span {
+    display: inline-block;
+    margin-top: 2rem;
+    font-weight: 600;
+}
+
+.featured-conference-grid .activity-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.secondary-card {
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.secondary-card:hover {
+    transform: translateY(-6px);
+    border-color: #b31b1b;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.10);
+}
+
+.resource-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.resource-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    column-gap: 2rem;
+
+    padding: 2rem 0;
+
+    text-decoration: none;
+    color: inherit;
+
+    border-bottom: 1px solid #e5e5e5;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.resource-item:first-child {
+    border-top: 1px solid #e5e5e5;
+}
+
+.resource-item {
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.resource-item:hover {
+    background-color: #fafafa;
+    border-color: #d0d0d0;
+}
+
+.resource-item h3 {
+    margin-bottom: 0.9rem;
+}
+
+.resource-item p {
+    margin: 0;
+    color: #666;
+    max-width: 600px;
+    line-height: 1.7;
+}
+
+.resource-item span {
+    font-size: 1.75rem;
+    color: #990000;
+    flex-shrink: 0;
+    margin-left: 2rem;
+    transition: transform 0.2s ease;
+}
+
+.resource-item:hover span {
+    transform: translateX(6px);
+}

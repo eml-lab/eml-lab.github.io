@@ -1,0 +1,148 @@
+.page-intro {
+            background: #fff;
+            border-left: 4px solid #990000;
+            border-radius: 8px;
+            padding: 1.5rem 1.75rem;
+            margin: 0 0 2rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .page-intro h2 {
+            margin: 0 0 0.75rem 0;
+            color: #333;
+            font-size: 1.5rem;
+        }
+
+        .page-intro p {
+            margin: 0;
+            color: #555;
+            line-height: 1.65;
+        }
+
+        .collaborators-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .collaborator-card {
+            display: flex;
+            gap: 1.25rem;
+            align-items: flex-start;
+            background: #fff;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 1.25rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transition: box-shadow 0.2s ease, transform 0.2s ease;
+        }
+
+        .collaborator-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 14px rgba(0,0,0,0.10);
+        }
+
+        .collaborator-image {
+            width: 115px;
+            height: 115px;
+            border-radius: 8px;
+            object-fit: cover;
+            flex-shrink: 0;
+            background: #f3f3f3;
+        }
+
+        .collaborator-info {
+            min-width: 0;
+            flex: 1;
+        }
+
+        .collaborator-name {
+            margin: 0 0 0.35rem 0;
+            font-size: 1.3rem;
+            line-height: 1.25;
+            color: #333;
+            font-weight: 700;
+        }
+
+        .collaborator-affiliation {
+            margin: 0 0 0.45rem 0;
+            color: #555;
+            line-height: 1.4;
+            font-weight: 500;
+        }
+
+        .collaborator-specialty {
+            display: inline-block;
+            margin: 0 0 1rem 0;
+            color: #990000;
+            font-size: 0.95rem;
+            font-style: italic;
+        }
+
+        .project-block {
+            border-top: 1px solid #eee;
+            padding-top: 0.9rem;
+            margin-top: 0.25rem;
+        }
+
+        .project-label {
+            margin: 0 0 0.35rem 0;
+            color: #666;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .project-title {
+            margin: 0;
+            color: #333;
+            font-size: 1rem;
+            line-height: 1.45;
+            font-weight: 600;
+        }
+
+        .collaborator-links {
+            margin-top: 1rem;
+        }
+
+        .collaborator-link,
+        .institution-link {
+            color: #990000;
+            text-decoration: none;
+        }
+
+        .collaborator-link {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .institution-link {
+            color: #555;
+        }
+
+        .collaborator-link:hover,
+        .institution-link:hover {
+            color: #800000;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 640px) {
+            .collaborators-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .collaborator-card {
+                flex-direction: column;
+            }
+
+            .collaborator-image {
+                width: 100%;
+                height: 240px;
+            }
+        }
+
+        .collaborators-layout {
+            grid-template-columns: 1fr;
+        }

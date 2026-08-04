@@ -1,0 +1,101 @@
+/* =====================================================
+   Individual Dashboard Pages
+===================================================== */
+
+/* ---------- Overall Layout ---------- */
+
+.dashboard-page-layout {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 4rem 2rem 5rem;
+}
+
+/* ---------- Introduction ---------- */
+
+.dashboard-page-intro {
+    max-width: 900px;
+    margin: 0 auto 4rem;
+
+    text-align: center;
+}
+
+.dashboard-page-intro h2 {
+    margin-bottom: 1rem;
+
+    font-size: 2.2rem;
+}
+
+.dashboard-page-intro p {
+    margin-bottom: 1rem;
+
+    color: #555;
+
+    font-size: 1.15rem;
+    line-height: 1.8;
+}
+
+/* ---------- Research Areas ---------- */
+
+.dashboard-page-section {
+    margin-top: 4rem;
+}
+
+.dashboard-page-section h2 {
+    margin-bottom: 2rem;
+
+    text-align: center;
+    font-size: 2rem;
+}
+
+.research-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    gap: 1rem;
+
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.research-tag {
+    padding: 0.75rem 1.15rem;
+
+    color: #555;
+    background: #f3f3f3;
+
+    border: 1px solid #e2e2e2;
+    border-radius: 999px;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+/* ---------- Navigation ---------- */
+
+.dashboard-navigation {
+    margin-top: 4rem;
+    padding-top: 2rem;
+
+    border-top: 1px solid #e5e5e5;
+}
+
+.dashboard-back-link {
+    color: #990000;
+
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.dashboard-back-link:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 800px) {
+
+    .dashboard-page-layout {
+        padding: 3rem 1.5rem 4rem;
+    }
+}

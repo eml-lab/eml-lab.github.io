@@ -1,0 +1,163 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/activities.css";
+---
+
+<BaseLayout title="Activities | Economic Machine Learning Lab">
+
+    <!-- Banner Section -->
+    <section class="banner">
+        <div class="banner-content">
+            <h1>Activities</h1>
+            <p>Explore EML conferences, workshops, presentations, and research activities.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container activities-layout">
+        <main>
+
+            <!-- Intro -->
+            <section class="activities-intro-panel">
+                <p class="activities-intro-label">
+                    Explore EML
+                </p>
+
+                <h2>
+                    Research, Education, and Interactive Tools.
+                </h2>
+
+                <p>
+                    The Economic Machine Learning Lab promotes and advances the use of machine learning
+                    methods in economic research and practice.
+                </p>
+
+                <p>
+                    Our activities include flagship conferences, workshops and courses, research presentations,
+                publications, and interactive dashboards that foster learning, collaboration, and innovation.
+                </p>
+            </section>
+
+            <section class="activities-section">
+
+                <!-- Featured Activities -->
+                <h3 class="activity-subtitle">Featured Activities</h3>
+
+                <p class="section-intro">
+                    Highlighting EML's flagship conferences and major initiatives that bring
+                    together researchers, practitioners, and students.
+                </p>
+
+                <div class="featured-conference-grid">
+
+                    <a href="/quant_2025" class="activity-card featured-card">
+                        <h3>EML Quant Conference 2025</h3>
+                        <p>
+                            Learn about the EML Quant Conference focusing on quantitative methods,
+                            finance, and machine learning.
+                        </p>
+                        <span>Learn more &rarr;</span>
+                    </a>
+
+                    <a href="/energy_2026" class="activity-card featured-card">
+                        <h3>EML Energy Conference 2026</h3>
+                        <p>
+                            Learn about the EML Energy Conference focusing on energy, economics,
+                            and machine learning.
+                        </p>
+                        <span>Learn more &rarr;</span>
+                    </a>
+
+                </div>
+
+                <!-- Research & Education -->
+                <h3 class="activity-subtitle secondary-subtitle">
+                    Research &amp; Education
+                </h3>
+
+                <div class="resource-list">
+
+                    <a href="/workshops" class="resource-item">
+                        <div>
+                            <h3>Workshops &amp; Courses</h3>
+                            <p>Discover training opportunities, short courses, and workshops on machine learning methods and applications in economics.</p>
+                        </div>
+                        <span>&rarr;</span>
+                    </a>
+
+                    <a href="/presentations" class="resource-item">
+                        <div>
+                            <h3>Presentations</h3>
+                            <p>Browse talks, seminars, and presentations by EML affiliates, visitors, and collaborators.</p>
+                        </div>
+                        <span>&rarr;</span>
+                    </a>
+
+                    <a href="/publications" class="resource-item">
+                        <div>
+                            <h3>Publications</h3>
+                            <p>Explore research papers and publications produced by EML members and partners.</p>
+                        </div>
+                        <span>&rarr;</span>
+                    </a>
+                </div>
+
+                <!-- Dashboards -->
+                <h3 class="activity-subtitle secondary-subtitle">
+                    Dashboards
+                </h3>
+
+                <p class="section-intro">
+                    Explore interactive tools and visualizations that make
+                    economic data easier to analyze and interpret.
+                </p>
+
+                <div class="activities-grid secondary-grid">
+
+                    <div class="activity-card secondary-card">
+                        <h3>Macroeconomics</h3>
+                        <p>
+                            Interactive dashboards for macroeconomic forecasting,
+                            policy analysis, and economic indicators.
+                        </p>
+                        <span>Coming soon</span>
+                    </div>
+
+                    <div class="activity-card secondary-card">
+                        <h3>Finance</h3>
+                        <p>
+                            Dashboards for financial markets, asset pricing,
+                            and machine learning applications in finance.
+                        </p>
+                        <span>Coming soon</span>
+                    </div>
+
+                    <a
+                        href="/dashboards/energy"
+                        class="activity-card secondary-card"
+                    >
+                        <h3>Energy</h3>
+                        <p>
+                            Interactive tools for electricity markets,
+                            forecasting, and energy analytics.
+                        </p>
+                        <span>Explore &rarr;</span>
+                    </a>
+
+                    <div class="activity-card secondary-card">
+                        <h3>Health</h3>
+                        <p>
+                            Dashboards supporting health economics,
+                            healthcare analytics, and policy evaluation.
+                        </p>
+                        <span>Coming soon</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+    </div>
+
+</BaseLayout>

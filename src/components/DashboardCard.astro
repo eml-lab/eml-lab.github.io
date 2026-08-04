@@ -1,0 +1,55 @@
+---
+interface Props {
+    title: string;
+    description: string;
+    href: string;
+    image?: string;
+    imageAlt?: string;
+}
+
+const {
+    title,
+    description,
+    href,
+    image,
+    imageAlt = ""
+} = Astro.props;
+---
+
+<a href={href} class="dashboards-card">
+
+    <div class="dashboards-preview">
+        {
+            image ? (
+                <img
+                    src={image}
+                    alt={imageAlt}
+                    class="dashboards-image"
+                />
+            ) : (
+                <div class="preview-placeholder">
+                    Dashboard Coming Soon
+                </div>
+            )
+        }
+    </div>
+
+    <div class="dashboards-body">
+
+        <h2 class="dashboards-title">
+            {title}
+        </h2>
+
+        <p class="dashboards-description">
+            {description}
+        </p>
+
+        <div class="dashboards-footer">
+            <span class="dashboards-link">
+                Explore &rarr;
+            </span>
+        </div>
+
+    </div>
+
+</a>

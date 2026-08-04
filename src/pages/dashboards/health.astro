@@ -1,0 +1,65 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import DashboardContainer from "../../components/DashboardContainer.astro";
+import "../../styles/dashboard-page.css";
+---
+
+<BaseLayout title="Health Economics Dashboards | Economic Machine Learning Lab">
+
+    <!-- Banner -->
+    <section class="banner">
+        <div class="banner-content">
+            <h1>Health Economics Dashboards</h1>
+            <p>Interactive tools for exploring research in health economics.</p>
+        </div>
+    </section>
+
+    <div class="dashboard-page-layout">
+
+        <section class="dashboard-page-intro">
+
+            <h2>Health Economics Research</h2>
+
+            <p>
+                This page hosts interactive dashboards developed by the Economic
+                Machine Learning Lab to explore topics in health economics.
+                Future dashboards will provide interactive visualizations,
+                forecasting tools, and data exploration interfaces supporting
+                ongoing research.
+            </p>
+
+        </section>
+
+        <DashboardContainer
+            title="Featured Dashboard"
+            description="This space will host an interactive health economics dashboard once it is available."
+        />
+
+        <section class="dashboard-page-section">
+
+            <h2>Research Areas</h2>
+
+            <div class="research-grid">
+                <div class="research-tag">Healthcare Analytics</div>
+
+                <div class="research-tag">Intergenerational Mobility</div>
+
+                <div class="research-tag">Program Evaluation</div>
+
+            </div>
+
+        </section>
+
+        <section class="dashboard-navigation">
+
+            <a
+                class="dashboard-back-link"
+                href="/dashboards"
+            >
+                ← Back to Research Dashboards
+            </a>
+        </section>
+
+    </div>
+
+</BaseLayout>

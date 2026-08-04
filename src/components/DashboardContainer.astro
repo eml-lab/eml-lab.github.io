@@ -1,0 +1,33 @@
+---
+interface Props {
+    title: string;
+    description: string;
+}
+
+const { title, description } = Astro.props;
+const hasDashboard = Astro.slots.has("default");
+
+import "../styles/dashboard-container.css";
+---
+
+<section class="dashboard-container">
+
+    <div class="dashboard-container-header">
+        <h2>{title}</h2>
+        <p>{description}</p>
+    </div>
+
+    <div
+        class:list={[
+            "dashboard-container-content",
+            { "dashboard-container-content--active": hasDashboard }
+        ]}
+    >
+        <slot>
+            <div class="dashboard-coming-soon">
+                Coming Soon
+            </div>
+        </slot>
+    </div>
+
+</section>

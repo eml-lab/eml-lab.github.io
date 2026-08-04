@@ -1,0 +1,154 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/publications.css";
+import { getCollection } from "astro:content";
+
+const publications = await getCollection("publications");
+
+publications.sort((a, b) => a.data.order - b.data.order);
+
+const featured = publications.filter(
+  (paper) => paper.data.category === "featured"
+);
+
+const projects = publications.filter(
+  (paper) => paper.data.category === "project"
+);
+
+const workingPapers = publications.filter(
+  (paper) => paper.data.category === "working-paper"
+);
+---
+
+<BaseLayout title="Publications">
+
+    <!-- Banner Section -->
+    <section class="banner">
+        <div class="banner-content">
+            <h1>Publications</h1>
+            <p>Research outputs and current projects from EML researchers</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container publications-layout">
+        <main class="main-content">
+            <section class="publications-intro">
+                <h2>EML Research</h2>
+                <p>
+                    The Economic Machine Learning Lab produces and supports research at the intersection of economics,
+                    econometrics, machine learning, artificial intelligence, and applied data science.
+                </p>
+                <p>
+                    This page highlights recent publications and ongoing projects, with a collapsible archive for additional working papers and related research.
+                </p>
+            </section>
+
+            <section class="publication-section">
+                <h2 class="section-heading">Recent Research</h2>
+
+                <div class="featured-publications-grid">
+                    {featured.map((paper) => (
+                        <div class="publication-card featured-publication">
+                            <h3 class="publication-title">
+                                {paper.data.title}
+                            </h3>
+
+                            <div class="publication-authors">
+                                {paper.data.authors}
+                            </div>
+
+                            <div class="publication-journal">
+                                {paper.data.source}
+                            </div>
+
+                            <div class="publication-links">
+                                <a
+                                    href={paper.data.buttonLink}
+                                    class="pub-link"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    {paper.data.buttonText}
+                                </a>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </section>
+
+            <section class="publication-section">
+                <h2 class="section-heading">Current Projects</h2>
+
+                <div class="projects-grid">
+                    {projects.map((paper) => (
+                        <div class="publication-card">
+                            <h3 class="publication-title">
+                                {paper.data.title}
+                            </h3>
+
+                            <div class="publication-authors">
+                                {paper.data.authors}
+                            </div>
+
+                            <div class="publication-links">
+                                <a
+                                    href={paper.data.buttonLink}
+                                    class="pub-link"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    {paper.data.buttonText}
+                                </a>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </section>
+
+            <section class="publication-section">
+                <details class="archive-details">
+                    <summary>Publication Archive</summary>
+
+                    <div class="archive-content">
+                        <div class="archive-year">
+                            <h3>Working Papers</h3>
+
+                            <ul class="archive-list">
+                                {workingPapers.map((paper) => (
+                                    <li>
+                                        <div class="archive-title">
+                                            {paper.data.title}
+                                        </div>
+
+                                        <div class="archive-authors">
+                                            {paper.data.authors}
+                                        </div>
+
+                                        <div class="archive-source">
+                                            {paper.data.source && (
+                                                <>
+                                                    {paper.data.source}{" · "}
+                                                </>
+                                            )}
+
+                                            <a
+                                                href={paper.data.buttonLink}
+                                                class="archive-link"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                            >
+                                                {paper.data.buttonText}
+                                            </a>
+                                        </div>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                </details>
+            </section>
+        </main>
+    </div>
+
+</BaseLayout>

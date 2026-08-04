@@ -1,0 +1,224 @@
+/* =====================================================
+   Dashboard Landing Page
+===================================================== */
+
+/* ---------- Hero ---------- */
+
+.dashboard-hero {
+    position: relative;
+
+    min-height: 460px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 5rem 2rem;
+
+    overflow: hidden;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(38, 20, 20, 0.96) 0%,
+            rgba(73, 17, 17, 0.9) 50%,
+            rgba(153, 0, 0, 0.72) 100%
+        ),
+        url("/images/banner.png");
+
+    background-position: center;
+    background-size: cover;
+}
+
+.dashboard-hero-content {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+}
+
+.dashboard-hero h1 {
+    max-width: 1100px;
+
+    margin: 0;
+
+    font-size: clamp(2.6rem, 5vw, 4.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+}
+
+.dashboard-hero-description {
+    max-width: 700px;
+
+    margin-top: 1.5rem;
+
+    color: rgba(255, 255, 255, 0.88);
+
+    font-size: 1.2rem;
+    line-height: 1.7;
+}
+
+/* ---------- Main Layout ---------- */
+
+.dashboards-layout {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 5rem 2rem 6rem;
+}
+
+/* ---------- Dashboard Grid ---------- */
+
+.dashboards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4rem 2.5rem;
+}
+
+/* ---------- Dashboard Cards ---------- */
+
+.dashboards-card {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+
+    padding: 1rem;
+
+    color: inherit;
+    text-decoration: none;
+
+    background: white;
+
+    border: 1px solid #e2e2e2;
+    border-radius: 10px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.dashboards-card:hover {
+    transform: translateY(-6px);
+
+    border-color: #990000;
+
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.10);
+}
+
+.dashboards-preview {
+    aspect-ratio: 16 / 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f0f1f2,
+            #dfe3e7
+        );
+
+    border-radius: 4px;
+}
+
+.dashboards-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+
+    transition: transform 0.35s ease;
+}
+
+.dashboards-card:hover .dashboards-image {
+    transform: scale(1.025);
+}
+
+.preview-placeholder {
+    color: #6b7280;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+}
+
+.dashboards-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    padding-top: 1.75rem;
+}
+
+.dashboards-title {
+    margin: 0;
+
+    font-size: 2rem;
+    line-height: 1.2;
+}
+
+.dashboards-description {
+    max-width: 580px;
+    margin: 1rem 0 0;
+
+    color: #5f5f5f;
+
+    font-size: 1.05rem;
+    line-height: 1.7;
+
+    flex-grow: 1;
+}
+
+.dashboards-footer {
+    margin-top: 1.75rem;
+}
+
+.dashboards-link {
+    color: #990000;
+
+    font-weight: 600;
+}
+
+.dashboards-link {
+    display: inline-block;
+
+    transition: transform 0.2s ease;
+}
+
+.dashboards-card:hover .dashboards-link {
+    transform: translateX(5px);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 800px) {
+    .dashboard-hero {
+        min-height: 390px;
+        padding: 4rem 1.25rem;
+    }
+
+    .dashboard-hero h1 {
+        font-size: 2.6rem;
+    }
+
+    .dashboard-hero-description {
+        font-size: 1rem;
+    }
+
+    .dashboards-layout {
+        padding: 4rem 1.5rem 5rem;
+    }
+
+    .dashboards-grid {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+    }
+}
