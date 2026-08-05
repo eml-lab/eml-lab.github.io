@@ -130,12 +130,12 @@ body {
 .banner {
     position: relative;
 
-    min-height: 390px;
+    min-height: 230px;
 
     display: flex;
     align-items: center;
 
-    padding: 4.5rem 2rem;
+    padding: 2.5rem 2rem;
 
     overflow: hidden;
 
@@ -171,7 +171,7 @@ body {
 
     margin: 0;
 
-    font-size: clamp(2.75rem, 5vw, 4rem);
+    font-size: clamp(2.25rem, 4vw, 3.25rem);
     font-weight: bold;
     line-height: 1.08;
     letter-spacing: -0.03em;
@@ -180,12 +180,12 @@ body {
 .banner p {
     max-width: 760px;
 
-    margin-top: 1.5rem;
+    margin-top: 0.85rem;
 
     color: rgba(255, 255, 255, 0.88);
 
-    font-size: 1.2rem;
-    line-height: 1.7;
+    font-size: 1.05rem;
+    line-height: 1.5;
 }
 
 /* Main content layout */

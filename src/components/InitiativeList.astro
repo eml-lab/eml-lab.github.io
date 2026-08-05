@@ -18,26 +18,35 @@ const initiatives = (await getCollection("initiatives"))
 ---
 
 <div class="initiatives-list">
-  {initiatives.map((item) => (
-    <article class="initiatives-card">
-      <p class="initiatives-date">
-        {formatDateRange(item.data.startDate, item.data.endDate)}
-      </p>
+  {initiatives.map((item) =>
+    item.data.link ? (
+      <a class="initiatives-card" href={item.data.link}>
+        <p class="initiatives-date">
+          {formatDateRange(item.data.startDate, item.data.endDate)}
+        </p>
 
-      <h3>
-        {item.data.link ? (
-          <a href={item.data.link}>{item.data.title}</a>
-        ) : (
-          item.data.title
+        <h3>{item.data.title}</h3>
+
+        <p>{item.data.description}</p>
+
+        {item.data.location && (
+          <p class="initiatives-location">{item.data.location}</p>
         )}
-      </h3>
+      </a>
+    ) : (
+      <article class="initiatives-card">
+        <p class="initiatives-date">
+          {formatDateRange(item.data.startDate, item.data.endDate)}
+        </p>
 
-      <p>{item.data.description}</p>
+        <h3>{item.data.title}</h3>
 
-      {item.data.location && (
-        <p class="initiatives-location">{item.data.location}</p>
-      )}
+        <p>{item.data.description}</p>
 
-    </article>
-  ))}
+        {item.data.location && (
+          <p class="initiatives-location">{item.data.location}</p>
+        )}
+      </article>
+    )
+  )}
 </div>

@@ -20,13 +20,7 @@ export default function FeaturedCard({
   secondaryLink,
 }: Props) {
   return (
-    <article
-      className="featured-card"
-      draggable={false}
-      style={{
-        backgroundImage: `linear-gradient(rgba(20,35,50,.72), rgba(20,35,50,.72)), url(${image})`,
-      }}
-    >
+    <article className="featured-card" draggable={false}>
       <div className="featured-card-content">
         <p className="featured-card-category">{category}</p>
 
@@ -49,6 +43,12 @@ export default function FeaturedCard({
             </a>
           )}
         </div>
+      </div>
+
+      <div className="featured-card-preview">
+        <span className="featured-preview-placeholder">
+          Coming Soon
+        </span>
       </div>
     </article>
   );

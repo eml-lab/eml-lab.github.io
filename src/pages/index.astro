@@ -32,38 +32,17 @@ import "../styles/home.css";
             <FeaturedCarousel items={featuredItems} />
         </section>
 
-        <!-- Highlights and News -->
-        <section class="home-section home-updates-grid">
-            <div class="featured-highlights">
-                <div class="section-heading">
-                    <p class="section-label">Featured Highlights</p>
-                    <h2>Recent EML initiatives</h2>
-                </div>
-
-                <InitiativeList limit={2} />
-            </div>
-
-            <aside class="recent-news">
-                <div class="section-heading">
-                    <p class="section-label">Updates</p>
-                    <h2>Recent News &amp; Events</h2>
-                </div>
-                <NewsList limit={4} />
-                
-            </aside>
-        </section>
-
         <!-- Explore EML -->
         <section class="home-section explore-eml-section">
             <div class="section-heading">
                 <p class="section-label">Explore EML</p>
-                <h2>Discover the lab</h2>
+                <h2>Discover the Lab</h2>
             </div>
 
             <div class="explore-grid">
                 <a class="explore-card" href="/activities">
                     <h3>Research</h3>
-                    <p>Explore the lab’s research activities and ongoing work.</p>
+                    <p>Explore the Lab’s research activities and ongoing work.</p>
                 </a>
 
                 <a class="explore-card" href="/publications">
@@ -83,7 +62,7 @@ import "../styles/home.css";
 
                 <a class="explore-card" href="/about">
                     <h3>About</h3>
-                    <p>Learn about the lab’s mission, goals, and activities.</p>
+                    <p>Learn about the Lab’s mission, goals, and activities.</p>
                 </a>
                 
                 <div class="explore-card explore-card-placeholder">
@@ -94,6 +73,28 @@ import "../styles/home.css";
 
             </div>
         </section>
+
+        <!-- Highlights and News -->
+        <section class="home-section home-updates-grid">
+            <div class="featured-highlights">
+                <div class="section-heading">
+                    <p class="section-label">Featured Highlights</p>
+                    <h2>Recent EML initiatives</h2>
+                </div>
+
+                <InitiativeList limit={2} />
+            </div>
+
+            <aside class="recent-news">
+                <div class="section-heading">
+                    <p class="section-label">Updates</p>
+                    <h2>Recent News &amp; Events</h2>
+                </div>
+                <NewsList limit={3} />
+                
+            </aside>
+        </section>
+
     </main>
 
 </BaseLayout>
