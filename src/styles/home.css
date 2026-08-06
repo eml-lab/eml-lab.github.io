@@ -333,30 +333,41 @@ a.explore-card:hover {
 
 .featured-card {
     position: relative;
-    height: 330px;
-    min-height: 330px;
+    height: 290px;
+    min-height: 290px;
+
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(360px, 1fr);
+
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+
     overflow: hidden;
+
     border: 1px solid #dfe3e6;
     border-radius: 18px;
+
     background: #4f5b67;
     box-shadow: 0 12px 28px rgba(20, 36, 46, 0.12);
 }
 
 .featured-card-content {
     min-width: 0;
+
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 1.75rem 2.25rem;
+
+    padding: 0 2.25rem;
+
     color: white;
 }
 
 .featured-card-preview {
     min-width: 0;
-    height: calc(100% - 3rem);
-    margin: 1.5rem;
+    min-height: 0;
+
+    margin: 0 1.5rem;
 
     display: flex;
     align-items: center;
@@ -404,7 +415,8 @@ a.explore-card:hover {
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
-    margin-top: 1rem;
+    margin-top: auto;
+    padding-top: 1rem;
 }
 
 .featured-button {
@@ -559,7 +571,7 @@ a.explore-card:hover {
 .embla__slide {
     flex: 0 0 100%;
     min-width: 0;
-    height: 330px;
+    height: 290px;
     user-select: none;
 }
 
