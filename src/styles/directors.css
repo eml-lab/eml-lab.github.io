@@ -14,30 +14,37 @@
             padding: 2rem 1rem 3rem;
         }
 
-        .leadership-intro {
-            background: linear-gradient(135deg, #fff 0%, #fff8f8 100%);
-            border: 1px solid var(--eml-line);
-            border-left: 5px solid var(--eml-red);
-            border-radius: 12px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 14px rgba(0,0,0,0.05);
-        }
+.leadership-intro {
+    margin-bottom: 1.5rem;
+    padding: 1.5rem 1.8rem;
 
-        .leadership-intro h2 {
-            margin: 0 0 0.8rem;
-            color: var(--eml-ink);
-            font-size: 2rem;
-            line-height: 1.2;
-        }
+    background: linear-gradient(135deg, #fff 0%, #fff8f8 100%);
 
-        .leadership-intro p {
-            max-width: 900px;
-            color: #444;
-            font-size: 1.06rem;
-            line-height: 1.7;
-            margin: 0;
-        }
+    border: 1px solid var(--eml-line);
+    border-left: 5px solid var(--eml-red);
+    border-radius: 12px;
+
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+}
+
+.leadership-intro h2 {
+    margin: 0 0 0.65rem;
+
+    color: var(--eml-ink);
+
+    font-size: 1.8rem;
+    line-height: 1.2;
+}
+
+.leadership-intro p {
+    max-width: none;
+    margin: 0;
+
+    color: #444;
+
+    font-size: 1.02rem;
+    line-height: 1.55;
+}
 
         .directors-grid {
             display: grid;
@@ -56,19 +63,23 @@
             box-shadow: 0 5px 18px rgba(0,0,0,0.06);
         }
 
-        .role-structure {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 1rem;
-            margin-top: 1.6rem;
-        }
+.role-structure {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
 
-        .role-note {
-            background: white;
-            border: 1px solid var(--eml-line);
-            border-radius: 10px;
-            padding: 1rem;
-        }
+    margin-top: 1rem;
+}
+
+
+.role-note {
+    padding: 0.8rem 1rem;
+
+    background: white;
+
+    border: 1px solid var(--eml-line);
+    border-radius: 10px;
+}
 
         .role-note h3 {
             margin: 0 0 0.45rem;

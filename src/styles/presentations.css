@@ -1,6 +1,6 @@
 .presentations-intro {
-    margin-bottom: 3rem;
-    padding: 2.5rem 2.75rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem 2rem;
 
     background: white;
 
@@ -11,7 +11,7 @@
 }
 
 .presentations-intro h2 {
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.75rem;
 
     color: #333;
 
@@ -20,12 +20,12 @@
 
 .presentations-intro p {
     max-width: none;
-    margin-bottom: 1rem;
+    margin-bottom: 0.65rem;
 
     color: #555;
 
     font-size: 1.05rem;
-    line-height: 1.8;
+    line-height: 1.6;
 }
 
 .presentations-intro p:last-child {
@@ -43,12 +43,14 @@
             gap: 2rem;
             margin: 2rem 0;
         }
-        .upcoming-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0 3rem;
-        }
+
+.upcoming-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0 2rem;
+}
+
         .presentation-card {
             background: white;
             border-radius: 10px;
@@ -64,11 +66,14 @@
         .featured-presentation-card {
             border: 2px solid #990000;
         }
-        .presentation-header {
-            padding: 1.5rem;
-            background: linear-gradient(to right, #990000, #800000);
-            color: white;
-        }
+
+.presentation-header {
+    padding: 1rem 1.25rem;
+
+    background: linear-gradient(to right, #990000, #800000);
+    color: white;
+}
+
         .upcoming-header {
             background: linear-gradient(to right, #990000, #800000);
         }
@@ -76,17 +81,23 @@
             font-size: 1.25rem;
             line-height: 1.35;
         }
-        .presentation-content {
-            padding: 1.5rem;
-        }
-        .presentation-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            margin: 1rem 0;
-            color: #666;
-            font-size: 0.9rem;
-        }
+
+.presentation-content {
+    padding: 1.25rem;
+}
+
+.presentation-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem;
+
+    margin: 0.75rem 0;
+
+    color: #666;
+
+    font-size: 0.9rem;
+}
+
         .meta-item {
             display: flex;
             align-items: center;
@@ -96,23 +107,32 @@
             width: 16px;
             height: 16px;
         }
-        .presentation-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-        .presentation-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
-            background-color: #333;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            transition: background-color 0.3s ease;
-        }
+
+.presentation-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+
+    margin-top: 1rem;
+}
+
+.presentation-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    padding: 0.55rem 1rem;
+
+    background-color: #333;
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 4px;
+
+    transition: background-color 0.3s ease;
+}
+
         .presentation-link:hover {
             background-color: #666;
         }
@@ -215,9 +235,10 @@
             grid-template-columns: 1fr;
         }
 
-        .presentation-paragraph {
-            margin-bottom: 1rem;
-        }
+.presentation-paragraph {
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+}
 
         .event-photos-heading {
             margin: 1.5rem 0 1rem;

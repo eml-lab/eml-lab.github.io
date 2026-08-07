@@ -44,67 +44,63 @@ const workingPapers = publications.filter(
                 </p>
             </section>
 
-            <section class="publication-section">
-                <h2 class="section-heading">Recent Research</h2>
+    <section class="publication-section">
+    <h2 class="section-heading">Research Highlights</h2>
 
-                <div class="featured-publications-grid">
-                    {featured.map((paper) => (
-                        <div class="publication-card featured-publication">
-                            <h3 class="publication-title">
-                                {paper.data.title}
-                            </h3>
+    <div class="featured-publications-grid">
+        {featured.map((paper) => (
+            <div class="publication-card featured-publication">
+                <h3 class="publication-title">
+                    {paper.data.title}
+                </h3>
 
-                            <div class="publication-authors">
-                                {paper.data.authors}
-                            </div>
-
-                            <div class="publication-journal">
-                                {paper.data.source}
-                            </div>
-
-                            <div class="publication-links">
-                                <a
-                                    href={paper.data.buttonLink}
-                                    class="pub-link"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    {paper.data.buttonText}
-                                </a>
-                            </div>
-                        </div>
-                    ))}
+                <div class="publication-authors">
+                    {paper.data.authors}
                 </div>
-            </section>
 
-            <section class="publication-section">
-                <h2 class="section-heading">Current Projects</h2>
-
-                <div class="projects-grid">
-                    {projects.map((paper) => (
-                        <div class="publication-card">
-                            <h3 class="publication-title">
-                                {paper.data.title}
-                            </h3>
-
-                            <div class="publication-authors">
-                                {paper.data.authors}
-                            </div>
-
-                            <div class="publication-links">
-                                <a
-                                    href={paper.data.buttonLink}
-                                    class="pub-link"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    {paper.data.buttonText}
-                                </a>
-                            </div>
-                        </div>
-                    ))}
+                <div class="publication-journal">
+                    {paper.data.source}
                 </div>
-            </section>
+
+                <div class="publication-links">
+                    <a
+                        href={paper.data.buttonLink}
+                        class="pub-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        {paper.data.buttonText}
+                    </a>
+                </div>
+            </div>
+        ))}
+    </div>
+
+    <div class="projects-grid combined-projects-grid">
+        {projects.map((paper) => (
+            <div class="publication-card">
+                <h3 class="publication-title">
+                    {paper.data.title}
+                </h3>
+
+                <div class="publication-authors">
+                    {paper.data.authors}
+                </div>
+
+                <div class="publication-links">
+                    <a
+                        href={paper.data.buttonLink}
+                        class="pub-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        {paper.data.buttonText}
+                    </a>
+                </div>
+            </div>
+        ))}
+    </div>
+</section>
 
             <section class="publication-section">
                 <details class="archive-details">

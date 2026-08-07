@@ -24,7 +24,7 @@ const courses = workshops.filter((w) => !w.data.featured);
         <main class="main-content">
 
             <section class="training-intro">
-                <h2>Training and Learning Opportunities</h2>
+                <h2>Training at EML</h2>
 
                 <p>
                     The Economic Machine Learning Lab supports training in modern econometric and machine learning methods through workshops, graduate courses, and lecture series.
@@ -35,110 +35,104 @@ const courses = workshops.filter((w) => !w.data.featured);
                 </p>
             </section>
 
-            {featured && (
-                <section class="training-section">
-
-                    <h2>Featured Training</h2>
-
-                    <div class="training-card featured-training-card">
-
-                        <h3>{featured.data.title}</h3>
-
-                        <div class="training-meta">
-                            <span>{featured.data.date}</span>
-                            <span>Instructors: {featured.data.instructors}</span>
-                        </div>
-
-                        <p>{featured.data.description}</p>
-
-                        <ul>
-                            {featured.data.topics.map((topic) => (
-                                <li>{topic}</li>
-                            ))}
-                        </ul>
-
-                        <a
-                            href={featured.data.buttonLink}
-                            class="training-link"
-                        >
-                            {featured.data.buttonText}
-                        </a>
-
-                    </div>
-
-                </section>
-            )}
-
             <section class="training-section">
 
-                <h2>Courses and Lecture Series</h2>
+    <h2>Past Workshops and Courses</h2>
 
-                <div class="training-grid">
+    {featured && (
+        <div class="training-card featured-training-card">
 
-                    {courses.map((course) => (
+            <h3>{featured.data.title}</h3>
 
-                        <div class="training-card">
+            <div class="training-meta">
+                <span>{featured.data.date}</span>
+                <span>Instructors: {featured.data.instructors}</span>
+            </div>
 
-                            <h3>{course.data.title}</h3>
+            <p>{featured.data.description}</p>
 
-                            <div class="training-meta">
+            <ul>
+                {featured.data.topics.map((topic) => (
+                    <li>{topic}</li>
+                ))}
+            </ul>
 
-                                {course.data.date && (
-                                    <span>{course.data.date}</span>
-                                )}
+            <a
+                href={featured.data.buttonLink}
+                class="training-link"
+            >
+                {featured.data.buttonText}
+            </a>
 
-                                <span>
-                                    Instructor{course.data.instructors.includes(",") ? "s" : ""}: {course.data.instructors}
-                                </span>
+        </div>
+    )}
 
-                            </div>
+    <div class="training-grid">
 
-                            <p>{course.data.description}</p>
+        {courses.map((course) => (
 
-                            {course.data.topics.length > 0 && (
-                                <ul>
-                                    {course.data.topics.map((topic) => (
-                                        <li>{topic}</li>
-                                    ))}
-                                </ul>
-                            )}
+            <div class="training-card">
 
-                            {course.data.resources.length > 0 ? (
+                <h3>{course.data.title}</h3>
 
-                                <ul class="resource-links">
-                                    {course.data.resources.map((resource) => (
-                                        <li>
-                                            <a
-                                                href={resource.url}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                            >
-                                                {resource.title}
-                                            </a>
-                                        </li>
-                                    ))}
-                                </ul>
+                <div class="training-meta">
 
-                            ) : (
+                    {course.data.date && (
+                        <span>{course.data.date}</span>
+                    )}
 
-                                <a
-                                    href={course.data.buttonLink}
-                                    class="training-link"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    {course.data.buttonText}
-                                </a>
-
-                            )}
-
-                        </div>
-
-                    ))}
+                    <span>
+                        Instructor{course.data.instructors.includes(",") ? "s" : ""}: {course.data.instructors}
+                    </span>
 
                 </div>
 
-            </section>
+                <p>{course.data.description}</p>
+
+                {course.data.topics.length > 0 && (
+                    <ul>
+                        {course.data.topics.map((topic) => (
+                            <li>{topic}</li>
+                        ))}
+                    </ul>
+                )}
+
+                {course.data.resources.length > 0 ? (
+
+                    <ul class="resource-links">
+                        {course.data.resources.map((resource) => (
+                            <li>
+                                <a
+                                    href={resource.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    {resource.title}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+
+                ) : (
+
+                    <a
+                        href={course.data.buttonLink}
+                        class="training-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        {course.data.buttonText}
+                    </a>
+
+                )}
+
+            </div>
+
+        ))}
+
+    </div>
+
+</section>
 
         </main>
     </div>
