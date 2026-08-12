@@ -187,6 +187,35 @@
             box-shadow: 0 0 0 5px rgba(153, 0, 0, 0.08);
         }
 
+.art-band {
+    margin-top: 2rem;
+    padding: 1.5rem 2rem;
+    background: white;
+    border: 1px solid var(--eml-border);
+    border-radius: 18px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.055);
+    text-align: center;
+}
+
+        .art-band .section-label {
+            margin-bottom: 0.4rem;
+        }
+
+        .art-band h2 {
+            margin: 0 0 0.6rem;
+            color: #222;
+            font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+            letter-spacing: -0.015em;
+        }
+
+        .art-band p {
+            margin: 0 auto;
+            max-width: 900px;
+            color: var(--eml-muted);
+            font-size: 1rem;
+            line-height: 1.65;
+        }
+
         .section-heading {
             margin: 4rem 0 1.5rem;
             display: flex;
