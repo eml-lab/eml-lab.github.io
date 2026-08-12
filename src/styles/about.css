@@ -140,6 +140,10 @@
             font-size: 1rem;
         }
 
+.intro-panel > div > p {
+    font-size: 1.25rem;
+}
+
         .intro-feature {
             border-radius: 18px;
             background: linear-gradient(180deg, var(--eml-cream), #ffffff);
@@ -204,7 +208,7 @@
         .art-band h2 {
             margin: 0 0 0.6rem;
             color: #222;
-            font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+            font-size: clamp(2.5rem, 3.2vw, 2.6rem);
             letter-spacing: -0.015em;
         }
 
@@ -212,7 +216,7 @@
             margin: 0 auto;
             max-width: 900px;
             color: var(--eml-muted);
-            font-size: 1rem;
+            font-size: 1.15rem;
             line-height: 1.65;
         }
 
