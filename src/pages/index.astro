@@ -7,6 +7,10 @@ import InitiativeList from "../components/InitiativeList.astro";
 
 import "../styles/home.css";
 
+const showCarousel = false;
+const showServices = false;
+const showDashboards = false;
+
 ---
 
 <BaseLayout title="Economic Machine Learning Lab">
@@ -24,13 +28,15 @@ import "../styles/home.css";
 
     <main class="home-page">
         <!-- Featured Carousel -->
-        <section class="home-section featured-carousel-section">
-            <div class="section-heading">
-                <p class="section-label">Featured</p>
-                <h2>Research, Data, and Services from EML</h2>
-            </div>
-            <FeaturedCarousel items={featuredItems} />
-        </section>
+        {showCarousel && (
+            <section class="home-section featured-carousel-section">
+                <div class="section-heading">
+                    <p class="section-label">Featured</p>
+                    <h2>Research, Data, and Services from EML</h2>
+                </div>
+                <FeaturedCarousel items={featuredItems} />
+            </section>
+        )}
 
         <!-- Explore EML -->
         <section class="home-section explore-eml-section">
@@ -50,10 +56,12 @@ import "../styles/home.css";
                     <p>Read research produced by EML faculty and collaborators.</p>
                 </a>
 
-                <a class="explore-card" href="/dashboards">
-                    <h3>Dashboards</h3>
-                    <p>Interact with economic data and forecasting tools.</p>
-                </a>
+                {showDashboards && (
+                    <a class="explore-card" href="/dashboards">
+                        <h3>Dashboards</h3>
+                        <p>Interact with economic data and forecasting tools.</p>
+                    </a>
+                )}
 
                 <a class="explore-card" href="/people">
                     <h3>People</h3>
@@ -65,11 +73,13 @@ import "../styles/home.css";
                     <p>Learn about the Lab’s mission, goals, and activities.</p>
                 </a>
                 
-                <div class="explore-card explore-card-placeholder">
-                    <h3>Services</h3>
-                    <p>Learn about data, forecasting, and analytical services.</p>
-                    <span>Coming soon</span>
-                </div>
+                    {showServices && (
+                    <div class="explore-card explore-card-placeholder">
+                        <h3>Services</h3>
+                        <p>Learn about data, forecasting, and analytical services.</p>
+                        <span>Coming soon</span>
+                    </div>
+                )}
 
             </div>
         </section>

@@ -1,3 +1,7 @@
+---
+const showDashboards = false;
+---
+
 <header class="header">
   <nav class="nav">
     <a href="/" class="logo">Economic Machine Learning Lab</a>
@@ -5,15 +9,17 @@
     <div class="nav-links">
 
       <!-- Dashboards -->
-      <div class="dropdown">
-        <a href="/dashboards">Dashboards</a>
-        <div class="dropdown-content">
-          <a href="/dashboards/energy">Energy</a>
-          <a href="/dashboards/finance">Finance</a>
-          <a href="/dashboards/macro">Macroeconomics</a>
-          <a href="/dashboards/health">Health and Mobility</a>
-        </div>
-      </div>
+        {showDashboards && (
+          <div class="dropdown">
+            <a href="/dashboards">Dashboards</a>
+            <div class="dropdown-content">
+              <a href="/dashboards/energy">Energy</a>
+              <a href="/dashboards/finance">Finance</a>
+              <a href="/dashboards/macro">Macroeconomics</a>
+              <a href="/dashboards/health">Health and Mobility</a>
+            </div>
+          </div>
+        )}
       
       <!-- Activities -->
       <div class="dropdown">

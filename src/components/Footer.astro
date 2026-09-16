@@ -1,3 +1,7 @@
+---
+const showDashboards = false;
+---
+
 <footer class="footer">
     <div class="footer-content">
         <div class="footer-section">
@@ -8,7 +12,9 @@
         <div class="footer-section">
             <h3>Quick Links</h3>
                 <ul class="footer-links">
-                    <li><a href="/dashboards">Dashboards</a></li>
+                    {showDashboards && (
+                        <li><a href="/dashboards">Dashboards</a></li>
+                    )}
                     <li><a href="/workshops">Workshops &amp; Courses</a></li>
                     <li><a href="/presentations">Presentations</a></li>
                     <li><a href="/publications">Publications</a></li>
