@@ -1,5 +1,5 @@
 ---
-order: 2
+order: 1
 category: "upcoming"
 year: 2026
 title: "Keynote Speech at 2026 Canadian Econometrics Study Group (CESG)"
