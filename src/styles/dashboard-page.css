@@ -7,14 +7,14 @@
 .dashboard-page-layout {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 4rem 2rem 5rem;
+    padding: 2rem 2rem 5rem;
 }
 
 /* ---------- Introduction ---------- */
 
 .dashboard-page-intro {
     max-width: 900px;
-    margin: 0 auto 4rem;
+    margin: 0 auto 1.5rem;
 
     text-align: center;
 }
@@ -96,6 +96,12 @@
 @media (max-width: 800px) {
 
     .dashboard-page-layout {
-        padding: 3rem 1.5rem 4rem;
+        padding: 1.5rem 1.5rem 4rem;
     }
+}
+
+/* Energy page: spacing for introduction below dashboard */
+
+.dashboard-page-layout > .dashboard-page-intro {
+    margin-top: 2rem;
 }

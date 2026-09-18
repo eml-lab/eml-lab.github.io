@@ -17,6 +17,13 @@ import LoadForecasterDashboard from "../../components/dashboards/LoadForecasterD
 
     <div class="dashboard-page-layout">
 
+        <DashboardContainer
+            title="EML Load Forecaster Dashboard"
+            description="Interactive electricity load forecasts and forecast decomposition."
+        >
+            <LoadForecasterDashboard client:only="react" />
+        </DashboardContainer>
+
         <section class="dashboard-page-intro">
 
             <h2>Energy Research</h2>
@@ -30,13 +37,6 @@ import LoadForecasterDashboard from "../../components/dashboards/LoadForecasterD
             </p>
 
         </section>
-
-        <DashboardContainer
-            title="EML Load Forecaster Dashboard"
-            description="Interactive electricity load forecasts and forecast decomposition."
-        >
-            <LoadForecasterDashboard client:only="react" />
-        </DashboardContainer>
 
         <section class="dashboard-page-section">
 
