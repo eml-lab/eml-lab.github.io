@@ -1,6 +1,11 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import "../styles/activities.css";
+
+const showEnergy = true;
+const showFinance = false;
+const showMacro = false;
+const showHealth = false;
 ---
 
 <BaseLayout title="Activities | Economic Machine Learning Lab">
@@ -101,6 +106,7 @@ import "../styles/activities.css";
                     </a>
                 </div>
 
+                
                 <!-- Dashboards -->
                 <h3 class="activity-subtitle secondary-subtitle">
                     Dashboards
@@ -113,44 +119,52 @@ import "../styles/activities.css";
 
                 <div class="activities-grid secondary-grid">
 
-                    <div class="activity-card secondary-card">
-                        <h3>Macroeconomics</h3>
-                        <p>
-                            Interactive dashboards for macroeconomic forecasting,
-                            policy analysis, and economic indicators.
-                        </p>
-                        <span>Coming soon</span>
-                    </div>
+                    {showMacro && (
+                        <div class="activity-card secondary-card">
+                            <h3>Macroeconomics</h3>
+                            <p>
+                                Interactive dashboards for macroeconomic forecasting,
+                                policy analysis, and economic indicators.
+                            </p>
+                            <span>Coming soon</span>
+                        </div>
+                    )}
 
-                    <div class="activity-card secondary-card">
-                        <h3>Finance</h3>
-                        <p>
-                            Dashboards for financial markets, asset pricing,
-                            and machine learning applications in finance.
-                        </p>
-                        <span>Coming soon</span>
-                    </div>
+                    {showFinance && (
+                        <div class="activity-card secondary-card">
+                            <h3>Finance</h3>
+                            <p>
+                                Dashboards for financial markets, asset pricing,
+                                and machine learning applications in finance.
+                            </p>
+                            <span>Coming soon</span>
+                        </div>
+                    )}
 
-                    <a
-                        href="/dashboards/energy"
-                        class="activity-card secondary-card"
-                    >
-                        <h3>Energy</h3>
-                        <p>
-                            Interactive tools for electricity markets,
-                            forecasting, and energy analytics.
-                        </p>
-                        <span>Explore &rarr;</span>
-                    </a>
+                    {showEnergy && (
+                        <a
+                            href="/dashboards/energy"
+                            class="activity-card secondary-card"
+                        >
+                            <h3>Energy</h3>
+                            <p>
+                                Interactive tools for electricity markets,
+                                forecasting, and energy analytics.
+                            </p>
+                            <span>Explore &rarr;</span>
+                        </a>
+                    )}
 
-                    <div class="activity-card secondary-card">
-                        <h3>Health</h3>
-                        <p>
-                            Dashboards supporting health economics,
-                            healthcare analytics, and policy evaluation.
-                        </p>
-                        <span>Coming soon</span>
-                    </div>
+                    {showHealth && (
+                        <div class="activity-card secondary-card">
+                            <h3>Health</h3>
+                            <p>
+                                Dashboards supporting health economics,
+                                healthcare analytics, and policy evaluation.
+                            </p>
+                            <span>Coming soon</span>
+                        </div>
+                    )}
 
                 </div>
 

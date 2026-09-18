@@ -79,6 +79,19 @@
     align-items: stretch;
 }
 
+/* Center the grid when only one dashboard is visible */
+
+.dashboards-grid:has(> :only-child) {
+    display: flex;
+    justify-content: center;
+}
+
+.dashboards-grid:has(> :only-child) > .dashboards-card {
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+}
+
 /* ---------- Dashboard Cards ---------- */
 
 .dashboards-card {

@@ -1,5 +1,10 @@
 ---
-const showDashboards = false;
+const showDashboards = true;
+
+const showEnergy = true;
+const showFinance = false;
+const showMacro = false;
+const showHealth = false;
 ---
 
 <header class="header">
@@ -13,10 +18,21 @@ const showDashboards = false;
           <div class="dropdown">
             <a href="/dashboards">Dashboards</a>
             <div class="dropdown-content">
-              <a href="/dashboards/energy">Energy</a>
-              <a href="/dashboards/finance">Finance</a>
-              <a href="/dashboards/macro">Macroeconomics</a>
-              <a href="/dashboards/health">Health and Mobility</a>
+              {showEnergy && (
+                <a href="/dashboards/energy">Energy</a>
+              )}
+
+              {showFinance && (
+                <a href="/dashboards/finance">Finance</a>
+              )}
+
+              {showMacro && (
+                <a href="/dashboards/macro">Macroeconomics</a>
+              )}
+
+              {showHealth && (
+                <a href="/dashboards/health">Health and Mobility</a>
+              )}
             </div>
           </div>
         )}

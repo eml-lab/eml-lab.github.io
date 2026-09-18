@@ -2,6 +2,11 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import "../../styles/dashboards.css";
 import DashboardCard from "../../components/DashboardCard.astro";
+
+const showEnergy = true;
+const showFinance = false;
+const showMacro = false;
+const showHealth = false;
 ---
 
 <BaseLayout title="Interactive Economic Data | Economic Machine Learning Lab">
@@ -22,29 +27,37 @@ import DashboardCard from "../../components/DashboardCard.astro";
         <section class="dashboard-catalog">
             <div class="dashboards-grid">
 
-                <DashboardCard
-                    title="Energy"
-                    description="Explore electricity markets, energy forecasting, and related economic data."
-                    href="/dashboards/energy"
-                />
+                {showEnergy && (
+                    <DashboardCard
+                        title="Energy"
+                        description="Explore electricity markets, energy forecasting, and related economic data."
+                        href="/dashboards/energy"
+                    />
+                )}
 
-                <DashboardCard
-                    title="Finance"
-                    description="Explore financial markets, asset pricing, and machine learning applications in finance."
-                    href="/dashboards/finance"
-                />
+                {showFinance && (
+                    <DashboardCard
+                        title="Finance"
+                        description="Explore financial markets, asset pricing, and machine learning applications in finance."
+                        href="/dashboards/finance"
+                    />
+                )}
 
-                <DashboardCard
-                    title="Macroeconomics"
-                    description="Explore macroeconomic indicators, forecasting, policy analysis, and economic dynamics."
-                    href="/dashboards/macro"
-                />
+                {showMacro && (
+                    <DashboardCard
+                        title="Macroeconomics"
+                        description="Explore macroeconomic indicators, forecasting, policy analysis, and economic dynamics."
+                        href="/dashboards/macro"
+                    />
+                )}
 
-                <DashboardCard
-                    title="Health Economics and Mobility"
-                    description="Explore healthcare data, health outcomes, and questions in health economics."
-                    href="/dashboards/health"
-                />
+                {showHealth && (
+                    <DashboardCard
+                        title="Health Economics and Mobility"
+                        description="Explore healthcare data, health outcomes, and questions in health economics."
+                        href="/dashboards/health"
+                    />
+                )}
 
             </div>
         </section>
