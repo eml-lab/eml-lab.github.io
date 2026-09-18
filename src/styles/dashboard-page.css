@@ -105,3 +105,28 @@
 .dashboard-page-layout > .dashboard-page-intro {
     margin-top: 2rem;
 }
+
+/* Energy dashboard: compact hero */
+
+.energy-dashboard-page .banner {
+    min-height: 150px;
+    padding: 1.5rem 2rem;
+}
+
+/* Energy dashboard: remove spacing below hero */
+
+.energy-dashboard-page .dashboard-page-layout {
+    padding-top: 0;
+}
+
+/* Dashboard documentation */
+
+.dashboard-page-intro h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.4rem;
+}
+
+.dashboard-page-intro p {
+    margin-bottom: 1rem;
+}
