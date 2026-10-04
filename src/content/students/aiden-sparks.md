@@ -8,7 +8,7 @@ order: 6
 
 email: aidspark@iu.edu
 
-website: ""
+website: "https://aidensparks622.github.io/"
 
 research:
   - To be added soon

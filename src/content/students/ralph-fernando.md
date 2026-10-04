@@ -8,8 +8,10 @@ order: 5
 
 email: fernanra@iu.edu
 
-website: ""
+website: "https://ralphx34.github.io/ralph-fernando-website/"
 
 research:
-  - To be added soon
+  - Microeconomic Theory
+  - Information Economics
+  - Mechanism Design
 ---
