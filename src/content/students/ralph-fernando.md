@@ -11,7 +11,7 @@ email: fernanra@iu.edu
 website: "https://ralphx34.github.io/ralph-fernando-website/"
 
 research:
+  - Game Theory
   - Information Economics
-  - Decision Theory
   - Mechanism Design
 ---
