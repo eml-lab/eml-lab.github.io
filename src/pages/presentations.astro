@@ -46,6 +46,7 @@ const archiveYears = [...new Set(archived.map((entry) => entry.data.year))]
                 </p>
             </section>
 
+            {upcoming.length > 0 && (
             <section class="presentation-section">
                 <h2>Upcoming Presentations</h2>
 
@@ -113,6 +114,7 @@ const archiveYears = [...new Set(archived.map((entry) => entry.data.year))]
                     ))}
                 </div>
             </section>
+            )}
 
             <details class="archive-details">
                 <summary>Presentation Archive</summary>

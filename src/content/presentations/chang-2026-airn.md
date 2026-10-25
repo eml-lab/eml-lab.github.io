@@ -1,6 +1,6 @@
 ---
 order: 4
-category: "upcoming"
+category: "archive"
 year: 2026
 title: "Transforming Economic Models into AI Systems: An Illustration with Load Forecasting"
 date: "April 6, 2026"

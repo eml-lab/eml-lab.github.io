@@ -9,11 +9,7 @@ interface Props {
 const { limit = 4 } = Astro.props;
 
 const news = (await getCollection("news"))
-  .sort(
-    (a, b) =>
-      b.data.startDate.getTime() -
-      a.data.startDate.getTime()
-  )
+  .sort((a, b) => b.data.startDate.getTime() - a.data.startDate.getTime())
   .slice(0, limit);
 ---
 
@@ -35,6 +31,19 @@ const news = (await getCollection("news"))
       {item.data.location && (
         <p class="news-location">{item.data.location}</p>
       )}
+
+      {item.data.description?.map((paragraph) => (
+        <p class="news-description">{paragraph}</p>
+      ))}
     </article>
   ))}
 </div>
+
+<style>
+  .news-description {
+    margin: 0.75rem 0 0;
+    color: #52606d;
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+</style>

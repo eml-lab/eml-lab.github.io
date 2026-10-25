@@ -1,13 +1,13 @@
 ---
 order: 2
-category: "upcoming"
+category: "archive"
 year: 2026
 title: "2026 World Knowledge Forum (WKF) - Seoul, Korea"
 date: "September 8-10, 2026"
 location: "Seoul, Korea"
 speaker: "Speaker: Yoosoon Chang"
 descriptionHtml:
-  - "Yoosoon Chang will discuss inequality and intergenerational mobility in an invited session with Steven Durlauf at University of Chicago."
+  - "Yoosoon Chang discusses inequality and intergenerational mobility in an invited session with Steven Durlauf at University of Chicago."
 links:
   - title: "WKF Website"
     url: "https://www.wkforum.org/en/"

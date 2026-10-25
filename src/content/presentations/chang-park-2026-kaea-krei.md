@@ -1,6 +1,6 @@
 ---
 order: 3
-category: "upcoming"
+category: "archive"
 year: 2026
 title: "AI and Machine Learning for Economic Data Analysis"
 date: "June 19, 2026"

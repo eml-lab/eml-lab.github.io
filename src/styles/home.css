@@ -67,11 +67,17 @@
 }
 
 .home-hero h1 {
-    max-width: 850px;
+    max-width: none;
     margin: 0;
-    font-size: clamp(2.4rem, 4.5vw, 3.75rem);
-    line-height: 1.05;
+    font-size: clamp(1.8rem, 3.5vw, 3.5rem);
+    line-height: 1.15;
     letter-spacing: -0.04em;
+}
+
+@media (min-width: 1200px) {
+    .home-hero h1 {
+        white-space: nowrap;
+    }
 }
 
 .home-hero-description {
