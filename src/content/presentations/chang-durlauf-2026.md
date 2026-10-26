@@ -1,6 +1,6 @@
 ---
 order: 2
-category: "archive"
+category: "upcoming"
 year: 2026
 title: "2026 World Knowledge Forum (WKF) - Seoul, Korea"
 date: "September 8-10, 2026"

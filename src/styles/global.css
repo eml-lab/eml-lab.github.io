@@ -46,8 +46,14 @@ body {
     align-items: center;
 }
 
+@media (min-width: 1200px) {
+    .logo {
+        transform: translateX(-36px);
+    }
+}
+
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.65rem;
     color: white;
     text-decoration: none;
     font-weight: bold;

@@ -1,6 +1,6 @@
 ---
 order: 1
-category: "archive"
+category: "upcoming"
 year: 2026
 title: "Keynote Speech at 2026 Canadian Econometrics Study Group (CESG)"
 date: "October 16-18, 2026"
