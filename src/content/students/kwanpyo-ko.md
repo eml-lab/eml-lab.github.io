@@ -4,7 +4,9 @@ title: PhD Student in Economics
 
 initials: KK
 
-order: 3
+order: 1
+
+status: former
 
 email: kwko@iu.edu
 

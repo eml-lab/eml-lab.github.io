@@ -1,0 +1,38 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/students.css";
+import { getCollection } from "astro:content";
+
+const fellows = await getCollection("postdocs");
+fellows.sort((a, b) => a.data.order - b.data.order);
+---
+<BaseLayout title="Postdoctoral Fellows">
+  <section class="banner"><div class="banner-content">
+    <h1>Postdoctoral Fellows</h1>
+    <p>Postdoctoral researchers contributing to the lab's work</p>
+  </div></section>
+  <div class="container students-layout"><main class="main-content">
+    <section class="student-intro"><h2>Postdoctoral Fellows</h2>
+      <p>Meet the postdoctoral fellows contributing to research at the Economic Machine Learning Lab.</p>
+    </section>
+    <div class="people-grid">
+      {fellows.map((fellow) => (
+        <div class="person-card">
+          <div class="person-header">
+            <div class="person-placeholder">{fellow.data.initials}</div>
+            <div class="person-heading"><h3 class="person-name">{fellow.data.name}</h3><p class="person-title">{fellow.data.title}</p></div>
+          </div>
+          <div class="person-info">
+            <div class="person-section"><h4>{fellow.data.interestLabel}</h4>
+              {fellow.data.research.length > 0 ? <div class="interest-tags">{fellow.data.research.map((interest) => <span class="interest-tag">{interest}</span>)}</div> : <p class="empty-note">Research interests forthcoming.</p>}
+            </div>
+            <div class="person-actions">
+              {fellow.data.email && <a href={`mailto:${fellow.data.email}`} class="person-link">Email: {fellow.data.email}</a>}
+              {fellow.data.website && <a href={fellow.data.website} class="person-link">Personal Website</a>}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </main></div>
+</BaseLayout>

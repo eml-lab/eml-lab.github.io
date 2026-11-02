@@ -4,7 +4,9 @@ title: Masters Student in Data Science
 
 initials: JY
 
-order: 7
+order: 2
+
+status: former
 
 email: JackYeung99@gmail.com
 
