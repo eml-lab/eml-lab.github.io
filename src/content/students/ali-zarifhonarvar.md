@@ -4,7 +4,9 @@ title: PhD Student in Economics
 
 initials: AZ
 
-order: 2
+order: 1
+
+status: former
 
 email: alizarif@iu.edu
 

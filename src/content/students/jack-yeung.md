@@ -4,7 +4,7 @@ title: Masters Student in Data Science
 
 initials: JY
 
-order: 2
+order: 3
 
 status: former
 
