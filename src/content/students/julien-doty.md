@@ -8,8 +8,10 @@ order: 7
 
 email: juldoty@iu.edu
 
-website: ""
+website: "https://www.linkedin.com/in/julien-doty-09a16332a/"
 
 research:
-  - To be added soon
+  - Energy Economics
+  - Environmental Economics
+  - Microeconometrics
 ---
