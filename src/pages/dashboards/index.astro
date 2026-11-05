@@ -6,16 +6,13 @@ import DashboardCard from "../../components/DashboardCard.astro";
 const showEnergy = true;
 const showFinance = false;
 const showMacro = false;
-const showHealth = false;
+const showIndiana = true;
 ---
 
 <BaseLayout title="Interactive Economic Data | Economic Machine Learning Lab">
-
     <section class="dashboard-hero">
         <div class="dashboard-hero-content">
-
             <h1>Interactive Dashboards</h1>
-
             <p class="dashboard-hero-description">
                 Explore economic questions through interactive visualizations,
                 data tools, and analytical dashboards.
@@ -26,7 +23,6 @@ const showHealth = false;
     <main class="dashboards-layout">
         <section class="dashboard-catalog">
             <div class="dashboards-grid">
-
                 {showEnergy && (
                     <DashboardCard
                         title="Energy"
@@ -34,7 +30,6 @@ const showHealth = false;
                         href="/dashboards/energy"
                     />
                 )}
-
                 {showFinance && (
                     <DashboardCard
                         title="Finance"
@@ -42,7 +37,6 @@ const showHealth = false;
                         href="/dashboards/finance"
                     />
                 )}
-
                 {showMacro && (
                     <DashboardCard
                         title="Macroeconomics"
@@ -50,17 +44,14 @@ const showHealth = false;
                         href="/dashboards/macro"
                     />
                 )}
-
-                {showHealth && (
+                {showIndiana && (
                     <DashboardCard
-                        title="Health Economics and Mobility"
-                        description="Explore healthcare data, health outcomes, and questions in health economics."
-                        href="/dashboards/health"
+                        title="Indiana Forecasting"
+                        description="Explore Indiana economic indicators, forecasts, and county-level data."
+                        href="/dashboards/indiana-forecasting"
                     />
                 )}
-
             </div>
         </section>
     </main>
-
 </BaseLayout>

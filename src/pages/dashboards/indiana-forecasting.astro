@@ -1,0 +1,35 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import DashboardContainer from "../../components/DashboardContainer.astro";
+import "../../styles/dashboard-page.css";
+---
+
+<BaseLayout title="Indiana Forecasting Dashboard | Economic Machine Learning Lab">
+    <section class="banner">
+        <div class="banner-content">
+            <h1>Indiana Forecasting Dashboard</h1>
+            <p>Interactive economic forecasts for Indiana.</p>
+        </div>
+    </section>
+
+    <div class="dashboard-page-layout">
+        <DashboardContainer
+            title="Indiana Forecasting Dashboard"
+            description="Explore economic indicators and forecasts for Indiana and its counties."
+        >
+            <iframe
+                src="https://eml-indiana-forecaster.plotly.app/"
+                title="Indiana Forecasting Dashboard"
+                loading="lazy"
+                allowfullscreen
+                style="display: block; width: 100%; height: 1250px; border: 0; background: white;"
+            ></iframe>
+        </DashboardContainer>
+
+        <section class="dashboard-navigation">
+            <a class="dashboard-back-link" href="/dashboards">
+                ← Back to Research Dashboards
+            </a>
+        </section>
+    </div>
+</BaseLayout>
