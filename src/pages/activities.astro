@@ -1,11 +1,13 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import "../styles/activities.css";
+import "../styles/competition-activities.css";
 
 const showEnergy = true;
 const showFinance = false;
 const showMacro = false;
 const showHealth = false;
+const showIndiana = true;
 ---
 
 <BaseLayout title="Activities | Economic Machine Learning Lab">
@@ -39,23 +41,23 @@ const showHealth = false;
 
                 <p>
                     Our activities include flagship conferences, workshops and courses, research presentations,
-                publications, and interactive dashboards that foster learning, collaboration, and innovation.
+                    publications, and interactive dashboards that foster learning, collaboration, and innovation.
                 </p>
             </section>
 
             <section class="activities-section">
 
                 <!-- Activities -->
-                <h3 class="activity-subtitle">Conferences, Research, & Education</h3>
+                <h3 class="activity-subtitle">Conferences, Research, &amp; Education</h3>
 
                 <div class="resource-list">
 
-                    <a href="/quant_2025" class="resource-item">
+                    <a href="/quant-trading-competition-2027" class="resource-item">
                         <div>
-                            <h3>EML Quant Conference 2025</h3>
+                            <h3>EML Quant Trading Competition 2027</h3>
                             <p>
-                                Learn about the EML Quant Conference focusing on quantitative methods,
-                                finance, and machine learning.
+                                Apply for an individual paper-trading competition featuring portfolio execution
+                                and original trading strategies. Applications close December 4, 2026.
                             </p>
                         </div>
                         <span>&rarr;</span>
@@ -67,6 +69,17 @@ const showHealth = false;
                             <p>
                                 Learn about the EML Energy Conference focusing on energy, economics,
                                 and machine learning.
+                            </p>
+                        </div>
+                        <span>&rarr;</span>
+                    </a>
+
+                    <a href="/quant_2025" class="resource-item">
+                        <div>
+                            <h3>EML Quant Conference 2025</h3>
+                            <p>
+                                Learn about the EML Quant Conference focusing on quantitative methods,
+                                finance, and machine learning.
                             </p>
                         </div>
                         <span>&rarr;</span>
@@ -106,7 +119,6 @@ const showHealth = false;
                     </a>
                 </div>
 
-                
                 <!-- Dashboards -->
                 <h3 class="activity-subtitle secondary-subtitle">
                     Dashboards
@@ -164,6 +176,20 @@ const showHealth = false;
                             </p>
                             <span>Coming soon</span>
                         </div>
+                    )}
+
+                    {showIndiana && (
+                        <a
+                            href="/dashboards/indiana-forecasting"
+                            class="activity-card secondary-card"
+                        >
+                            <h3>Indiana Economy Forecasting</h3>
+                            <p>
+                                Interactive tools for forecasting Indiana
+                                state and county level data.
+                            </p>
+                            <span>Explore &rarr;</span>
+                        </a>
                     )}
 
                 </div>

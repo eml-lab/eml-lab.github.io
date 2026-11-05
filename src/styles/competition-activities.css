@@ -1,0 +1,11 @@
+/* Place six resources in two even rows of three, preserving existing styling. */
+.resource-list .resource-item:nth-child(4),
+.resource-list .resource-item:nth-child(5) {
+    grid-column: span 2;
+}
+@media (max-width: 1000px) {
+    .resource-list .resource-item:nth-child(4),
+    .resource-list .resource-item:nth-child(5) {
+        grid-column: auto;
+    }
+}

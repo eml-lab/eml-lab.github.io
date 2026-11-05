@@ -1,0 +1,48 @@
+/* Competition page: follows the site's typography, white cards, and IU crimson accent. */
+.competition-banner { min-height: 250px; }
+.competition-eyebrow { font-size: .76rem !important; font-weight: 700; letter-spacing: .16em; color: #f0c9c9 !important; margin: 0 0 .85rem !important; }
+.competition-page { margin-top: 2.6rem; margin-bottom: 4rem; }
+.competition-page h2 { color: #24282c; font-size: clamp(1.55rem,2.6vw,2.1rem); line-height: 1.2; letter-spacing: -.025em; }
+.competition-page h3 { color: #24282c; }
+.competition-page p { line-height: 1.7; }
+.competition-label { color: #990000; font-weight: 750; font-size: .74rem; letter-spacing: .1em; margin-bottom: .7rem; }
+.competition-intro { display: grid; grid-template-columns: minmax(0,1.5fr) minmax(300px,.9fr); gap: 3.5rem; align-items: start; }
+.competition-overview h2 { margin-bottom: 1.25rem; }
+.competition-overview p:not(.competition-label) { max-width: 740px; margin-top: 1rem; color: #4c5661; }
+.competition-apply { border: 1px solid #e5e5e5; border-top: 4px solid #990000; border-radius: 12px; padding: 1.75rem; background: #fafafa; box-shadow: 0 10px 28px rgba(0,0,0,.035); }
+.competition-apply h2 { font-size: 1.55rem; }
+.competition-deadline { font-size: 1.15rem; font-weight: 750; color: #252525; margin-top: 1.25rem; }
+.competition-deadline-detail { color: #65717b; font-size: .85rem; margin-bottom: 1.35rem; }
+.competition-actions { display: grid; gap: .7rem; }
+.competition-button { display: flex; justify-content: space-between; align-items: center; gap: 1rem; text-decoration: none; padding: .85rem 1.15rem; font-weight: 700; border-radius: 7px; transition: background-color .15s,border-color .15s; }
+.competition-button-primary { background: #990000; color: #fff; }
+.competition-button-primary:hover { background: #7e0000; }
+.competition-button-secondary { background: white; color: #990000; border: 1px solid #d1b1b1; }
+.competition-button-secondary:hover { background: #fff3f3; }
+.competition-fine-print { margin-top: 1.1rem; font-size: .86rem; color: #6b7280; }
+.competition-closed { padding: .8rem 1rem; margin-top: .8rem; background: #efefef; border-radius: 6px; font-weight: 700; color: #4b5563; }
+.competition-closed[hidden], .competition-button[hidden] { display: none !important; }
+.competition-section { margin-top: 3.2rem; padding-top: 2.4rem; border-top: 1px solid #e5e7eb; }
+.competition-section h2 { margin-bottom: 1.4rem; }
+.competition-parts { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1.2rem; }
+.competition-part { padding: 1.8rem; border: 1px solid #e2e6e9; border-radius: 12px; background: #fff; }
+.competition-part-label { color: #990000; font-size: .76rem; font-weight: 800; letter-spacing: .09em; margin-bottom: .65rem; }
+.competition-part h3 { font-size: 1.3rem; margin-bottom: .7rem; }
+.competition-part p:last-child { color: #58636e; }
+.competition-note { margin-top: 1rem; font-size: .9rem; color: #65717b; }
+.competition-facts { display: grid; grid-template-columns: minmax(0,1.3fr) minmax(300px,.85fr); gap: 3.5rem; }
+.competition-timeline { border-top: 1px solid #e5e7eb; }
+.competition-timeline > div { display: grid; grid-template-columns: minmax(125px,.45fr) 1fr; gap: 1rem; padding: .85rem 0; border-bottom: 1px solid #e5e7eb; }
+.competition-timeline time { font-weight: 700; color: #990000; }
+.competition-timeline span { color: #47515b; }
+.competition-awards-block { align-self: start; }
+.competition-award { display: flex; align-items: baseline; justify-content: space-between; gap: 1.2rem; padding: 1rem 0; border-bottom: 1px solid #e5e7eb; }
+.competition-award span { color: #47515b; }
+.competition-award strong { color: #990000; font-size: 1.35rem; white-space: nowrap; }
+.competition-awards-note { margin-top: 1.1rem; color: #65717b; font-size: .9rem; }
+.competition-bottom { margin-top: 3rem; padding: 1.5rem 1.75rem; border-radius: 10px; background: #f7f8f9; }
+.competition-bottom p + p { margin-top: .5rem; }
+.competition-bottom a { color: #990000; font-weight: 600; }
+.competition-disclaimer { font-size: .82rem; color: #68737d; }
+@media(max-width:800px) { .competition-intro,.competition-facts { grid-template-columns: 1fr; gap: 2rem; } .competition-parts { grid-template-columns: 1fr; } .competition-page { margin-top: 1.5rem; } }
+@media(max-width:520px) { .competition-page { padding-left: 1.1rem; padding-right: 1.1rem; } .competition-timeline > div { grid-template-columns: 1fr; gap: .15rem; } .competition-apply,.competition-part { padding: 1.3rem; } }

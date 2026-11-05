@@ -1,0 +1,106 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/quant-trading-competition-2027.css";
+
+const applicationUrl = "https://eml-quant-competition-application.netlify.app/";
+const callUrl = "/assets/eml-quant-trading-competition-spring-2027-call.pdf";
+---
+
+<BaseLayout
+  title="EML Quant Trading Competition 2027 | Economic Machine Learning Lab"
+  description="Apply for the Spring 2027 EML Quant Trading Competition at Indiana University. Applications due December 4, 2026."
+>
+  <section class="banner competition-banner">
+    <div class="banner-content">
+      <p class="competition-eyebrow">SPRING 2027 · CALL FOR PARTICIPATION</p>
+      <h1>EML Quant Trading Competition</h1>
+      <p>Portfolio execution and trading strategies in a quant competition for Indiana University students.</p>
+    </div>
+  </section>
+
+  <main class="competition-page container">
+    <section class="competition-intro" aria-labelledby="competition-overview">
+      <div class="competition-overview">
+        <p class="competition-label">ABOUT THE COMPETITION</p>
+        <h2 id="competition-overview">Put Quantitative Trading Skills Into Practice</h2>
+        <p>The Economic Machine Learning (EML) Lab invites Indiana University undergraduate and graduate students from any program to apply. Participants trade with simulated money in paper-trading accounts; <strong>no real capital is at risk, and no real funds may be used.</strong></p>
+        <p>The competition runs from <strong>January 11 to April 23, 2027</strong>, with two complementary parts: implementing a provided portfolio efficiently and developing an original trading strategy.</p>
+        <p>Participation is <strong>individual</strong>; teams are not permitted. Applying does not guarantee selection.</p>
+      </div>
+      <aside class="competition-apply" aria-label="Application information">
+        <p class="competition-label">APPLICATIONS</p>
+        <h2>Apply to Participate</h2>
+        <p class="competition-deadline">Friday, December 4, 2026</p>
+        <p class="competition-deadline-detail">Application deadline</p>
+        <div class="competition-actions">
+          <a id="competition-apply-link" href={applicationUrl} target="_blank" rel="noopener noreferrer" class="competition-button competition-button-primary">Apply Online <span aria-hidden="true">↗</span></a>
+          <a href={callUrl} target="_blank" rel="noopener noreferrer" class="competition-button competition-button-secondary">Read the Full Call (PDF) <span aria-hidden="true">↗</span></a>
+        </div>
+        <p id="competition-applications-closed" class="competition-closed" hidden>Applications have closed.</p>
+        <p class="competition-fine-print">Selected participants will be notified by mid-December 2026.</p>
+      </aside>
+    </section>
+
+    <section class="competition-section" aria-labelledby="competition-format">
+      <p class="competition-label">COMPETITION FORMAT</p>
+      <h2 id="competition-format">Two Parts - One Competition</h2>
+      <div class="competition-parts">
+        <article class="competition-part">
+          <p class="competition-part-label">PART 01</p>
+          <h3>Portfolio Execution</h3>
+          <p>Each week, participants receive an EML Lab portfolio with specified stocks and weights. The goal is to implement it in a paper account while minimizing costs such as commissions, spreads, slippage, and short-selling expenses.</p>
+        </article>
+        <article class="competition-part">
+          <p class="competition-part-label">PART 02</p>
+          <h3>Your Own Strategy</h3>
+          <p>Design and trade an original strategy in a paper account. Report its quality and performance using cumulative return, the Sharpe ratio, and other metrics specified by the Lab.</p>
+        </article>
+      </div>
+      <p class="competition-note">Any trading platform offering paper-money accounts may be used. Interactive Brokers is an option, not a requirement.</p>
+    </section>
+
+    <section class="competition-section competition-facts" aria-labelledby="competition-dates">
+      <div>
+        <p class="competition-label">IMPORTANT DATES</p>
+        <h2 id="competition-dates">Competition timeline</h2>
+        <div class="competition-timeline">
+          <div><time datetime="2026-12-04">Dec 4, 2026</time><span>Applications due</span></div>
+          <div><time datetime="2027-01-11">Jan 11, 2027</time><span>Competition begins</span></div>
+          <div><time datetime="2027-04-23">Apr 23, 2027</time><span>Trading cutoff · 4:00 PM ET</span></div>
+          <div><time datetime="2027-04-27">Apr 27, 2027</time><span>Reports, records, and P&amp;L logs due</span></div>
+          <div><time datetime="2027-04-28">Apr 28, 2027</time><span>Six finalists notified</span></div>
+          <div><time datetime="2027-04-30">Apr 30, 2027</time><span>In-person finalist presentations (backup: May 3)</span></div>
+          <div><time datetime="2027-05-14">May 14, 2027</time><span>Winner and runners-up announced</span></div>
+        </div>
+      </div>
+      <div class="competition-awards-block">
+        <p class="competition-label">AWARDS</p>
+        <h2>Cash awards</h2>
+        <div class="competition-award"><span>Winner</span><strong>$1,000</strong></div>
+        <div class="competition-award"><span>Runner-up · Portfolio Execution</span><strong>$500</strong></div>
+        <div class="competition-award"><span>Runner-up · Own Strategy</span><strong>$500</strong></div>
+        <p class="competition-awards-note">Three awards are selected from the six finalists; each participant can receive at most one.</p>
+        <p class="competition-awards-note">Finalist presentations are in person. Remote presentations are not available.</p>
+      </div>
+    </section>
+
+    <section class="competition-bottom" aria-label="Additional information">
+      <p>For eligibility, reporting requirements, evaluation details, and complete competition rules, see the <a href={callUrl} target="_blank" rel="noopener noreferrer">full call for participation (PDF)</a>.</p>
+      <p>Questions: <a href="mailto:emllab@iu.edu">emllab@iu.edu</a></p>
+      <p class="competition-disclaimer">This competition is for educational purposes only. All trading takes place in paper-money accounts, and nothing in the competition constitutes investment advice.</p>
+    </section>
+  </main>
+
+  <script is:inline>
+    // Application deadline: December 4, 2026, 11:59:59 PM Eastern Standard Time.
+    (function () {
+      var isClosed = Date.now() >= Date.parse('2026-12-05T05:00:00Z');
+      var link = document.getElementById('competition-apply-link');
+      var notice = document.getElementById('competition-applications-closed');
+      if (isClosed && link && notice) {
+        link.hidden = true;
+        notice.hidden = false;
+      }
+    })();
+  </script>
+</BaseLayout>
