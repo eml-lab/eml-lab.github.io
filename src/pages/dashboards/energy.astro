@@ -2,99 +2,31 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import DashboardContainer from "../../components/DashboardContainer.astro";
 import "../../styles/dashboard-page.css";
-import LoadForecasterDashboard from "../../components/dashboards/LoadForecasterDashboard.jsx";
 ---
 
-<BaseLayout title="Energy Dashboards | Economic Machine Learning Lab">
-
-    <!-- Banner -->
+<BaseLayout title="Energy Dashboard | Economic Machine Learning Lab">
     <section class="banner">
         <div class="banner-content">
-            <h1>EML Load Forecaster Dashboard</h1>
-            <p>Interactive electricity load forecasts and forecast decomposition.</p>
+            <h1>Energy Dashboard</h1>
+            <p>Interactive electricity load forecasts.</p>
         </div>
     </section>
 
-    <div class="energy-dashboard-page">
-        <div class="dashboard-page-layout">
-
-        <DashboardContainer
-            title=""
-            description=""
-        >
-            
-            <LoadForecasterDashboard client:only="react" />
+    <div class="dashboard-page-layout">
+        <DashboardContainer title="" description="">
+            <iframe
+                src="https://b2p-dashboard-eml.plotly.app/"
+                title="Energy Dashboard"
+                loading="lazy"
+                allowfullscreen
+                style="display: block; width: 100%; height: 1250px; border: 0; background: white;"
+            ></iframe>
         </DashboardContainer>
 
-        <!-- Dashboard Documentation -->
-        <section class="dashboard-page-intro">
-
-            <h2>About This Dashboard</h2>
-
-            <p>
-                The EML Load Forecaster Dashboard visualizes electricity load
-                forecasts generated using data from the Midcontinent Independent System Operator (MISO).
-                It compares predicted electricity demand with actual demand,
-                allowing users to examine forecast performance across different
-                dates and hours.
-            </p>
-
-            <h3>Data and Coverage</h3>
-
-            <p>
-                <strong>Data Source:</strong> Midcontinent Independent System Operator (MISO).
-                <br />
-                <strong>Coverage:</strong> January 1 – September 29, 2025.
-                <br />
-                <strong>Frequency:</strong> Hourly.
-                <br />
-                <strong>Forecast Horizons:</strong> One-day-ahead and two-day-ahead.
-                <br />
-                <strong>Units:</strong> Megawatts (MW).
-            </p>
-
-            <h3>Reading the Dashboard</h3>
-
-            <p>
-                The main graph compares forecasted and realized electricity load.
-                The controls allow users to switch between forecast starting times
-                and forecast horizons.
-            </p>
-
-            <p>
-                The accompanying graphs display day and temperature characteristics
-                associated with the forecast.
-            </p>
-
-        </section>
-
-
-        <section class="dashboard-page-section">
-
-            <h2>Research Areas</h2>
-
-            <div class="research-grid">
-
-                <div class="research-tag">Electricity Markets</div>
-
-                <div class="research-tag">Energy Forecasting</div>
-
-                <div class="research-tag">Machine Learning Applications</div>
-            </div>
-
-        </section>
-
         <section class="dashboard-navigation">
-
-            <a
-                class="dashboard-back-link"
-                href="/dashboards"
-            >
+            <a class="dashboard-back-link" href="/dashboards">
                 ← Back to Research Dashboards
             </a>
         </section>
-
     </div>
-    </div>
-
 </BaseLayout>
